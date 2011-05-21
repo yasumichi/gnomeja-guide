@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE book PUBLIC "-//OASIS//DTD DocBook XML V4.3//EN"
+"http://www.oasis-open.org/docbook/xml/4.3/docbookx.dtd">
+<book id="gnomeja-guide" lang="ja">
+  <bookinfo>
+    <title>GNOME 日本語翻訳チーム参加者ガイド(仮題)</title>
+    <abstract>
+      <para>この文書では、GNOME 日本語翻訳チームへ参加する方法および参加者がどのような作業を行うかについて解説します。</para>
+    </abstract>
+    <authorgroup>
+      <author>
+        <firstname>赤星</firstname><surname>柔充</surname>
+        <email>yasumichi@vinelinux.org</email>
+      </author>
+      <author>
+        <firstname>Jiro</firstname><surname>Matsuzawa</surname>
+      </author>
+    </authorgroup>
+    <copyright>
+      <year>2011</year>
+      <holder>日本 GNOME ユーザー会</holder>
+    </copyright>
+  </bookinfo>
+  <preface id="joinus">
+    <title>GNOME 日本語翻訳チームへご協力ください</title>
+    <para>私たち GNOME 日本語翻訳チームは、GNOME 公式の翻訳プロジェクトとして GNOME の日本語化を行っています。日本語環境を改善し、デスクトップをもっと使いやすくする。わかりやすい日本語のドキュメントをもっと充実させる。そのために日々活動しております。しかしながら、足りていないものがあります。ユーザの皆さんの声です。実際のユーザの声をGNOME に反映させることで、GNOME はもっと良いものになります。私たちはあなたの声を求めています。自分の使う環境を自分の手でより良くしたいと思う方がいれば、ぜひ私たちにご協力ください。みなさんの声が大きな力となります。</para>
+    <para>英語能力や翻訳スキルは必ずしも必要ではありません。たとえば、何かのアプリケーションを使ってみて、そのメッセージやヘルプの分かりづらい点などをご指摘くださるだけでも十分です。あるいはアプリケーションの実際の操作と対応する日本語の表現に相違が無いかのチェックなどもありがたいものです。そういった作業は翻訳品質の向上にとってなくてはならないものです。さらに実際の翻訳をやってみたいという方のご協力は大歓迎です。</para>
+  </preface>
+  <chapter id="roles">
+    <title>GNOME 日本語翻訳チームへの参加形態</title>
+    <sect1 id="users">
+      <title>協力ユーザー</title>
+      <para>協力ユーザーとは、GNOME デスクトップ、アプリケーションおよびマニュアルの翻訳改善に貢献するユーザーのことです。翻訳の間違いやわかりづらい日本語など、気づいたことや気になったことがあれば、ぜひお知らせください。いただいた情報をもとに、必要に応じて翻訳チームが対処します。単語ひとつだけに関する指摘など、些細に思われるものでも歓迎します。</para>
+      <para>お知らせいただきたい情報としては、たとえば以下のようなものがあります。</para>
+      <itemizedlist>
+        <listitem><para>誤字・脱字・誤訳・未訳を見つけた</para></listitem>
+        <listitem><para>ソフトウェアのメッセージがわかりづらい、使いにくい</para></listitem>
+        <listitem><para>マニュアルやヘルプの文章がわかりづらい、読みにくい</para></listitem>
+        <listitem><para>日本語化してほしいソフトウェアやマニュアルがある</para></listitem>
+        <listitem><para>その他、翻訳の改善提案などなど</para></listitem>
+      </itemizedlist>
+	  <para>協力ユーザとして参加するには、翻訳チームのメーリングリストを購読して、そちらにご報告ください。購読の方法は、<xref linkend="list"/> を参照してください。</para>
+    </sect1>
+    <sect1 id="translators">
+      <title>翻訳者</title>
+      <para>ToDo: 翻訳者の役割</para>
+    </sect1>
+    <sect1 id="reviewers">
+      <title>査読者</title>
+      <para>ToDo: 査読者の役割</para>
+      <para>ToDo: 査読者が翻訳作業の流れにどのように関わるか？次章へのリンクも交えて解説</para>
+    </sect1>
+    <sect1 id="committers">
+      <title>コミッター</title>
+      <para>ToDo: コミッターの役割</para>
+    </sect1>
+    <sect1 id="coordinator">
+      <title>コーディネータ</title>
+      <para>ToDo: コーディネータとは</para>
+    </sect1>
+  </chapter>
+  <chapter id="preparation">
+    <title>参加の準備</title>
+    <sect1 id="list">
+      <title>メーリングリストの購読</title>
+      <para>GNOME 日本語翻訳に関する情報共有を目的としてメーリングリストを用意しています。</para>
+      <para>メーリングリストへの参加手続は、<ulink url="http://mail.gnome.gr.jp/mailman/listinfo/gnome-translation">Gnome-translation -- 翻訳作業者向け</ulink>というページで始めます。</para>
+      <orderedlist>
+        <listitem>
+          <para>「Gnome-translation の購読」にある入会フォームに必要事項を入力し、<guibutton>入会を申し込む</guibutton>を押してください。</para>
+          <itemizedlist>
+            <listitem><para>「メールアドレス」は唯一の必須入力項目です。確実にメールを受信できるように正しいメールアドレスを入力してください。</para></listitem>
+            <listitem><para>「名前」は省略可能です。ここで指定した名前は、メーリングリストの設定を変更する画面などで利用されます。</para></listitem>
+            <listitem><para>「パスワード」も省略可能です。省略した場合は、自動でパスワードが設定されメールで通知されます。入力した場合は、「確認のため同じパスワードを再入力:」という欄にも同じパスワードを入力してください。</para></listitem>
+            <listitem><para>「表示に使う言語」は、自動的に「日本語」に設定されます。変更はできません。</para></listitem>
+            <listitem><para>「リストのメールを毎日1本にまとめて送りますか?」に対し、デフォルトの「いいえ」を選択した場合、メーリングリストへの投稿がある度に一通ずつメールが送られて来ます。「はい」を選択した場合は、その日の投稿が一通のメールにまとめられて送られて来ます。</para></listitem>
+          </itemizedlist>
+        </listitem>
+        <listitem>
+          <para>「Gnome-translation 入会手続きの結果」というページが表示されます。ここにも書かれていますが、申請内容確認のために「gnome-translation-request@gnome.gr.jp」というアドレスから「confirm」で始まる件名でメールが送られて来ます。メールにも書かれていますが、ほとんどの場合、単にそのメールに返信を行うだけで入会の手続をすすめることができます。</para>
+        </listitem>
+        <listitem>
+          <para>「"Gnome-translation" メーリングリストへようこそ」というようなメールが届けば、入会手続完了です。</para>
+        </listitem>
+      </orderedlist>
+      <important>
+        <title>メーリングリストのアドレスについて</title>
+        <para>メーリングリストへ投稿を行う場合は、「gnome-translation@gnome.gr.jp」を宛先としてください。</para>
+      </important>
+      <para>どのようにメールを書けば良いか、メーリングリストの雰囲気などを知りたいなど過去のメールを確認したい場合、<ulink url="http://mail.gnome.gr.jp/ml/gnome-translation">Gnome-translation 保存書庫</ulink>で過去のメールを参照することが可能です。</para>
+    </sect1>
+    <sect1 id="damned-lies">
+      <title>GNOME 翻訳ステータスへのアカウント登録</title>
+      <para>ToDo: GNOME 翻訳ステータスへのアカウント登録要領について記す</para>
+    </sect1>
+  </chapter>
+  <chapter>
+    <title>翻訳作業の流れ</title>
+    <sect1>
+      <title>翻訳状況の確認</title>
+      <para>ToDo: GNOME 翻訳ステータスで翻訳状況を確認する要領について記す</para>
+    </sect1>
+    <sect1>
+      <title>翻訳の予約</title>
+      <para>ToDo: GNOME 翻訳ステータスで翻訳を予約する要領について記す</para>
+    </sect1>
+    <sect1>
+      <title>翻訳</title>
+      <para>ToDo: ja.po の編集</para>
+    </sect1>
+    <sect1>
+      <title>翻訳のアップロード</title>
+      <para>ToDo: ja.po のアップロード</para>
+    </sect1>
+    <sect1>
+      <title>査読待ちへの変更</title>
+      <para>ToDo: GNOME 翻訳ステータスでの状態変更要領</para>
+    </sect1>
+    <sect1>
+      <title>査読者による査読</title>
+      <para>ToDo: demnad-lies でのコメントを使わず ML で返信するように統制</para>
+    </sect1>
+    <sect1>
+      <title>コミッターによるコミット</title>
+      <para>ToDo: この辺の事情を確認</para>
+    </sect1>
+  </chapter>
+  <appendix>
+    <title>翻訳を支える技術</title>
+    <sect1>
+      <title>インターフェースの翻訳を支える gettext</title>
+    </sect1>
+    <sect1>
+      <title>マニュアルの翻訳を支える gnome-doc-utils</title>
+    </sect1>
+  </appendix>
+  <appendix>
+    <title>ja.po 編集ソフトウェアの紹介(仮)</title>
+    <sect1>
+      <title>Gtranslator 翻訳エディタ</title>
+      <para>ToDo: Gtranslator の簡易チュートリアルを作成?</para>
+    </sect1>
+    <sect1>
+      <title>エディタ Emacs の po-mode</title>
+      <para>ToDo: この辺の事情を確認</para>
+    </sect1>
+    <sect1>
+      <title>Omega-T</title>
+      <para>ToDo: この辺の事情を確認</para>
+    </sect1>
+  </appendix>
+</book>
