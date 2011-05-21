@@ -94,57 +94,57 @@
       <para>ToDo: GNOME 翻訳ステータスへのアカウント登録要領について記す</para>
     </sect1>
   </chapter>
-  <chapter>
+  <chapter id="workflow">
     <title>翻訳作業の流れ</title>
-    <sect1>
+    <sect1 id="status">
       <title>翻訳状況の確認</title>
       <para>ToDo: GNOME 翻訳ステータスで翻訳状況を確認する要領について記す</para>
     </sect1>
-    <sect1>
+    <sect1 id="reserve">
       <title>翻訳の予約</title>
       <para>ToDo: GNOME 翻訳ステータスで翻訳を予約する要領について記す</para>
     </sect1>
-    <sect1>
+    <sect1 id="translation">
       <title>翻訳</title>
       <para>ToDo: ja.po の編集</para>
     </sect1>
-    <sect1>
+    <sect1 id="upload">
       <title>翻訳のアップロード</title>
       <para>ToDo: ja.po のアップロード</para>
     </sect1>
-    <sect1>
+    <sect1 id="waiting">
       <title>査読待ちへの変更</title>
       <para>ToDo: GNOME 翻訳ステータスでの状態変更要領</para>
     </sect1>
-    <sect1>
+    <sect1 id="review">
       <title>査読者による査読</title>
       <para>ToDo: demnad-lies でのコメントを使わず ML で返信するように統制</para>
     </sect1>
-    <sect1>
+    <sect1 id="commit">
       <title>コミッターによるコミット</title>
       <para>ToDo: この辺の事情を確認</para>
     </sect1>
   </chapter>
-  <appendix>
+  <appendix id="technology">
     <title>翻訳を支える技術</title>
-    <sect1>
+    <sect1 id="gettext">
       <title>インターフェースの翻訳を支える gettext</title>
     </sect1>
-    <sect1>
+    <sect1 id="gnome-doc-utils">
       <title>マニュアルの翻訳を支える gnome-doc-utils</title>
     </sect1>
   </appendix>
-  <appendix>
+  <appendix id="po-edtior">
     <title>ja.po 編集ソフトウェアの紹介(仮)</title>
-    <sect1>
+    <sect1 id="gtranslaor">
       <title>Gtranslator 翻訳エディタ</title>
       <para>ToDo: Gtranslator の簡易チュートリアルを作成?</para>
     </sect1>
-    <sect1>
+    <sect1 id="po-mode">
       <title>エディタ Emacs の po-mode</title>
       <para>ToDo: この辺の事情を確認</para>
     </sect1>
-    <sect1>
+    <sect1 id="omega-t">
       <title>Omega-T</title>
       <para>ToDo: この辺の事情を確認</para>
     </sect1>
