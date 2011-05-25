@@ -65,8 +65,9 @@
       <title>メーリングリストの購読</title>
       <para>GNOME 日本語翻訳に関する情報共有を目的としてメーリングリストを用意しています。</para>
       <para>メーリングリストへの参加手続は、<ulink url="http://mail.gnome.gr.jp/mailman/listinfo/gnome-translation">Gnome-translation -- 翻訳作業者向け</ulink>というページで始めます。</para>
-      <orderedlist>
-        <listitem>
+      <procedure>
+        <title>メーリングリストの購読手順</title>
+        <step>
           <para>「Gnome-translation の購読」にある入会フォームに必要事項を入力し、<guibutton>入会を申し込む</guibutton>を押してください。</para>
           <itemizedlist>
             <listitem><para>「メールアドレス」は唯一の必須入力項目です。確実にメールを受信できるように正しいメールアドレスを入力してください。</para></listitem>
@@ -75,19 +76,19 @@
             <listitem><para>「表示に使う言語」は、自動的に「日本語」に設定されます。変更はできません。</para></listitem>
             <listitem><para>「リストのメールを毎日1本にまとめて送りますか?」に対し、デフォルトの「いいえ」を選択した場合、メーリングリストへの投稿がある度に一通ずつメールが送られて来ます。「はい」を選択した場合は、その日の投稿が一通のメールにまとめられて送られて来ます。</para></listitem>
           </itemizedlist>
-        </listitem>
-        <listitem>
+        </step>
+        <step>
           <para>「Gnome-translation 入会手続きの結果」というページが表示されます。ここにも書かれていますが、申請内容確認のために「gnome-translation-request@gnome.gr.jp」というアドレスから「confirm」で始まる件名でメールが送られて来ます。メールにも書かれていますが、ほとんどの場合、単にそのメールに返信を行うだけで入会の手続をすすめることができます。</para>
-        </listitem>
-        <listitem>
+        </step>
+        <step>
           <para>「"Gnome-translation" メーリングリストへようこそ」というようなメールが届けば、入会手続完了です。</para>
-        </listitem>
-      </orderedlist>
+        </step>
+      </procedure>
       <important>
         <title>メーリングリストのアドレスについて</title>
         <para>メーリングリストへ投稿を行う場合は、「gnome-translation@gnome.gr.jp」を宛先としてください。</para>
       </important>
-      <para>どのようにメールを書けば良いか、メーリングリストの雰囲気などを知りたいなど過去のメールを確認したい場合、<ulink url="http://mail.gnome.gr.jp/ml/gnome-translation">Gnome-translation 保存書庫</ulink>で過去のメールを参照することが可能です。</para>
+      <para>どのようにメールを書けば良いか、メーリングリストの雰囲気を知りたいなど過去のメールを確認したい場合、<ulink url="http://mail.gnome.gr.jp/ml/gnome-translation">Gnome-translation 保存書庫</ulink>で過去のメールを参照することが可能です。</para>
     </sect1>
     <sect1 id="damned-lies">
       <title>GNOME 翻訳ステータスへのアカウント登録</title>
