@@ -115,6 +115,17 @@
         <step><para>入力内容に問題があった場合は、どの欄に問題があったのか表示されるので再度やりなおしてください。</para></step>
         <step><para>登録に成功すると先ほど入力したメールアドレス宛にアカウントを有効にするためのメールが送信されます。メールに書かれた説明に従ってください。</para></step>
       </procedure>
+      <para>アカウントの登録が完了したら、ログインして日本語翻訳チームに参加してください。</para>
+      <procedure>
+        <title>日本語翻訳チームへの参加手順</title>
+        <step><para><ulink url="http://l10n.gnome.org/login/">ログイン</ulink>のページからログインしてください。</para></step>
+        <step>
+          <para>まだ、チームに参加していない場合は、『あなたはまだどの翻訳チームにも参加していません。あなたのプロフィールから参加できます。』という案内がでます。</para>
+          <para>『あなたのプロフィール』というリンクにアクセスしてください。</para>
+        </step>
+        <step><para>『以下のチームに「翻訳者」として参加したい』という所にあるリストから『Japanese』を選択して<guibutton>参加</guibutton>というボタンをクリックしてください。</para></step>
+      </procedure>
+      <para>以上で手続は完了です。ようこそ、<ulink url="http://l10n.gnome.org/teams/ja/">GNOME 日本語翻訳チーム</ulink>へ!</para>
     </sect1>
   </chapter>
   <chapter id="workflow">
