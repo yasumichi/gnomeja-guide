@@ -92,7 +92,29 @@
     </sect1>
     <sect1 id="damned-lies">
       <title>GNOME 翻訳ステータスへのアカウント登録</title>
-      <para>ToDo: GNOME 翻訳ステータスへのアカウント登録要領について記す</para>
+      <para><ulink url="http://l10n.gnome.org/">GNOME 翻訳ステータス</ulink>というサイトが、私たちの活動拠点になります。このサイトでは、GNOME アプリケーションの翻訳状況の確認、翻訳の予約・アップロードなどが行えます。<xref linkend="workflow" />で示す作業を行うには、アカウントの登録が必要です。</para>
+      <procedure>
+        <title>GNOME 翻訳ステータスへのアカウント登録手順</title>
+        <step><para><ulink url="http://l10n.gnome.org/register/">アカウント登録</ulink>のページを開きます。</para></step>
+        <step>
+          <para>GNOME 翻訳ステータスで利用したいユーザーIDを入力してください。(入力必須)</para>
+          <para>英字、数字、アンダースコア(_)、およびハイフン(-)のみが使えます。</para>
+        </step>
+        <step><para>メールアドレスを入力してください。(入力必須)</para></step>
+        <step>
+          <para>希望する認証方法に応じ、必要事項を入力します。</para>
+          <itemizedlist>
+            <listitem><para>OpenID を利用する場合、<guilabel>OpenID</guilabel> の入力欄に OpenID URL を入力してください。</para></listitem>
+            <listitem>
+              <para>このサイト独自のパスワードを利用する場合は、<guilabel>パスワード</guilabel>および<guilabel>パスワードの確認</guilabel>の欄に同じパスワードを入力してください。</para>
+              <para>パスワードは、少なくとも7文字でなければなりません。</para>
+            </listitem>
+          </itemizedlist>
+        </step>
+        <step><para>前項の選択に応じ、<guibutton>OpenIDで登録</guibutton>か<guibutton>パスワードで登録</guibutton>というボタンを押してください。</para></step>
+        <step><para>入力内容に問題があった場合は、どの欄に問題があったのか表示されるので再度やりなおしてください。</para></step>
+        <step><para>登録に成功すると先ほど入力したメールアドレス宛にアカウントを有効にするためのメールが送信されます。メールに書かれた説明に従ってください。</para></step>
+      </procedure>
     </sect1>
   </chapter>
   <chapter id="workflow">
