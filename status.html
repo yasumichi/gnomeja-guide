@@ -354,6 +354,7 @@ span.medialabel { font-style: italic; }
 span.methodname { font-family: monospace; }
 span.ooclass, span.ooexception, span.oointerface { font-family: monospace; }
 span.option { font-family: monospace; }
+span.package { font-family: monospace; }
 span.parameter { font-family: monospace; }
 span.paramdef span.parameter { font-style: italic; }
 span.prompt { font-family: monospace; }
@@ -442,7 +443,63 @@ dd.answer div.label { float: left; }
 <li class="linktrail linktrail-first"><a class="linktrail" href="gnomeja-guide.html" title="GNOME 日本語翻訳チーム参加者ガイド(仮題)">GNOME 日本語翻訳チーム参加者ガイド(仮題)</a></li>
 <li class="linktrail linktrail-last"><a class="linktrail" href="workflow.html" title="翻訳作業の流れ">翻訳作業の流れ</a></li>
 </ul>
-<p class="para block block-first">ToDo: GNOME 翻訳ステータスで翻訳状況を確認する要領について記す</p>
+<p class="para block block-first">実際に翻訳作業に着手するまえに、まず日本語の翻訳状況を確認します。たとえば、翻訳したいアプリケーションを誰か他の人が担当していないか、未翻訳が残っているアプリケーションはどれか、などの確認を行います。</p>
+<p class="para block"><a class="ulink" href="http://l10n.gnome.org/teams/ja/" title="http://l10n.gnome.org/teams/ja/">GNOME 日本語翻訳チーム</a>のページをご覧ください。ページ中段の「<span class="guilabel">日本語 (ja)</span>」という見出しの下に、日本語の翻訳状況の概要をまとめた表があります。リリースセットごとにユーザーインターフェースおよびドキュメントの翻訳の進捗状況を確認することができます。パーセント表記の数字は翻訳の達成率です。</p>
+<div class=" block figure block-indent">
+<a name="status-overview"></a><div class="block block-first title title-formal"><span class="title"><span class="label"><span style="font-style: italic; ">図 3-1</span> </span>翻訳状況の概要</span></div>
+<div class="figure-inner">
+        
+        <div class=" block screenshot block-first">
+          <div class="mediaobject"><img src="figures/status-overview.png"></div>
+        </div>
+      </div>
+</div>
+<div class="block list variablelist"><dl class="variablelist">
+<dt class="term dt-first">リリース(セット)</dt>
+<dd>
+            <p class="para block block-first">リリースセットとは、各アプリケーションやライブラリ (モジュールと呼びます) を、その性質に応じてまとめたものです。「<span class="guilabel">開発版</span>」や「<span class="guilabel">安定版</span>」、「<span class="guilabel">追加の GNOME アプリケーション</span>」などのカテゴリーがあります。各モジュールはいずれかのリリースセットに含まれます。</p>
+          </dd>
+<dt class="term">ユーザーインターフェース</dt>
+<dd>
+            <p class="para block block-first">ユーザーインターフェースとは、アプリケーションなどのプログラムを実行したときに表示されるメッセージのことです。</p>
+          </dd>
+<dt class="term">ドキュメント</dt>
+<dd>
+            <p class="para block block-first">ドキュメントとは、モジュール付属のマニュアル文書のことです。</p>
+          </dd>
+</dl></div>
+<div class="block list procedure">
+<div class="block block-first title title-formal"><span class="title"><span class="label"></span>翻訳状況の確認手順</span></div>
+<p class="para block block-first">一例として開発版モジュールのユーザーインターフェースの確認手順について述べます。</p>
+<ol class="procedure">
+<li>
+          <p class="para block block-first">翻訳状況の表から、開発版ユーザーインターフェースの進捗状況のリンクをクリックしてください。モジュールごとの翻訳状況の一覧が表示されます。</p>
+        </li>
+<li>
+          <p class="para block block-first">「<span class="guilabel">状態</span>」の列を確認してください。</p>
+          <p class="para block">空欄になっているモジュールもあれば、「<span class="guilabel">翻訳中</span>」や「<span class="guilabel">査読待ち</span>」などの状態が記されているものもあります。空欄の場合は、現時点で誰もそのモジュールの翻訳作業を担当していません。状態が設定されているものは、誰かしらが翻訳作業に関わっていることを意味しています。</p>
+        </li>
+<li>
+          <p class="para block block-first">モジュール名のリンクをクリックしてください。該当モジュールの詳細ページが表示されます。</p>
+        </li>
+</ol>
+</div>
+<p class="para block">状況の確認をしたいモジュールがはっきりとわかっている場合は、リリースセットに関係なくモジュール名から直接状況を確認することができます。
+      </p>
+<div class="block list procedure">
+<div class="block block-first title title-formal"><span class="title"><span class="label"></span>モジュール名からの状況確認手順</span></div>
+<ol class="procedure">
+<li class="li-first">
+          <p class="para block block-first">「<a class="ulink" href="http://l10n.gnome.org/" title="http://l10n.gnome.org/">GNOME 翻訳ステータス</a>」のトップページ上部の「<span class="guilabel">モジュール</span>」タブをクリックしてください。モジュール名の一覧が表示されます。</p>
+        </li>
+<li>
+          <p class="para block block-first">対象のモジュールをクリックしてください。</p>
+        </li>
+<li>
+          <p class="para block block-first"><span class="guilabel">日本語 (ja)</span>をクリックしてください。該当モジュールのページが表示されます。</p>
+        </li>
+</ol>
+</div>
 </div></div>
 <div class="navbar navbar-bottom"><table class="navbar"><tr>
 <td class="navbar-prev"><a class="navbar-prev" href="status.html" title="翻訳状況の確認">翻訳状況の確認</a></td>
