@@ -130,9 +130,72 @@
   </chapter>
   <chapter id="workflow">
     <title>翻訳作業の流れ</title>
+    <para>ここでは、翻訳作業にかかわる一連の作業手順を説明します。</para>
     <sect1 id="status">
       <title>翻訳状況の確認</title>
-      <para>ToDo: GNOME 翻訳ステータスで翻訳状況を確認する要領について記す</para>
+      <para>実際に翻訳作業に着手するまえに、まず日本語の翻訳状況を確認します。たとえば、翻訳したいアプリケーションを誰か他の人が担当していないか、未翻訳が残っているアプリケーションはどれか、などの確認を行います。</para>
+      <para><ulink url="http://l10n.gnome.org/teams/ja/">GNOME 日本語翻訳チーム</ulink>のページをご覧ください。ページ中段の「<guilabel>日本語 (ja)</guilabel>」という見出しの下に、日本語の翻訳状況の概要をまとめた表があります。リリースセットごとにユーザーインターフェースおよびドキュメントの翻訳の進捗状況を確認することができます。パーセント表記の数字は翻訳の達成率です。</para>
+      <figure id="status-overview">
+        <title>翻訳状況の概要</title>
+        <screenshot>
+          <mediaobject>
+            <imageobject>
+              <imagedata fileref="figures/status-overview.png" format="PNG"/>
+            </imageobject>
+            <textobject>
+              <phrase>翻訳状況の概要</phrase>
+            </textobject>
+          </mediaobject>
+        </screenshot>
+      </figure>
+      <variablelist>
+        <varlistentry>
+          <term>リリース(セット)</term>
+          <listitem>
+            <para>リリースセットとは、各アプリケーションやライブラリ (モジュールと呼びます) を、その性質に応じてまとめたものです。「<guilabel>開発版</guilabel>」や「<guilabel>安定版</guilabel>」、「<guilabel>追加の GNOME アプリケーション</guilabel>」などのカテゴリーがあります。各モジュールはいずれかのリリースセットに含まれます。</para>
+          </listitem>
+        </varlistentry>
+        <varlistentry>
+          <term>ユーザーインターフェース</term>
+          <listitem>
+            <para>ユーザーインターフェースとは、アプリケーションなどのプログラムを実行したときに表示されるメッセージのことです。</para>
+          </listitem>
+        </varlistentry>
+        <varlistentry>
+          <term>ドキュメント</term>
+          <listitem>
+            <para>ドキュメントとは、モジュール付属のマニュアル文書のことです。</para>
+          </listitem>
+        </varlistentry>
+      </variablelist>
+      <procedure>
+        <title>翻訳状況の確認手順</title>
+        <para>一例として開発版モジュールのユーザーインターフェースの確認手順について述べます。</para>
+        <step>
+          <para>翻訳状況の表から、開発版ユーザーインターフェースの進捗状況のリンクをクリックしてください。モジュールごとの翻訳状況の一覧が表示されます。</para>
+        </step>
+        <step>
+          <para>「<guilabel>状態</guilabel>」の列を確認してください。</para>
+          <para>空欄になっているモジュールもあれば、「<guilabel>翻訳中</guilabel>」や「<guilabel>査読待ち</guilabel>」などの状態が記されているものもあります。空欄の場合は、現時点で誰もそのモジュールの翻訳作業を担当していません。状態が設定されているものは、誰かしらが翻訳作業に関わっていることを意味しています。</para>
+        </step>
+        <step>
+          <para>モジュール名のリンクをクリックしてください。該当モジュールの詳細ページが表示されます。</para>
+        </step>
+      </procedure>
+      <para>状況の確認をしたいモジュールがはっきりとわかっている場合は、リリースセットに関係なくモジュール名から直接状況を確認することができます。
+      </para>
+      <procedure>
+        <title>モジュール名からの状況確認手順</title>
+        <step>
+          <para>「<ulink url="http://l10n.gnome.org/">GNOME 翻訳ステータス</ulink>」のトップページ上部の「<guilabel>モジュール</guilabel>」タブをクリックしてください。モジュール名の一覧が表示されます。</para>
+        </step>
+        <step>
+          <para>対象のモジュールをクリックしてください。</para>
+        </step>
+        <step>
+          <para><guilabel>日本語 (ja)</guilabel>をクリックしてください。該当モジュールのページが表示されます。</para>
+        </step>
+      </procedure>
     </sect1>
     <sect1 id="reserve">
       <title>翻訳の予約</title>
