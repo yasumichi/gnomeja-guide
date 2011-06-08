@@ -236,7 +236,37 @@
     </sect1>
     <sect1 id="upload">
       <title>翻訳のアップロード</title>
-      <para>ToDo: ja.po のアップロード</para>
+      <para>PO ファイルを作成したあとは、それを「<ulink url="http://l10n.gnome.org/">GNOME 翻訳ステータス</ulink>」にアップロードします。</para>
+      <para>アップロードすることで、翻訳チームに向けて翻訳文を提案することになります。アップロードされたファイルは、他の翻訳メンバーなどが参照できます。アップロードした翻訳物がそのままアプリケーションに反映されるわけではないので、お気軽にアップロードしてください。</para>
+      <important>
+        <para>翻訳をアップロードすると、自動的に日本語翻訳チームのメーリングリスト宛にその旨の通知が行われます。</para>
+    </important>
+      <procedure>
+        <title>翻訳のアップロード手順</title>
+        <step>
+          <para>該当モジュールのページに移動してください。</para>
+        </step>
+        <step>
+          <para>「<guilabel>新しいアクション</guilabel>」ブロック中の<guilabel>アクション</guilabel>欄で「<guilabel>新しい翻訳をアップロード</guilabel>」を選択してください。</para>
+        </step>
+        <step>
+          <para><guilabel>コメント</guilabel>欄に、実施した翻訳作業の概要などを簡潔に記載してください。</para>
+        </step>
+        <step>
+          <para><guilabel>ファイル</guilabel>欄から、アップロードしたいファイルを選択してください。</para>
+        </step>
+        <step>
+          <para><guibutton>送信</guibutton>ボタンをクリックしてください。</para>
+        </step>
+      </procedure>
+      <caution>
+        <title>アップロード時のエラー</title>
+        <para>PO ファイルをアップロードするときに、フォーマットエラーのチェックが自動で実施されます。エラーが検出された場合はアップロードできません。エラーメッセージをもとに PO ファイルを修正して、アップロードしなおしてください。エラーの対処方法がわからない場合は、メーリングリストで相談してください。</para>
+      </caution>
+      <tip>
+        <title>複数ファイルのアップロード</title>
+        <para>マニュアルの翻訳では、PO ファイルだけでなく画面キャプチャなどの画像ファイルもアップロードすることがあります。複数のファイルをアップロードしたい場合は、それらを tar.gz、または tar.bz2 形式のアーカイブとして 1 ファイルにまとめてアップロードしてください。</para>
+    </tip>
     </sect1>
     <sect1 id="waiting">
       <title>査読待ちへの変更</title>
