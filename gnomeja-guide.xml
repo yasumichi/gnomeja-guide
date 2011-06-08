@@ -201,7 +201,36 @@
     </sect1>
     <sect1 id="reserve">
       <title>翻訳の予約</title>
-      <para>ToDo: GNOME 翻訳ステータスで翻訳を予約する要領について記す</para>
+      <para>翻訳状況の確認が済み、翻訳したいモジュールが決まれば、次に行うことは翻訳の予約です。</para>
+      <para>翻訳の予約によって、そのモジュールの翻訳に着手することを明示することができます。予約済みのモジュールにたいしては、翻訳チームの他のメンバーが予約をすることはできません。これにより、翻訳者間で作業の競合、重複を防ぐことができます。</para>
+      <procedure>
+        <title>翻訳の予約手順</title>
+        <step>
+          <para>該当モジュールのページに移動してください。</para>
+        </step>
+        <step>
+          <para>「<guilabel>新しいアクション</guilabel>」ブロック中の<guilabel>アクション</guilabel>欄で「<guilabel>翻訳を予約</guilabel>」を選択してください。</para>
+        </step>
+        <step>
+          <para>伝達事項などがあれば、<guilabel>コメント</guilabel>欄に入力してください。<guilabel>コメント</guilabel>欄はフリーフォーマットです。</para>
+        </step>
+        <step>
+          <para><guibutton>送信</guibutton>ボタンをクリックしてください。</para>
+        </step>
+      </procedure>
+      <figure id="status-overview">
+        <title>翻訳の予約</title>
+        <screenshot>
+          <mediaobject>
+            <imageobject>
+              <imagedata fileref="figures/reserve.png" format="PNG"/>
+            </imageobject>
+            <textobject>
+              <phrase>翻訳の予約</phrase>
+            </textobject>
+          </mediaobject>
+        </screenshot>
+      </figure>
     </sect1>
     <sect1 id="translation">
       <title>翻訳</title>
@@ -209,11 +238,59 @@
     </sect1>
     <sect1 id="upload">
       <title>翻訳のアップロード</title>
-      <para>ToDo: ja.po のアップロード</para>
+      <para>PO ファイルを作成したあとは、それを「<ulink url="http://l10n.gnome.org/">GNOME 翻訳ステータス</ulink>」にアップロードします。</para>
+      <para>アップロードすることで、翻訳チームに向けて翻訳文を提案することになります。アップロードされたファイルは、他の翻訳メンバーなどが参照できます。アップロードした翻訳物がそのままアプリケーションに反映されるわけではないので、お気軽にアップロードしてください。</para>
+      <important>
+        <para>翻訳をアップロードすると、自動的に日本語翻訳チームのメーリングリスト宛にその旨の通知が行われます。</para>
+    </important>
+      <procedure>
+        <title>翻訳のアップロード手順</title>
+        <step>
+          <para>該当モジュールのページに移動してください。</para>
+        </step>
+        <step>
+          <para>「<guilabel>新しいアクション</guilabel>」ブロック中の<guilabel>アクション</guilabel>欄で「<guilabel>新しい翻訳をアップロード</guilabel>」を選択してください。</para>
+        </step>
+        <step>
+          <para><guilabel>コメント</guilabel>欄に、実施した翻訳作業の概要などを簡潔に記載してください。</para>
+        </step>
+        <step>
+          <para><guilabel>ファイル</guilabel>欄から、アップロードしたいファイルを選択してください。</para>
+        </step>
+        <step>
+          <para><guibutton>送信</guibutton>ボタンをクリックしてください。</para>
+        </step>
+      </procedure>
+      <caution>
+        <title>アップロード時のエラー</title>
+        <para>PO ファイルをアップロードするときに、フォーマットエラーのチェックが自動で実施されます。エラーが検出された場合はアップロードできません。エラーメッセージをもとに PO ファイルを修正して、アップロードしなおしてください。エラーの対処方法がわからない場合は、メーリングリストで相談してください。</para>
+      </caution>
+      <tip>
+        <title>複数ファイルのアップロード</title>
+        <para>マニュアルの翻訳では、PO ファイルだけでなく画面キャプチャなどの画像ファイルもアップロードすることがあります。複数のファイルをアップロードしたい場合は、それらを tar.gz、または tar.bz2 形式のアーカイブとして 1 ファイルにまとめてアップロードしてください。</para>
+    </tip>
     </sect1>
     <sect1 id="waiting">
       <title>査読待ちへの変更</title>
-      <para>ToDo: GNOME 翻訳ステータスでの状態変更要領</para>
+      <para>翻訳を提案した後は、査読者による査読を経る必要があります。査読依頼を出すために、アップロードした翻訳物の状態を「査読待ち」に変更します。</para>
+      <important>
+        <para>査読待ちへの変更を行うと、自動的に日本語翻訳チームのメーリングリスト宛にその旨の通知が行われます。</para>
+      </important>
+      <procedure>
+        <step>
+          <para>該当モジュールのページに移動してください。</para>
+        </step>
+        <step>
+          <para>「<guilabel>新しいアクション</guilabel>」ブロック中の<guilabel>アクション</guilabel>欄で「<guilabel>査読待ち</guilabel>」を選択してください。</para>
+        </step>
+        <step>
+          <para><guilabel>コメント</guilabel>欄に、査読者宛ての伝達事項を記載してください。</para>
+        </step>
+        <step>
+          <para><guibutton>送信</guibutton>ボタンをクリックしてください。</para>
+        </step>
+      </procedure>
+
     </sect1>
     <sect1 id="review">
       <title>査読者による査読</title>
