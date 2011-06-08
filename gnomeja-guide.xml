@@ -199,7 +199,36 @@
     </sect1>
     <sect1 id="reserve">
       <title>翻訳の予約</title>
-      <para>ToDo: GNOME 翻訳ステータスで翻訳を予約する要領について記す</para>
+      <para>翻訳状況の確認が済み、翻訳したいモジュールが決まれば、次に行うことは翻訳の予約です。</para>
+      <para>翻訳の予約によって、そのモジュールの翻訳に着手することを明示することができます。予約済みのモジュールにたいしては、翻訳チームの他のメンバーが予約をすることはできません。これにより、翻訳者間で作業の競合、重複を防ぐことができます。</para>
+      <procedure>
+        <title>翻訳の予約手順</title>
+        <step>
+          <para>該当モジュールのページに移動してください。</para>
+        </step>
+        <step>
+          <para>「<guilabel>新しいアクション</guilabel>」ブロック中の<guilabel>アクション</guilabel>欄で「<guilabel>翻訳を予約</guilabel>」を選択してください。</para>
+        </step>
+        <step>
+          <para>伝達事項などがあれば、<guilabel>コメント</guilabel>欄に入力してください。<guilabel>コメント</guilabel>欄はフリーフォーマットです。</para>
+        </step>
+        <step>
+          <para><guibutton>送信</guibutton>ボタンをクリックしてください。</para>
+        </step>
+      </procedure>
+      <figure id="status-overview">
+        <title>翻訳の予約</title>
+        <screenshot>
+          <mediaobject>
+            <imageobject>
+              <imagedata fileref="figures/reserve.png" format="PNG"/>
+            </imageobject>
+            <textobject>
+              <phrase>翻訳の予約</phrase>
+            </textobject>
+          </mediaobject>
+        </screenshot>
+      </figure>
     </sect1>
     <sect1 id="translation">
       <title>翻訳</title>
