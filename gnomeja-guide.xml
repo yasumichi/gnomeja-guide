@@ -138,7 +138,7 @@
       <title>翻訳状況の確認</title>
       <para>実際に翻訳作業に着手するまえに、まず日本語の翻訳状況を確認します。たとえば、翻訳したいアプリケーションを誰か他の人が担当していないか、未翻訳が残っているアプリケーションはどれか、などの確認を行います。</para>
       <para><ulink url="http://l10n.gnome.org/teams/ja/">GNOME 日本語翻訳チーム</ulink>のページをご覧ください。ページ中段の「<guilabel>日本語 (ja)</guilabel>」という見出しの下に、日本語の翻訳状況の概要をまとめた表があります。リリースセットごとにユーザーインターフェースおよびドキュメントの翻訳の進捗状況を確認することができます。パーセント表記の数字は翻訳の達成率です。</para>
-      <figure id="status-overview">
+      <figure>
         <title>翻訳状況の概要</title>
         <screenshot>
           <mediaobject>
@@ -219,7 +219,7 @@
           <para><guibutton>送信</guibutton>ボタンをクリックしてください。</para>
         </step>
       </procedure>
-      <figure id="status-reserve">
+      <figure>
         <title>翻訳の予約</title>
         <screenshot>
           <mediaobject>
