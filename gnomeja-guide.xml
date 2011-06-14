@@ -1,0 +1,378 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE book PUBLIC "-//OASIS//DTD DocBook XML V4.3//EN"
+"http://www.oasis-open.org/docbook/xml/4.3/docbookx.dtd">
+<book id="gnomeja-guide" lang="ja">
+  <bookinfo>
+    <title>GNOME 日本語翻訳チーム参加者ガイド(仮題)</title>
+    <abstract>
+      <para>この文書では、GNOME 日本語翻訳チームへ参加する方法および参加者がどのような作業を行うかについて解説します。</para>
+    </abstract>
+    <authorgroup>
+      <author>
+        <firstname>赤星</firstname><surname>柔充</surname>
+        <email>yasumichi@vinelinux.org</email>
+      </author>
+      <author>
+        <firstname>Jiro</firstname><surname>Matsuzawa</surname>
+      </author>
+    </authorgroup>
+    <copyright>
+      <year>2011</year>
+      <holder>日本 GNOME ユーザー会</holder>
+    </copyright>
+  </bookinfo>
+  <preface id="joinus">
+    <title>GNOME 日本語翻訳チームへご協力ください</title>
+    <para>私たち GNOME 日本語翻訳チームは、GNOME 公式の翻訳プロジェクトとして GNOME の日本語化を行っています。日本語環境を改善し、デスクトップをもっと使いやすくする。わかりやすい日本語のドキュメントをもっと充実させる。そのために日々活動しております。しかしながら、足りていないものがあります。ユーザの皆さんの声です。実際のユーザの声をGNOME に反映させることで、GNOME はもっと良いものになります。私たちはあなたの声を求めています。自分の使う環境を自分の手でより良くしたいと思う方がいれば、ぜひ私たちにご協力ください。みなさんの声が大きな力となります。</para>
+    <para>英語能力や翻訳スキルは必ずしも必要ではありません。たとえば、何かのアプリケーションを使ってみて、そのメッセージやヘルプの分かりづらい点などをご指摘くださるだけでも十分です。あるいはアプリケーションの実際の操作と対応する日本語の表現に相違が無いかのチェックなどもありがたいものです。そういった作業は翻訳品質の向上にとってなくてはならないものです。さらに実際の翻訳をやってみたいという方のご協力は大歓迎です。</para>
+  </preface>
+  <chapter id="roles">
+    <title>GNOME 日本語翻訳チームへの参加形態</title>
+    <sect1 id="users">
+      <title>協力ユーザー</title>
+      <para>協力ユーザーとは、GNOME デスクトップ、アプリケーションおよびマニュアルの翻訳改善に貢献するユーザーのことです。翻訳の間違いやわかりづらい日本語など、気づいたことや気になったことがあれば、ぜひお知らせください。いただいた情報をもとに、必要に応じて翻訳チームが対処します。単語ひとつだけに関する指摘など、些細に思われるものでも歓迎します。</para>
+      <para>お知らせいただきたい情報としては、たとえば以下のようなものがあります。</para>
+      <itemizedlist>
+        <listitem><para>誤字・脱字・誤訳・未訳を見つけた</para></listitem>
+        <listitem><para>ソフトウェアのメッセージがわかりづらい、使いにくい</para></listitem>
+        <listitem><para>マニュアルやヘルプの文章がわかりづらい、読みにくい</para></listitem>
+        <listitem><para>日本語化してほしいソフトウェアやマニュアルがある</para></listitem>
+        <listitem><para>その他、翻訳の改善提案などなど</para></listitem>
+      </itemizedlist>
+	  <para>協力ユーザとして参加するには、翻訳チームのメーリングリストを購読して、そちらにご報告ください。購読の方法は、<xref linkend="list"/> を参照してください。</para>
+    </sect1>
+    <sect1 id="translators">
+      <title>翻訳者</title>
+      <para>翻訳者は、文字通りユーザーインターフェースやマニュアルの翻訳を行う翻訳チームの主要なメンバーです。余力があれば、他の翻訳者の翻訳内容を確認し、コメントする場合もあります。</para>
+      <para>翻訳者の具体的な作業手順は、<xref linkend="workflow" />にて解説します。</para>
+      <para>翻訳者として参加するには、翻訳チームのメーリングリストの購読および<ulink url="http://l10n.gnome.org/">GNOME 翻訳ステータス</ulink>へのアカウント登録が必要です。詳細は、<xref linkend="preparation" />を参照してください。</para>
+    </sect1>
+    <sect1 id="reviewers">
+      <title>査読者</title>
+      <para>査読者は、翻訳者がアップロードした翻訳を査読し、必要により校正を行い、翻訳の状態を「コミット待ち」に変更し、コミッターにコミット可能であることを伝えます。</para>
+      <para>査読者は、<ulink url="http://l10n.gnome.org/">GNOME 翻訳ステータス</ulink>で翻訳者として登録されているメンバーから、コーディネータが選抜します。現在のところ、日本語翻訳チームでは、査読者の権限を持つメンバーがいない状況です。コーディネータの負担を軽減するためにも査読者の選抜について議論が必要と思われます。</para>
+      <para>ToDo: 松澤さんの指摘通り査読者の作業フローが必要そうである。校正を予約→校正した翻訳をアップロード→コミット待ち?</para>
+    </sect1>
+    <sect1 id="committers">
+      <title>コミッター</title>
+      <para>ToDo: コミッターの役割</para>
+    </sect1>
+    <sect1 id="coordinator">
+      <title>コーディネータ</title>
+      <para>ToDo: コーディネータとは</para>
+    </sect1>
+  </chapter>
+  <chapter id="preparation">
+    <title>参加の準備</title>
+    <sect1 id="list">
+      <title>メーリングリストの購読</title>
+      <para>GNOME 日本語翻訳に関する情報共有を目的としてメーリングリストを用意しています。</para>
+      <para>メーリングリストへの参加手続は、<ulink url="http://mail.gnome.gr.jp/mailman/listinfo/gnome-translation">Gnome-translation -- 翻訳作業者向け</ulink>というページで始めます。</para>
+      <procedure>
+        <title>メーリングリストの購読手順</title>
+        <step>
+          <para>「Gnome-translation の購読」にある入会フォームに必要事項を入力し、<guibutton>入会を申し込む</guibutton>を押してください。</para>
+          <itemizedlist>
+            <listitem><para>「メールアドレス」は唯一の必須入力項目です。確実にメールを受信できるように正しいメールアドレスを入力してください。</para></listitem>
+            <listitem><para>「名前」は省略可能です。ここで指定した名前は、メーリングリストの設定を変更する画面などで利用されます。</para></listitem>
+            <listitem><para>「パスワード」も省略可能です。省略した場合は、自動でパスワードが設定されメールで通知されます。入力した場合は、「確認のため同じパスワードを再入力:」という欄にも同じパスワードを入力してください。</para></listitem>
+            <listitem><para>「表示に使う言語」は、自動的に「日本語」に設定されます。変更はできません。</para></listitem>
+            <listitem><para>「リストのメールを毎日1本にまとめて送りますか?」に対し、デフォルトの「いいえ」を選択した場合、メーリングリストへの投稿がある度に一通ずつメールが送られて来ます。「はい」を選択した場合は、その日の投稿が一通のメールにまとめられて送られて来ます。</para></listitem>
+          </itemizedlist>
+        </step>
+        <step>
+          <para>「Gnome-translation 入会手続きの結果」というページが表示されます。ここにも書かれていますが、申請内容確認のために「gnome-translation-request@gnome.gr.jp」というアドレスから「confirm」で始まる件名でメールが送られて来ます。メールにも書かれていますが、ほとんどの場合、単にそのメールに返信を行うだけで入会の手続をすすめることができます。</para>
+        </step>
+        <step>
+          <para>「"Gnome-translation" メーリングリストへようこそ」というようなメールが届けば、入会手続完了です。</para>
+        </step>
+      </procedure>
+      <important>
+        <title>メーリングリストのアドレスについて</title>
+        <para>メーリングリストへ投稿を行う場合は、「gnome-translation@gnome.gr.jp」を宛先としてください。</para>
+      </important>
+      <para>どのようにメールを書けば良いか、メーリングリストの雰囲気を知りたいなど過去のメールを確認したい場合、<ulink url="http://mail.gnome.gr.jp/ml/gnome-translation">Gnome-translation 保存書庫</ulink>で過去のメールを参照することが可能です。</para>
+    </sect1>
+    <sect1 id="damned-lies">
+      <title>GNOME 翻訳ステータスへのアカウント登録</title>
+      <para><ulink url="http://l10n.gnome.org/">GNOME 翻訳ステータス</ulink>というサイトが、私たちの活動拠点になります。このサイトでは、GNOME アプリケーションの翻訳状況の確認、翻訳の予約・アップロードなどが行えます。<xref linkend="workflow" />で示す作業を行うには、アカウントの登録が必要です。</para>
+      <procedure>
+        <title>GNOME 翻訳ステータスへのアカウント登録手順</title>
+        <step><para><ulink url="http://l10n.gnome.org/register/">アカウント登録</ulink>のページを開きます。</para></step>
+        <step>
+          <para>GNOME 翻訳ステータスで利用したいユーザーIDを入力してください。(入力必須)</para>
+          <para>英字、数字、アンダースコア(_)、およびハイフン(-)のみが使えます。</para>
+        </step>
+        <step><para>メールアドレスを入力してください。(入力必須)</para></step>
+        <step>
+          <para>希望する認証方法に応じ、必要事項を入力します。</para>
+          <itemizedlist>
+            <listitem><para>OpenID を利用する場合、<guilabel>OpenID</guilabel> の入力欄に OpenID URL を入力してください。</para></listitem>
+            <listitem>
+              <para>このサイト独自のパスワードを利用する場合は、<guilabel>パスワード</guilabel>および<guilabel>パスワードの確認</guilabel>の欄に同じパスワードを入力してください。</para>
+              <para>パスワードは、少なくとも7文字でなければなりません。</para>
+            </listitem>
+          </itemizedlist>
+        </step>
+        <step><para>前項の選択に応じ、<guibutton>OpenIDで登録</guibutton>か<guibutton>パスワードで登録</guibutton>というボタンを押してください。</para></step>
+        <step><para>入力内容に問題があった場合は、どの欄に問題があったのか表示されるので再度やりなおしてください。</para></step>
+        <step><para>登録に成功すると先ほど入力したメールアドレス宛にアカウントを有効にするためのメールが送信されます。メールに書かれた説明に従ってください。</para></step>
+      </procedure>
+      <para>アカウントの登録が完了したら、ログインして日本語翻訳チームに参加してください。</para>
+      <procedure>
+        <title>日本語翻訳チームへの参加手順</title>
+        <step><para><ulink url="http://l10n.gnome.org/login/">ログイン</ulink>のページからログインしてください。</para></step>
+        <step>
+          <para>まだ、チームに参加していない場合は、『あなたはまだどの翻訳チームにも参加していません。あなたのプロフィールから参加できます。』という案内がでます。</para>
+          <para>『あなたのプロフィール』というリンクにアクセスしてください。</para>
+        </step>
+        <step><para>『以下のチームに「翻訳者」として参加したい』という所にあるリストから『Japanese』を選択して<guibutton>参加</guibutton>というボタンをクリックしてください。</para></step>
+      </procedure>
+      <para>以上で手続は完了です。ようこそ、<ulink url="http://l10n.gnome.org/teams/ja/">GNOME 日本語翻訳チーム</ulink>へ!</para>
+    </sect1>
+  </chapter>
+  <chapter id="workflow">
+    <title>翻訳作業の流れ</title>
+    <para>ここでは、翻訳作業にかかわる一連の作業手順を説明します。</para>
+    <sect1 id="status">
+      <title>翻訳状況の確認</title>
+      <para>実際に翻訳作業に着手するまえに、まず日本語の翻訳状況を確認します。たとえば、翻訳したいアプリケーションを誰か他の人が担当していないか、未翻訳が残っているアプリケーションはどれか、などの確認を行います。</para>
+      <para><ulink url="http://l10n.gnome.org/teams/ja/">GNOME 日本語翻訳チーム</ulink>のページをご覧ください。ページ中段の「<guilabel>日本語 (ja)</guilabel>」という見出しの下に、日本語の翻訳状況の概要をまとめた表があります。リリースセットごとにユーザーインターフェースおよびドキュメントの翻訳の進捗状況を確認することができます。パーセント表記の数字は翻訳の達成率です。</para>
+      <figure>
+        <title>翻訳状況の概要</title>
+        <screenshot>
+          <mediaobject>
+            <imageobject>
+              <imagedata fileref="figures/status-overview.png" format="PNG"/>
+            </imageobject>
+            <textobject>
+              <phrase>翻訳状況の概要</phrase>
+            </textobject>
+          </mediaobject>
+        </screenshot>
+      </figure>
+      <variablelist>
+        <varlistentry>
+          <term>リリース(セット)</term>
+          <listitem>
+            <para>リリースセットとは、各アプリケーションやライブラリ (モジュールと呼びます) を、その性質に応じてまとめたものです。「<guilabel>開発版</guilabel>」や「<guilabel>安定版</guilabel>」、「<guilabel>追加の GNOME アプリケーション</guilabel>」などのカテゴリーがあります。各モジュールはいずれかのリリースセットに含まれます。</para>
+          </listitem>
+        </varlistentry>
+        <varlistentry>
+          <term>ユーザーインターフェース</term>
+          <listitem>
+            <para>ユーザーインターフェースとは、アプリケーションなどのプログラムを実行したときに表示されるメッセージのことです。</para>
+          </listitem>
+        </varlistentry>
+        <varlistentry>
+          <term>ドキュメント</term>
+          <listitem>
+            <para>ドキュメントとは、モジュール付属のマニュアル文書のことです。</para>
+          </listitem>
+        </varlistentry>
+      </variablelist>
+      <procedure>
+        <title>翻訳状況の確認手順</title>
+        <para>一例として開発版モジュールのユーザーインターフェースの確認手順について述べます。</para>
+        <step>
+          <para>翻訳状況の表から、開発版ユーザーインターフェースの進捗状況のリンクをクリックしてください。モジュールごとの翻訳状況の一覧が表示されます。</para>
+        </step>
+        <step>
+          <para>「<guilabel>状態</guilabel>」の列を確認してください。</para>
+          <para>空欄になっているモジュールもあれば、「<guilabel>翻訳中</guilabel>」や「<guilabel>査読待ち</guilabel>」などの状態が記されているものもあります。空欄の場合は、現時点で誰もそのモジュールの翻訳作業を担当していません。状態が設定されているものは、誰かしらが翻訳作業に関わっていることを意味しています。</para>
+        </step>
+        <step>
+          <para>モジュール名のリンクをクリックしてください。該当モジュールの詳細ページが表示されます。</para>
+        </step>
+      </procedure>
+      <para>状況の確認をしたいモジュールがはっきりとわかっている場合は、リリースセットに関係なくモジュール名から直接状況を確認することができます。
+      </para>
+      <procedure>
+        <title>モジュール名からの状況確認手順</title>
+        <step>
+          <para>「<ulink url="http://l10n.gnome.org/">GNOME 翻訳ステータス</ulink>」のトップページ上部の「<guilabel>モジュール</guilabel>」タブをクリックしてください。モジュール名の一覧が表示されます。</para>
+        </step>
+        <step>
+          <para>対象のモジュールをクリックしてください。</para>
+        </step>
+        <step>
+          <para><guilabel>日本語 (ja)</guilabel>をクリックしてください。該当モジュールのページが表示されます。</para>
+        </step>
+      </procedure>
+    </sect1>
+    <sect1 id="reserve">
+      <title>翻訳の予約</title>
+      <para>翻訳状況の確認が済み、翻訳したいモジュールが決まれば、次に行うことは翻訳の予約です。</para>
+      <para>翻訳の予約によって、そのモジュールの翻訳に着手することを明示することができます。予約済みのモジュールにたいしては、翻訳チームの他のメンバーが予約をすることはできません。これにより、翻訳者間で作業の競合、重複を防ぐことができます。</para>
+      <procedure>
+        <title>翻訳の予約手順</title>
+        <step>
+          <para>該当モジュールのページに移動してください。</para>
+        </step>
+        <step>
+          <para>「<guilabel>新しいアクション</guilabel>」ブロック中の<guilabel>アクション</guilabel>欄で「<guilabel>翻訳を予約</guilabel>」を選択してください。</para>
+        </step>
+        <step>
+          <para>伝達事項などがあれば、<guilabel>コメント</guilabel>欄に入力してください。<guilabel>コメント</guilabel>欄はフリーフォーマットです。</para>
+        </step>
+        <step>
+          <para><guibutton>送信</guibutton>ボタンをクリックしてください。</para>
+        </step>
+      </procedure>
+      <figure>
+        <title>翻訳の予約</title>
+        <screenshot>
+          <mediaobject>
+            <imageobject>
+              <imagedata fileref="figures/reserve.png" format="PNG"/>
+            </imageobject>
+            <textobject>
+              <phrase>翻訳の予約</phrase>
+            </textobject>
+          </mediaobject>
+        </screenshot>
+      </figure>
+    </sect1>
+    <sect1 id="translation">
+      <title>翻訳</title>
+      <para>翻訳の予約が済めば、いよいよ実際の翻訳作業に入ります。</para>
+      <para>GNOME の翻訳は、PO ファイルという翻訳データのソースファイルを編集して作業を進めます。PO ファイルの中身は、一連の翻訳対象メッセージと各メッセージに対応する翻訳文とで構成されています。日本語の翻訳文を PO ファイルに記述していくのが、翻訳作業のメインになります。PO ファイルの詳細については、<xref linkend="gettext" /> を参照してください。</para>
+      <procedure>
+        <title>翻訳の手順</title>
+        <step>
+          <para>該当モジュールのページから、編集対象になる PO ファイルをダウンロードしてください。</para>
+          <para>翻訳率のラベルの左にあるダウンロード用のアイコンをクリックしてダウンロードできます。</para>
+          <figure>
+            <title>ダウンロード用のアイコン</title>
+            <screenshot>
+              <mediaobject>
+                <imageobject>
+                  <imagedata fileref="figures/download-icon.png" format="PNG"/>
+                </imageobject>
+                <textobject>
+                  <phrase>ダウンロード用のアイコン</phrase>
+                </textobject>
+              </mediaobject>
+            </screenshot>
+          </figure>
+        </step>
+        <step>
+          <para>PO ファイルを編集します。</para>
+          <para>PO ファイルはテキストデータなので、gedit などお好みのテキストエディターだけで作業することができます。テキストエディター以外にも、<xref linkend="po-editor" /> で紹介する翻訳支援ツールを使うのもよいでしょう。</para>
+        </step>
+        <step>
+          <para>編集した PO ファイルのフォーマットチェックを行います。</para>
+          <para>PO ファイルに形式的な誤りがないかチェックします。このチェックは、あくまで機械的なものであり、翻訳内容の妥当性判断を行うものではありません。</para>
+          <substeps>
+            <step>
+              <para><application>GNOME 端末</application> (<command>gnome-terminal</command>) を起動してください。</para>
+            </step>
+            <step>
+              <para>次のコマンドを実行してください。<prompt>$ </prompt><command>msgfmt -co /dev/null /PATH/TO/PO-FILE</command></para>
+            </step>
+            <step>
+              <para>エラーが検出されれば、修正してください。</para>
+            </step>
+          </substeps>
+        </step>
+      </procedure>
+      <tip>
+        <title>作業上のアドバイスと注意</title>
+        <itemizedlist>
+          <listitem><para><ulink url="http://www.gnome.gr.jp/l10n/trans-terms.html">対訳表</ulink>を適宜参照してください。</para></listitem>
+          <listitem><para>訳語に迷ったりした場合は、メーリングリストなどで他の翻訳メンバーに遠慮無く相談してください。</para></listitem>
+          <listitem><para>PO ファイルに含まれるすべてのメッセージを翻訳する必要はありません。1 メッセージだけの翻訳でもけっこうです。</para></listitem>
+          <listitem><para>プログラムを実際に動作させて、<emphasis>ユーザー目線</emphasis>で翻訳の妥当性を確認してください。プログラムのビルドには <ulink url="http://developer.gnome.org/jhbuild/stable/"><application>JHBuild</application></ulink> などのビルドツールが利用できます。</para></listitem>
+        </itemizedlist>
+      </tip>
+    </sect1>
+    <sect1 id="upload">
+      <title>翻訳のアップロード</title>
+      <para>PO ファイルを作成したあとは、それを「<ulink url="http://l10n.gnome.org/">GNOME 翻訳ステータス</ulink>」にアップロードします。</para>
+      <para>アップロードすることで、翻訳チームに向けて翻訳文を提案することになります。アップロードされたファイルは、他の翻訳メンバーなどが参照できます。アップロードした翻訳物がそのままアプリケーションに反映されるわけではないので、お気軽にアップロードしてください。</para>
+      <important>
+        <para>翻訳をアップロードすると、自動的に日本語翻訳チームのメーリングリスト宛にその旨の通知が行われます。</para>
+    </important>
+      <procedure>
+        <title>翻訳のアップロード手順</title>
+        <step>
+          <para>該当モジュールのページに移動してください。</para>
+        </step>
+        <step>
+          <para>「<guilabel>新しいアクション</guilabel>」ブロック中の<guilabel>アクション</guilabel>欄で「<guilabel>新しい翻訳をアップロード</guilabel>」を選択してください。</para>
+        </step>
+        <step>
+          <para><guilabel>コメント</guilabel>欄に、実施した翻訳作業の概要などを簡潔に記載してください。</para>
+        </step>
+        <step>
+          <para><guilabel>ファイル</guilabel>欄から、アップロードしたいファイルを選択してください。</para>
+        </step>
+        <step>
+          <para><guibutton>送信</guibutton>ボタンをクリックしてください。</para>
+        </step>
+      </procedure>
+      <caution>
+        <title>アップロード時のエラー</title>
+        <para>PO ファイルをアップロードするときに、フォーマットエラーのチェックが自動で実施されます。エラーが検出された場合はアップロードできません。エラーメッセージをもとに PO ファイルを修正して、アップロードしなおしてください。エラーの対処方法がわからない場合は、メーリングリストで相談してください。</para>
+      </caution>
+      <tip>
+        <title>複数ファイルのアップロード</title>
+        <para>マニュアルの翻訳では、PO ファイルだけでなく画面キャプチャなどの画像ファイルもアップロードすることがあります。複数のファイルをアップロードしたい場合は、それらを tar.gz、または tar.bz2 形式のアーカイブとして 1 ファイルにまとめてアップロードしてください。</para>
+      </tip>
+    </sect1>
+    <sect1 id="waiting">
+      <title>査読待ちへの変更</title>
+      <para>翻訳を提案した後は、査読者による査読を経る必要があります。査読依頼を出すために、アップロードした翻訳物の状態を「査読待ち」に変更します。</para>
+      <important>
+        <para>査読待ちへの変更を行うと、自動的に日本語翻訳チームのメーリングリスト宛にその旨の通知が行われます。</para>
+      </important>
+      <procedure>
+        <step>
+          <para>該当モジュールのページに移動してください。</para>
+        </step>
+        <step>
+          <para>「<guilabel>新しいアクション</guilabel>」ブロック中の<guilabel>アクション</guilabel>欄で「<guilabel>査読待ち</guilabel>」を選択してください。</para>
+        </step>
+        <step>
+          <para><guilabel>コメント</guilabel>欄に、査読者宛ての伝達事項を記載してください。</para>
+        </step>
+        <step>
+          <para><guibutton>送信</guibutton>ボタンをクリックしてください。</para>
+        </step>
+      </procedure>
+
+    </sect1>
+    <sect1 id="review">
+      <title>査読者による査読</title>
+      <para>ToDo: demnad-lies でのコメントを使わず ML で返信するように統制</para>
+    </sect1>
+    <sect1 id="commit">
+      <title>コミッターによるコミット</title>
+      <para>ToDo: この辺の事情を確認</para>
+    </sect1>
+  </chapter>
+  <appendix id="technology">
+    <title>翻訳を支える技術</title>
+    <sect1 id="gettext">
+      <title>インターフェースの翻訳を支える gettext</title>
+    </sect1>
+    <sect1 id="gnome-doc-utils">
+      <title>マニュアルの翻訳を支える gnome-doc-utils</title>
+    </sect1>
+  </appendix>
+  <appendix id="po-editor">
+    <title>ja.po 編集ソフトウェアの紹介(仮)</title>
+    <sect1 id="gtranslaor">
+      <title>Gtranslator 翻訳エディタ</title>
+      <para>ToDo: Gtranslator の簡易チュートリアルを作成?</para>
+    </sect1>
+    <sect1 id="po-mode">
+      <title>エディタ Emacs の po-mode</title>
+      <para>ToDo: この辺の事情を確認</para>
+    </sect1>
+    <sect1 id="omega-t">
+      <title>Omega-T</title>
+      <para>ToDo: この辺の事情を確認</para>
+    </sect1>
+  </appendix>
+</book>
