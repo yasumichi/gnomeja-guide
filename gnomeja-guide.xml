@@ -242,6 +242,19 @@
         <step>
           <para>該当モジュールのページから、編集対象になる PO ファイルをダウンロードしてください。</para>
           <para>翻訳率のラベルの左にあるダウンロード用のアイコンをクリックしてダウンロードできます。</para>
+          <figure>
+            <title>ダウンロード用のアイコン</title>
+            <screenshot>
+              <mediaobject>
+                <imageobject>
+                  <imagedata fileref="figures/download-icon.png" format="PNG"/>
+                </imageobject>
+                <textobject>
+                  <phrase>ダウンロード用のアイコン</phrase>
+                </textobject>
+              </mediaobject>
+            </screenshot>
+          </figure>
         </step>
         <step>
           <para>PO ファイルを編集します。</para>
