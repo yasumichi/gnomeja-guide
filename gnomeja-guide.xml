@@ -235,7 +235,43 @@
     </sect1>
     <sect1 id="translation">
       <title>翻訳</title>
-      <para>ToDo: ja.po の編集</para>
+      <para>翻訳の予約が済めば、いよいよ実際の翻訳作業に入ります。</para>
+      <para>GNOME の翻訳は、PO ファイルという翻訳データのソースファイルを編集して作業を進めます。PO ファイルの中身は、一連の翻訳対象メッセージと各メッセージに対応する翻訳文とで構成されています。日本語の翻訳文を PO ファイルに記述していくのが、翻訳作業のメインになります。PO ファイルの詳細については、<xref linkend="gettext" /> を参照してください。</para>
+      <procedure>
+        <title>翻訳の手順</title>
+        <step>
+          <para>該当モジュールのページから、編集対象になる PO ファイルをダウンロードしてください。</para>
+          <para>翻訳率のラベルの左にあるダウンロード用のアイコンをクリックしてダウンロードできます。</para>
+        </step>
+        <step>
+          <para>PO ファイルを編集します。</para>
+          <para>PO ファイルはテキストデータなので、gedit などお好みのテキストエディターだけで作業することができます。テキストエディター以外にも、<xref linkend="po-editor" /> で紹介する翻訳支援ツールを使うのもよいでしょう。</para>
+        </step>
+        <step>
+          <para>編集した PO ファイルのフォーマットチェックを行います。</para>
+          <para>PO ファイルに形式的な誤りがないかチェックします。このチェックは、あくまで機械的なものであり、翻訳内容の妥当性判断を行うものではありません。</para>
+          <substeps>
+            <step>
+              <para><application>GNOME 端末</application> (<command>gnome-terminal</command>) を起動してください。</para>
+            </step>
+            <step>
+              <para>次のコマンドを実行してください。<prompt>$ </prompt><command>msgfmt -co /dev/null /PATH/TO/PO-FILE</command></para>
+            </step>
+            <step>
+              <para>エラーが検出されれば、修正してください。</para>
+            </step>
+          </substeps>
+        </step>
+      </procedure>
+      <tip>
+        <title>作業上のアドバイスと注意</title>
+        <itemizedlist>
+          <listitem><para><ulink url="http://www.gnome.gr.jp/l10n/trans-terms.html">対訳表</ulink>を適宜参照してください。</para></listitem>
+          <listitem><para>訳語に迷ったりした場合は、メーリングリストなどで他の翻訳メンバーに遠慮無く相談してください。</para></listitem>
+          <listitem><para>PO ファイルに含まれるすべてのメッセージを翻訳する必要はありません。1 メッセージだけの翻訳でもけっこうです。</para></listitem>
+          <listitem><para>プログラムを実際に動作させて、<emphasis>ユーザー目線</emphasis>で翻訳の妥当性を確認してください。プログラムのビルドには <ulink url="http://developer.gnome.org/jhbuild/stable/"><application>JHBuild</application></ulink> などのビルドツールが利用できます。</para></listitem>
+        </itemizedlist>
+      </tip>
     </sect1>
     <sect1 id="upload">
       <title>翻訳のアップロード</title>
@@ -269,7 +305,7 @@
       <tip>
         <title>複数ファイルのアップロード</title>
         <para>マニュアルの翻訳では、PO ファイルだけでなく画面キャプチャなどの画像ファイルもアップロードすることがあります。複数のファイルをアップロードしたい場合は、それらを tar.gz、または tar.bz2 形式のアーカイブとして 1 ファイルにまとめてアップロードしてください。</para>
-    </tip>
+      </tip>
     </sect1>
     <sect1 id="waiting">
       <title>査読待ちへの変更</title>
@@ -311,7 +347,7 @@
       <title>マニュアルの翻訳を支える gnome-doc-utils</title>
     </sect1>
   </appendix>
-  <appendix id="po-edtior">
+  <appendix id="po-editor">
     <title>ja.po 編集ソフトウェアの紹介(仮)</title>
     <sect1 id="gtranslaor">
       <title>Gtranslator 翻訳エディタ</title>
