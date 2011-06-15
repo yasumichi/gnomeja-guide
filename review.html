@@ -443,7 +443,73 @@ dd.answer div.label { float: left; }
 <li class="linktrail linktrail-first"><a class="linktrail" href="gnomeja-guide.html" title="GNOME 日本語翻訳チーム参加者ガイド(仮題)">GNOME 日本語翻訳チーム参加者ガイド(仮題)</a></li>
 <li class="linktrail linktrail-last"><a class="linktrail" href="workflow.html" title="翻訳作業の流れ">翻訳作業の流れ</a></li>
 </ul>
-<p class="para block block-first">ToDo: demnad-lies でのコメントを使わず ML で返信するように統制</p>
+<p class="para block block-first">翻訳成果物が査読待ち状態になると、次に査読作業に入ります。査読のことをレビューと呼ぶこともあります。翻訳の品質を確保するために、翻訳物に誤訳や誤字脱字がないか、日本語はわかりやすいか、などのチェックが行われます。</p>
+<p class="para block">「GNOME 翻訳ステータス」上の役割として、「翻訳者」と区別される「査読者」がありますが、「査読者」以外にも、査読を行いたい人なら誰でも参加できます。</p>
+<div class="block list procedure">
+<div class="block block-first title title-formal"><span class="title"><span class="label"></span>査読の手順</span></div>
+<p class="para block block-first">ここでは、査読者と翻訳実施者と両者の作業について順を追って述べます。</p>
+<ol class="procedure">
+<li>
+          <p class="para block block-first">査読者は、査読待ち状態が通知されたモジュールのページから、アップロードされた PO ファイルをダウンロードしてください。</p>
+          <p class="para block">翻訳実施者による「<span class="guilabel">新しい翻訳をアップロード</span>」アクションの欄のリンクからダウンロードできます。下の画面例では、<span class="quote">“gnome-shell-master-po-ja-226361.merged.po”</span> のリンクからダウンロードしてください。</p>
+          <div class=" block figure block-indent">
+<div class="block block-first title title-formal"><span class="title"><span class="label"><span style="font-style: italic; ">図 3-4</span> </span>アップロードされた翻訳 (例)</span></div>
+<div class="figure-inner">
+            
+            <div class=" block screenshot block-first">
+              <div class="mediaobject"><img src="figures/action-upload.png"></div>
+            </div>
+          </div>
+</div>
+        </li>
+<li>
+          <p class="para block block-first">査読者は、翻訳の成果物を査読してください。</p>
+          <div class="block list itemizedlist">
+<div class="block block-first title title-formal"><span class="title"><span class="label"></span>主な査読方法</span></div>
+<ul class="itemizedlist">
+<li class="li-first"><span class="para">PO ファイルを使ってビルドしたアプリケーションを実際に使ってみて、翻訳の妥当性を確認する</span></li>
+<li><span class="para">PO ファイルの中身からチェックする</span></li>
+</ul>
+</div>
+        </li>
+<li>
+          <p class="para block block-first">査読者は、翻訳物の問題や改善点また確認事項などがあれば、「GNOME 翻訳ステータス」の該当モジュールのページでコメント登録してください。</p>
+          <div class="admonition block important block-indent"><div class="important-inner">
+            <p class="para block block-first">登録したコメント内容は、翻訳実施者および該当モジュールの各コメント登録者宛てに自動でメール通知されます。メーリングリストには通知されません。</p>
+          </div></div>
+        </li>
+<li>
+          <p class="para block block-first">翻訳実施者は、査読者からのコメントにたいする返事を、同じく該当モジュールのページでコメント登録してください。</p>
+        </li>
+<li>
+          <p class="para block block-first">上記 2 つの、査読者と翻訳実施者とによるコメント登録ステップは、双方の合意が得られるまでくり返し行います。</p>
+        </li>
+<li>
+          <p class="para block block-first">翻訳実施者は、査読者からの指摘を基に、必要に応じて PO ファイルを修正します。</p>
+          <p class="para block">「翻訳作業の流れ」の <a class="xref" href="reserve.html" title="翻訳の予約">セクション 3.2 - 翻訳の予約</a> からの手順を再度実施してください。修正自体は、アップロード済みの PO ファイルにたいして行ってください。</p>
+        </li>
+<li>
+          <p class="para block block-first">アップロードした翻訳にたいして査読者から合意が得られれば、査読はひとまず完了です。</p>
+        </li>
+</ol>
+</div>
+<div class="admonition block important block-indent"><div class="important-inner">
+        <div class="block block-first title title-formal"><span class="title"><span class="label"></span>査読手続き上の留意事項</span></div>
+        <div class="block list itemizedlist"><ul class="itemizedlist">
+<li class="li-first">
+            <span class="para">査読コメントのやりとりは、「GNOME 翻訳ステータス」上で行ってください。「GNOME 翻訳ステータス」のアカウントが必要になるので、アカウント登録していない場合は登録してください。登録方法については、<a class="xref" href="damned-lies.html" title="GNOME 翻訳ステータスへのアカウント登録">セクション 2.2 - GNOME 翻訳ステータスへのアカウント登録</a> を参照してください。</span>
+          </li>
+<li>
+            <span class="para">査読が十分になされていないと思われる場合は、メーリングリストなどで追加の査読者を募集してください。その場合も査読コメント自体は「GNOME 翻訳ステータス」上で行う必要があります。</span>
+          </li>
+<li>
+            <span class="para">査読者は、特に指摘事項がない場合でも、査読を実施した旨コメント登録するようにしてください。その時点で特に問題が見つかっていないことが明確になります。</span>
+          </li>
+<li>
+            <span class="para">査読者と翻訳実施者との間で意見が折り合わず、議論が平行線を辿る場合は、コーディネーターを中心に第三者が取りまとめることになります。必要に応じてメーリングリストなどで仲裁を呼びかけてください。</span>
+          </li>
+</ul></div>
+      </div></div>
 </div></div>
 <div class="navbar navbar-bottom"><table class="navbar"><tr>
 <td class="navbar-prev"><a class="navbar-prev" href="waiting.html" title="査読待ちへの変更">査読待ちへの変更</a></td>
