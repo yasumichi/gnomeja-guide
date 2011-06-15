@@ -258,22 +258,26 @@
         </step>
         <step>
           <para>PO ファイルを編集します。</para>
-          <para>PO ファイルはテキストデータなので、gedit などお好みのテキストエディターだけで作業することができます。テキストエディター以外にも、<xref linkend="po-editor" /> で紹介する翻訳支援ツールを使うのもよいでしょう。</para>
+          <para>PO ファイルはテキストデータなので、<application>gedit</application> などお好みのテキストエディターだけで作業することができます。テキストエディター以外にも、<xref linkend="po-editor" /> で紹介する翻訳支援ツールを使うのもよいでしょう。</para>
         </step>
         <step>
           <para>編集した PO ファイルのフォーマットチェックを行います。</para>
           <para>PO ファイルに形式的な誤りがないかチェックします。このチェックは、あくまで機械的なものであり、翻訳内容の妥当性判断を行うものではありません。</para>
           <substeps>
             <step>
-              <para><application>GNOME 端末</application> (<command>gnome-terminal</command>) を起動してください。</para>
+              <para><application>GNOME 端末</application> (gnome-terminal) を起動してください。</para>
             </step>
             <step>
               <para>次のコマンドを実行してください。<prompt>$ </prompt><command>msgfmt -co /dev/null /PATH/TO/PO-FILE</command></para>
+              <para><quote>/PATH/TO/PO-FILE</quote> の部分は、編集したPOファイルのパスに置き換えてください。</para>
             </step>
             <step>
               <para>エラーが検出されれば、修正してください。</para>
             </step>
           </substeps>
+          <tip>
+            <para><application>msgfmt</application> コマンドは、多くのディストリビューションで <package>gettext</package> パッケージにて提供されています。<application>msgfmt</application> がインストールされていない場合は、お使いのディストリビューションの該当するパッケージをインストールしてください。</para>
+          </tip>
         </step>
       </procedure>
       <tip>
