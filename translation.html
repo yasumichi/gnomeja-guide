@@ -463,22 +463,26 @@ dd.answer div.label { float: left; }
         </li>
 <li>
           <p class="para block block-first">PO ファイルを編集します。</p>
-          <p class="para block">PO ファイルはテキストデータなので、gedit などお好みのテキストエディターだけで作業することができます。テキストエディター以外にも、<a class="xref" href="po-editor.html" title="ja.po 編集ソフトウェアの紹介(仮)">付録 B - ja.po 編集ソフトウェアの紹介(仮)</a> で紹介する翻訳支援ツールを使うのもよいでしょう。</p>
+          <p class="para block">PO ファイルはテキストデータなので、<span class="application">gedit</span> などお好みのテキストエディターだけで作業することができます。テキストエディター以外にも、<a class="xref" href="po-editor.html" title="ja.po 編集ソフトウェアの紹介(仮)">付録 B - ja.po 編集ソフトウェアの紹介(仮)</a> で紹介する翻訳支援ツールを使うのもよいでしょう。</p>
         </li>
 <li>
           <p class="para block block-first">編集した PO ファイルのフォーマットチェックを行います。</p>
           <p class="para block">PO ファイルに形式的な誤りがないかチェックします。このチェックは、あくまで機械的なものであり、翻訳内容の妥当性判断を行うものではありません。</p>
           <div class="block list substeps"><ol class="substeps" type="a">
             <li class="li-first">
-              <p class="para block block-first"><span class="application">GNOME 端末</span> (<span class="command" dir="ltr">gnome-terminal</span>) を起動してください。</p>
+              <p class="para block block-first"><span class="application">GNOME 端末</span> (gnome-terminal) を起動してください。</p>
             </li>
             <li>
               <p class="para block block-first">次のコマンドを実行してください。<span class="prompt" dir="ltr">$ </span><span class="command" dir="ltr">msgfmt -co /dev/null /PATH/TO/PO-FILE</span></p>
+              <p class="para block"><span class="quote">“/PATH/TO/PO-FILE”</span> の部分は、編集したPOファイルのパスに置き換えてください。</p>
             </li>
             <li>
               <p class="para block block-first">エラーが検出されれば、修正してください。</p>
             </li>
           </ol></div>
+          <div class="admonition block tip block-indent"><div class="tip-inner">
+            <p class="para block block-first"><span class="application">msgfmt</span> コマンドは、多くのディストリビューションで <span class="package">gettext</span> パッケージにて提供されています。<span class="application">msgfmt</span> がインストールされていない場合は、お使いのディストリビューションの該当するパッケージをインストールしてください。</p>
+          </div></div>
         </li>
 </ol>
 </div>
