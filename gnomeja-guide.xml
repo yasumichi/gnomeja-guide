@@ -276,7 +276,7 @@
             </step>
           </substeps>
           <tip>
-            <para><application>msgfmt</application> コマンドは、多くのディストリビューションで <package>gettext</package> パッケージにて提供されています。<application>msgfmt</application> がインストールされていない場合は、お使いのディストリビューションの該当するパッケージをインストールしてください。</para>
+            <para><application>msgfmt</application> コマンドは、多くのディストリビューションで gettext パッケージにて提供されています。<application>msgfmt</application> がインストールされていない場合は、お使いのディストリビューションの該当するパッケージをインストールしてください。</para>
           </tip>
         </step>
       </procedure>
