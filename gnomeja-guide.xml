@@ -344,11 +344,76 @@
           <para><guibutton>送信</guibutton>ボタンをクリックしてください。</para>
         </step>
       </procedure>
-
     </sect1>
     <sect1 id="review">
       <title>査読者による査読</title>
-      <para>ToDo: demnad-lies でのコメントを使わず ML で返信するように統制</para>
+      <para>翻訳成果物が査読待ち状態になると、次に査読作業に入ります。査読のことをレビューと呼ぶこともあります。翻訳の品質を確保するために、翻訳物に誤訳や誤字脱字がないか、日本語はわかりやすいか、などのチェックが行われます。</para>
+      <para>「GNOME 翻訳ステータス」上の役割として、「翻訳者」と区別される「査読者」がありますが、「査読者」以外にも、査読を行いたい人なら誰でも参加できます。</para>
+      <procedure>
+        <title>査読の手順</title>
+        <para>ここでは、査読者と翻訳実施者と両者の作業について順を追って述べます。</para>
+        <step>
+          <para>査読者は、査読待ち状態が通知されたモジュールのページから、アップロードされた PO ファイルをダウンロードしてください。</para>
+          <para>翻訳実施者による「<guilabel>新しい翻訳をアップロード</guilabel>」アクションの欄のリンクからダウンロードできます。下の画面例では、<quote>gnome-shell-master-po-ja-226361.merged.po</quote> のリンクからダウンロードしてください。</para>
+          <figure>
+            <title>アップロードされた翻訳 (例)</title>
+            <screenshot>
+              <mediaobject>
+                <imageobject>
+                  <imagedata fileref="figures/action-upload.png" format="PNG"/>
+                </imageobject>
+                <textobject>
+                  <phrase>アップロードされた翻訳 (例)</phrase>
+                </textobject>
+              </mediaobject>
+            </screenshot>
+          </figure>
+        </step>
+        <step>
+          <para>査読者は、翻訳の成果物を査読してください。</para>
+          <itemizedlist>
+            <title>主な査読方法</title>
+            <listitem><para>PO ファイルを使ってビルドしたアプリケーションを実際に使ってみて、翻訳の妥当性を確認する</para></listitem>
+            <listitem><para>PO ファイルの中身からチェックする</para></listitem>
+          </itemizedlist>
+        </step>
+        <step>
+          <para>査読者は、翻訳物の問題や改善点また確認事項などがあれば、「GNOME 翻訳ステータス」の該当モジュールのページでコメント登録してください。</para>
+          <important>
+            <para>登録したコメント内容は、翻訳実施者および該当モジュールの各コメント登録者宛てに自動でメール通知されます。メーリングリストには通知されません。</para>
+          </important>
+        </step>
+        <step>
+          <para>翻訳実施者は、査読者からのコメントにたいする返事を、同じく該当モジュールのページでコメント登録してください。</para>
+        </step>
+        <step>
+          <para>上記 2 つの、査読者と翻訳実施者とによるコメント登録ステップは、双方の合意が得られるまでくり返し行います。</para>
+        </step>
+        <step>
+          <para>翻訳実施者は、査読者からの指摘を基に、必要に応じて PO ファイルを修正します。</para>
+          <para>「翻訳作業の流れ」の <xref linkend="reserve" /> からの手順を再度実施してください。修正自体は、アップロード済みの PO ファイルにたいして行ってください。</para>
+        </step>
+        <step>
+          <para>アップロードした翻訳にたいして査読者から合意が得られれば、査読はひとまず完了です。</para>
+        </step>
+      </procedure>
+      <important>
+        <title>査読手続き上の留意事項</title>
+        <itemizedlist>
+          <listitem>
+            <para>査読コメントのやりとりは、「GNOME 翻訳ステータス」上で行ってください。「GNOME 翻訳ステータス」のアカウントが必要になるので、アカウント登録していない場合は登録してください。登録方法については、<xref linkend="damned-lies" /> を参照してください。</para>
+          </listitem>
+          <listitem>
+            <para>査読が十分になされていないと思われる場合は、メーリングリストなどで追加の査読者を募集してください。その場合も査読コメント自体は「GNOME 翻訳ステータス」上で行う必要があります。</para>
+          </listitem>
+          <listitem>
+            <para>査読者は、特に指摘事項がない場合でも、査読を実施した旨コメント登録するようにしてください。その時点で特に問題が見つかっていないことが明確になります。</para>
+          </listitem>
+          <listitem>
+            <para>査読者と翻訳実施者との間で意見が折り合わず、議論が平行線を辿る場合は、コーディネーターを中心に第三者が取りまとめることになります。必要に応じてメーリングリストなどで仲裁を呼びかけてください。</para>
+          </listitem>
+        </itemizedlist>
+      </important>
     </sect1>
     <sect1 id="commit">
       <title>コミッターによるコミット</title>
