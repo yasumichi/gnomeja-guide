@@ -2,9 +2,9 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Gtranslator 翻訳エディタ</title>
-<link rel="previous" href="gtranslaor.html" title="Gtranslator 翻訳エディタ">
-<link rel="next" href="po-mode.html" title="エディタ Emacs の po-mode">
+<title>ドキュメントで使用されている画像の翻訳について</title>
+<link rel="previous" href="gnome-doc-utils.html" title="ドキュメントの翻訳を支える gnome-doc-utils">
+<link rel="next" href="po-editor.html" title="ja.po 編集ソフトウェアの紹介(仮)">
 <link rel="top" href="gnomeja-guide.html" title="GNOME 日本語翻訳チーム参加者ガイド(仮題)">
 <style type="text/css">
 
@@ -410,8 +410,8 @@ dd.answer div.label { float: left; }
 </head>
 <body>
 <div class="navbar navbar-top"><table class="navbar"><tr>
-<td class="navbar-prev"><a class="navbar-prev" href="gtranslaor.html" title="Gtranslator 翻訳エディタ">Gtranslator 翻訳エディタ</a></td>
-<td class="navbar-next"><a class="navbar-next" href="po-mode.html" title="エディタ Emacs の po-mode">エディタ Emacs の po-mode</a></td>
+<td class="navbar-prev"><a class="navbar-prev" href="gnome-doc-utils.html" title="ドキュメントの翻訳を支える gnome-doc-utils">ドキュメントの翻訳を支える gnome-doc-utils</a></td>
+<td class="navbar-next"><a class="navbar-next" href="po-editor.html" title="ja.po 編集ソフトウェアの紹介(仮)">ja.po 編集ソフトウェアの紹介(仮)</a></td>
 </tr></table></div>
 <div class="sidebar"><div class="sidenav"><div class="autotoc"><ul>
 <li><a href="gnomeja-guide-info.html" title="このドキュメントについて">このドキュメントについて</a></li>
@@ -422,28 +422,53 @@ dd.answer div.label { float: left; }
 <li><a class="xref" href="preparation.html" title="参加の準備">参加の準備</a></li>
 <li><a class="xref" href="workflow.html" title="翻訳作業の流れ">翻訳作業の流れ</a></li>
 <li><a class="xref" href="technology.html" title="翻訳を支える技術">翻訳を支える技術</a></li>
-<li><a class="xref" href="translate-figures.html" title="ドキュメントで使用されている画像の翻訳について">ドキュメントで使用されている画像の翻訳について</a></li>
-<li>
-<a class="xref" href="po-editor.html" title="ja.po 編集ソフトウェアの紹介(仮)">ja.po 編集ソフトウェアの紹介(仮)</a><div class="autotoc"><ul>
-<li>Gtranslator 翻訳エディタ</li>
-<li><a class="xref" href="po-mode.html" title="エディタ Emacs の po-mode">エディタ Emacs の po-mode</a></li>
-<li><a class="xref" href="omega-t.html" title="Omega-T">Omega-T</a></li>
-</ul></div>
+<li>ドキュメントで使用されている画像の翻訳について<div class="autotoc"><ul></ul></div>
 </li>
+<li><a class="xref" href="po-editor.html" title="ja.po 編集ソフトウェアの紹介(仮)">ja.po 編集ソフトウェアの紹介(仮)</a></li>
 </ul></div>
 </li>
 </ul></div></div></div>
-<div class="body body-sidebar"><div class="division sect1">
-<a name="gtranslaor"></a><div class="header"><h1 class="sect1 title"><span class="title">Gtranslator 翻訳エディタ</span></h1></div>
-<ul class="linktrail">
-<li class="linktrail linktrail-first"><a class="linktrail" href="gnomeja-guide.html" title="GNOME 日本語翻訳チーム参加者ガイド(仮題)">GNOME 日本語翻訳チーム参加者ガイド(仮題)</a></li>
-<li class="linktrail linktrail-last"><a class="linktrail" href="po-editor.html" title="ja.po 編集ソフトウェアの紹介(仮)">ja.po 編集ソフトウェアの紹介(仮)</a></li>
-</ul>
-<p class="para block block-first">ToDo: Gtranslator の簡易チュートリアルを作成?</p>
+<div class="body body-sidebar"><div class="division appendix">
+<a name="translate-figures"></a><div class="header"><h1 class="appendix title"><span class="title">ドキュメントで使用されている画像の翻訳について</span></h1></div>
+<ul class="linktrail"><li class="linktrail linktrail-only"><a class="linktrail" href="gnomeja-guide.html" title="GNOME 日本語翻訳チーム参加者ガイド(仮題)">GNOME 日本語翻訳チーム参加者ガイド(仮題)</a></li></ul>
+<p class="para block block-first">ユーザーの理解を助けるため、多くのドキュメントでアプリケーションのスクリーンショットやアイコンなどの画像を使用しています。当然のことながら、我々が翻訳対象とするドキュメントで使われているスクリーンショットは、翻訳されていないユーザーインターフェースのものを使用しています。ここでは、これらの画像を翻訳する方法について説明します。</p>
+<div class="block list procedure">
+<div class="block block-first title title-formal"><span class="title"><span class="label"></span>画像の翻訳手順</span></div>
+<ol class="procedure">
+<li class="li-first">
+          <p class="para block block-first">まず、画像の翻訳状況を確認します。ドキュメントで画像が使用されている場合、図のように「モジュールの翻訳」のページで PO ファイルの翻訳率の右側にウィンドウを2枚重ねたようなアイコンが表示されています。(代替えテキストは、「ドキュメントの画像を表示」です。)</p>
+          <div class=" block screenshot">
+            
+            <div class="graphic"><img src="figures/figure.png"></div>
+          </div>
+          <p class="para block">このアイコンは、ハイパーリンクになっておりクリックするとオリジナルと日本語の画像が対比されたページが表示されます。</p>
+          <div class=" block screenshot">
+            
+            <div class="graphic"><img src="figures/images.png"></div>
+          </div>
+          <p class="para block">オリジナルの画像に対する翻訳された画像が存在しない場合、「未翻訳」や「曖昧」と表示されます。</p>
+        </li>
+<li><p class="para block block-first">オリジナルの画像と同様の場面でスクリーンショットを取得します。適宜、画像処理ソフトで処理し、オリジナルの文書と画像用ディレクトリの関係と同じになるように保存します。(すなわち、オリジナル画像が C/figures/image.png という名前で保存されていれば、ja/figures/image.png として保存してください。)</p></li>
+<li>
+          <p class="para block block-first"><span class="command" dir="ltr">md5sum</span> コマンドを使用して、翻訳した画像の MD5 チェックサム値を取得します。</p>
+<div dir="ltr" class=" block screen block-indent"><pre class="screen">$ md5sum figures/figure.png
+c932ecb576a04c544fadaf8885492b23  figures/figure.png</pre></div>
+        </li>
+<li>
+          <p class="para block block-first">PO ファイルの該当画像に関する部分を修正します。msgid の「md5=」の後の部分を前項で取得した MD5 チェックサム値に置き換えた文字列を msgstr に与えます。</p>
+<div dir="ltr" class=" block screen block-indent"><pre class="screen">msgid "@@image: 'figures/image.png'; md5=a32ef2d5d2a75737206a394c8183cdf8"
+msgstr "@@image: 'figures/image.png'; md5=c932ecb576a04c544fadaf8885492b23"</pre></div>
+          <p class="para block">「fuzzy」(曖昧)とマークされている場合は、解除してください。(つまり、<div dir="ltr" class=" block screen block-indent block-first"><pre class="screen">#, fuzzy</pre></div>という行を削除します。)</p>
+        </li>
+<li>
+          <p class="para block block-first">PO ファイルの「新しい翻訳をアップロード」した際にコメント機能を使って画像をアップロードしてください。画像が複数ある場合は、gzip や bzip2 で圧縮された Tar アーカイブ(*.tar.gz、*.tar.bz2)にしてアップロードしても構いません。</p>
+        </li>
+</ol>
+</div>
 </div></div>
 <div class="navbar navbar-bottom"><table class="navbar"><tr>
-<td class="navbar-prev"><a class="navbar-prev" href="gtranslaor.html" title="Gtranslator 翻訳エディタ">Gtranslator 翻訳エディタ</a></td>
-<td class="navbar-next"><a class="navbar-next" href="po-mode.html" title="エディタ Emacs の po-mode">エディタ Emacs の po-mode</a></td>
+<td class="navbar-prev"><a class="navbar-prev" href="gnome-doc-utils.html" title="ドキュメントの翻訳を支える gnome-doc-utils">ドキュメントの翻訳を支える gnome-doc-utils</a></td>
+<td class="navbar-next"><a class="navbar-next" href="po-editor.html" title="ja.po 編集ソフトウェアの紹介(仮)">ja.po 編集ソフトウェアの紹介(仮)</a></td>
 </tr></table></div>
 </body>
 </html>
