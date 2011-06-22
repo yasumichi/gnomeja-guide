@@ -431,7 +431,38 @@
   </appendix>
   <appendix id="translate-figures">
     <title>ドキュメントで使用されている画像の翻訳について</title>
-    <para>Now Printing!</para>
+    <para>ユーザーの理解を助けるため、多くのドキュメントでアプリケーションのスクリーンショットやアイコンなどの画像を使用しています。当然のことながら、我々が翻訳対象とするドキュメントで使われているスクリーンショットは、翻訳されていないユーザーインターフェースのものを使用しています。ここでは、これらの画像を翻訳する方法について説明します。</para>
+      <procedure>
+        <title>画像の翻訳手順</title>
+        <step>
+          <para>まず、画像の翻訳状況を確認します。ドキュメントで画像が使用されている場合、図のように「モジュールの翻訳」のページで PO ファイルの翻訳率の右側にウィンドウを2枚重ねたようなアイコンが表示されています。(代替えテキストは、「ドキュメントの画像を表示」です。)</para>
+          <screenshot>
+            <screeninfo>329x28x256</screeninfo>
+            <graphic fileref="figures/figure.png" />
+          </screenshot>
+          <para>このアイコンは、ハイパーリンクになっておりクリックするとオリジナルと日本語の画像が対比されたページが表示されます。</para>
+          <screenshot>
+            <screeninfo>414x292x256</screeninfo>
+            <graphic fileref="figures/images.png" />
+          </screenshot>
+          <para>オリジナルの画像に対する翻訳された画像が存在しない場合、「未翻訳」や「曖昧」と表示されます。</para>
+        </step>
+        <step><para>オリジナルの画像と同様の場面でスクリーンショットを取得します。適宜、画像処理ソフトで処理し、オリジナルの文書と画像用ディレクトリの関係と同じになるように保存します。(すなわち、オリジナル画像が C/figures/image.png という名前で保存されていれば、ja/figures/image.png として保存してください。)</para></step>
+        <step>
+          <para><command>md5sum</command> コマンドを使用して、翻訳した画像の MD5 チェックサム値を取得します。</para>
+<screen>$ md5sum figures/figure.png
+c932ecb576a04c544fadaf8885492b23  figures/figure.png</screen>
+        </step>
+        <step>
+          <para>PO ファイルの該当画像に関する部分を修正します。msgid の「md5=」の後の部分を前項で取得した MD5 チェックサム値に置き換えた文字列を msgstr に与えます。</para>
+<screen>msgid "@@image: 'figures/image.png'; md5=a32ef2d5d2a75737206a394c8183cdf8"
+msgstr "@@image: 'figures/image.png'; md5=c932ecb576a04c544fadaf8885492b23"</screen>
+          <para>「fuzzy」(曖昧)とマークされている場合は、解除してください。(つまり、<screen>#, fuzzy</screen>という行を削除します。)</para>
+        </step>
+        <step>
+          <para>PO ファイルの「新しい翻訳をアップロード」した際にコメント機能を使って画像をアップロードしてください。画像が複数ある場合は、gzip や bzip2 で圧縮された Tar アーカイブ(*.tar.gz、*.tar.bz2)にしてアップロードしても構いません。</para>
+        </step>
+      </procedure>
   </appendix>
   <appendix id="po-editor">
     <title>ja.po 編集ソフトウェアの紹介(仮)</title>
