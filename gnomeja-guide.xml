@@ -237,6 +237,7 @@
       <title>翻訳</title>
       <para>翻訳の予約が済めば、いよいよ実際の翻訳作業に入ります。</para>
       <para>GNOME の翻訳は、PO ファイルという翻訳データのソースファイルを編集して作業を進めます。PO ファイルの中身は、一連の翻訳対象メッセージと各メッセージに対応する翻訳文とで構成されています。日本語の翻訳文を PO ファイルに記述していくのが、翻訳作業のメインになります。PO ファイルの詳細については、<xref linkend="gettext" /> を参照してください。</para>
+      <para>ドキュメント翻訳の場合は、アプリケーションの翻訳済み画面イメージが必要になることがあります。詳細については <xref linkend="translate-figures" /> を参照してください。</para>
       <procedure>
         <title>翻訳の手順</title>
         <step>
@@ -269,7 +270,7 @@
             </step>
             <step>
               <para>次のコマンドを実行してください。<prompt>$ </prompt><command>msgfmt -co /dev/null /PATH/TO/PO-FILE</command></para>
-              <para><quote>/PATH/TO/PO-FILE</quote> の部分は、編集したPOファイルのパスに置き換えてください。</para>
+              <para><quote>/PATH/TO/PO-FILE</quote> の部分は、編集した PO ファイルのパスに置き換えてください。</para>
             </step>
             <step>
               <para>エラーが検出されれば、修正してください。</para>
