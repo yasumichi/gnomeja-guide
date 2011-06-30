@@ -445,6 +445,7 @@ dd.answer div.label { float: left; }
 </ul>
 <p class="para block block-first">翻訳の予約が済めば、いよいよ実際の翻訳作業に入ります。</p>
 <p class="para block">GNOME の翻訳は、PO ファイルという翻訳データのソースファイルを編集して作業を進めます。PO ファイルの中身は、一連の翻訳対象メッセージと各メッセージに対応する翻訳文とで構成されています。日本語の翻訳文を PO ファイルに記述していくのが、翻訳作業のメインになります。PO ファイルの詳細については、<a class="xref" href="gettext.html" title="インターフェースの翻訳を支える gettext">セクション A.1 - インターフェースの翻訳を支える gettext</a> を参照してください。</p>
+<p class="para block">ドキュメント翻訳の場合は、アプリケーションの翻訳済み画面イメージが必要になることがあります。詳細については <a class="xref" href="translate-figures.html" title="ドキュメントで使用されている画像の翻訳について">付録 B - ドキュメントで使用されている画像の翻訳について</a> を参照してください。</p>
 <div class="block list procedure">
 <div class="block block-first title title-formal"><span class="title"><span class="label"></span>翻訳の手順</span></div>
 <ol class="procedure">
@@ -474,7 +475,7 @@ dd.answer div.label { float: left; }
             </li>
             <li>
               <p class="para block block-first">次のコマンドを実行してください。<span class="prompt" dir="ltr">$ </span><span class="command" dir="ltr">msgfmt -co /dev/null /PATH/TO/PO-FILE</span></p>
-              <p class="para block"><span class="quote">“/PATH/TO/PO-FILE”</span> の部分は、編集したPOファイルのパスに置き換えてください。</p>
+              <p class="para block"><span class="quote">“/PATH/TO/PO-FILE”</span> の部分は、編集した PO ファイルのパスに置き換えてください。</p>
             </li>
             <li>
               <p class="para block block-first">エラーが検出されれば、修正してください。</p>
