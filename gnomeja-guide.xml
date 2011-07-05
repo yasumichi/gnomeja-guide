@@ -15,11 +15,19 @@
       <author>
         <firstname>Jiro</firstname><surname>Matsuzawa</surname>
       </author>
+      <author>
+        <firstname>草野</firstname><surname>貴之</surname>
+      </author>
     </authorgroup>
     <copyright>
       <year>2011</year>
       <holder>日本 GNOME ユーザー会</holder>
     </copyright>
+    <legalnotice>
+      <title>ライセンス</title>
+      <para><mediaobject><imageobject><imagedata fileref="http://i.creativecommons.org/l/by-nc-sa/2.1/jp/88x31.png" /></imageobject></mediaobject></para>
+      <para>この 作品 は <ulink url="http://creativecommons.org/licenses/by-nc-sa/2.1/jp/">クリエイティブ・コモンズ 表示 - 非営利 - 継承 2.1 日本 ライセンス</ulink>の下に提供されています。</para>
+    </legalnotice>
   </bookinfo>
   <preface id="joinus">
     <title>GNOME 日本語翻訳チームへご協力ください</title>
