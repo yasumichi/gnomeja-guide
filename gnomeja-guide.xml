@@ -8,15 +8,15 @@
       <para>この文書では、GNOME 日本語翻訳チームへ参加する方法および参加者がどのような作業を行うかについて解説します。</para>
     </abstract>
     <authorgroup>
-      <author>
+      <author role="family-given">
         <surname>赤星</surname><firstname>柔充</firstname>
         <email>yasumichi@vinelinux.org</email>
       </author>
-      <author>
+      <author role="family-given">
         <surname>松澤</surname><firstname>二郎</firstname>
         <email>matsuzawa.jr@gmail.com</email>
       </author>
-      <author>
+      <author role="family-given">
         <surname>草野</surname><firstname>貴之</firstname>
       </author>
     </authorgroup>
