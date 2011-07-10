@@ -59,14 +59,14 @@
     <sect1 id="reviewers">
       <title>査読者</title>
       <para>査読者は、翻訳者がアップロードした翻訳を査読し、必要により校正を行い、翻訳の状態を「コミット待ち」に変更し、コミッターにコミット可能であることを伝えます。</para>
-      <para>査読者は、<ulink url="http://l10n.gnome.org/">GNOME 翻訳ステータス</ulink>で翻訳者として登録されているメンバーから、コーディネーターが選抜します。現在のところ、日本語翻訳チームでは、査読者の権限を持つメンバーがいない状況です。コーディネーターの負担を軽減するためにも査読者の選抜について議論が必要と思われます。</para>
+      <para>査読者は、<ulink url="http://l10n.gnome.org/">GNOME 翻訳ステータス</ulink>で翻訳者として登録されているメンバーの中から、コーディネーターが選出します。現在のところ、日本語翻訳チームに専任の査読者は存在せず、コーディネーターが査読者を兼務しています (専任の査読者の必要性について議論がなされています)。</para>
       <para>ToDo: 松澤さんの指摘通り査読者の作業フローが必要そうである。校正を予約→校正した翻訳をアップロード→コミット待ち?</para>
     </sect1>
     <sect1 id="committers">
       <title>コミッター</title>
       <para>コミッターは、リリースされる GNOME の翻訳に対し変更を加える権限を有します。査読者により「コミット待ち」状態に変更された翻訳を「リポジトリへ送る」(コミットする)ことができます。</para>
       <para>コミットが無事に完了したら、「コミットしたことを通知」します。すると、新たな提案を受け付けるための「アクションをアーカイブする」も同時に実行されます。</para>
-      <para>コミッターは、<ulink url="http://l10n.gnome.org/">GNOME 翻訳ステータス</ulink>で翻訳者として登録されているメンバーから、コーディネーターが選抜します。現在のところ、日本語翻訳チームでは、コミッターのみの権限を持つメンバーはいません。コーディネーターの負担を軽減するためにもコミッターの選抜について議論が必要と思われます。</para>
+      <para>コミッターは、<ulink url="http://l10n.gnome.org/">GNOME 翻訳ステータス</ulink>で翻訳者として登録されているメンバーの中から、コーディネーターが選出します。現在のところ、日本語翻訳チームに専任のコミッターは存在せず、コーディネーターがコミッターを兼務しています (専任のコミッターの必要性について議論がなされています)。</para>
       <para>GNOME の翻訳コミット権の取得方法については <ulink url="http://live.gnome.org/TranslationProject/RequestingAnAccount">Requesting a Git account</ulink> にまとめられています。また、<ulink url="http://live.gnome.org/TranslationProject/AccountResponsibilities">Translator Account Responsibilities</ulink> なども必読です。</para>
     </sect1>
     <sect1 id="coordinator">
