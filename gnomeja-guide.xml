@@ -8,58 +8,72 @@
       <para>この文書では、GNOME 日本語翻訳チームへ参加する方法および参加者がどのような作業を行うかについて解説します。</para>
     </abstract>
     <authorgroup>
-      <author>
-        <firstname>赤星</firstname><surname>柔充</surname>
+      <author role="family-given">
+        <surname>赤星</surname><firstname>柔充</firstname>
         <email>yasumichi@vinelinux.org</email>
       </author>
-      <author>
-        <firstname>Jiro</firstname><surname>Matsuzawa</surname>
+      <author role="family-given">
+        <surname>松澤</surname><firstname>二郎</firstname>
+        <email>matsuzawa.jr@gmail.com</email>
+      </author>
+      <author role="family-given">
+        <surname>草野</surname><firstname>貴之</firstname>
       </author>
     </authorgroup>
     <copyright>
       <year>2011</year>
       <holder>日本 GNOME ユーザー会</holder>
     </copyright>
+    <legalnotice>
+      <title>ライセンス</title>
+      <para><mediaobject><imageobject><imagedata fileref="http://i.creativecommons.org/l/by-sa/2.1/jp/88x31.png" /></imageobject></mediaobject></para>
+      <para>この 作品 は <ulink url="http://creativecommons.org/licenses/by-sa/2.1/jp/">クリエイティブ・コモンズ 表示 - 継承 2.1 日本 ライセンス</ulink>の下に提供されています。</para>
+    </legalnotice>
   </bookinfo>
   <preface id="joinus">
     <title>GNOME 日本語翻訳チームへご協力ください</title>
-    <para>私たち GNOME 日本語翻訳チームは、GNOME 公式の翻訳プロジェクトとして GNOME の日本語化を行っています。日本語環境を改善し、デスクトップをもっと使いやすくする。わかりやすい日本語のドキュメントをもっと充実させる。そのために日々活動しております。しかしながら、足りていないものがあります。ユーザの皆さんの声です。実際のユーザの声をGNOME に反映させることで、GNOME はもっと良いものになります。私たちはあなたの声を求めています。自分の使う環境を自分の手でより良くしたいと思う方がいれば、ぜひ私たちにご協力ください。みなさんの声が大きな力となります。</para>
+    <para>私たち GNOME 日本語翻訳チームは、GNOME 公式の翻訳プロジェクトとして GNOME の日本語化を行っています。日本語環境を改善し、デスクトップをもっと使いやすくする。わかりやすい日本語のドキュメントをもっと充実させる。そのために日々活動しております。しかしながら、足りていないものがあります。ユーザーの皆さんの声です。実際のユーザーの声をGNOME に反映させることで、GNOME はもっと良いものになります。私たちはあなたの声を求めています。自分の使う環境を自分の手でより良くしたいと思う方がいれば、ぜひ私たちにご協力ください。みなさんの声が大きな力となります。</para>
     <para>英語能力や翻訳スキルは必ずしも必要ではありません。たとえば、何かのアプリケーションを使ってみて、そのメッセージやヘルプの分かりづらい点などをご指摘くださるだけでも十分です。あるいはアプリケーションの実際の操作と対応する日本語の表現に相違が無いかのチェックなどもありがたいものです。そういった作業は翻訳品質の向上にとってなくてはならないものです。さらに実際の翻訳をやってみたいという方のご協力は大歓迎です。</para>
   </preface>
   <chapter id="roles">
     <title>GNOME 日本語翻訳チームへの参加形態</title>
     <sect1 id="users">
       <title>協力ユーザー</title>
-      <para>協力ユーザーとは、GNOME デスクトップ、アプリケーションおよびマニュアルの翻訳改善に貢献するユーザーのことです。翻訳の間違いやわかりづらい日本語など、気づいたことや気になったことがあれば、ぜひお知らせください。いただいた情報をもとに、必要に応じて翻訳チームが対処します。単語ひとつだけに関する指摘など、些細に思われるものでも歓迎します。</para>
+      <para>協力ユーザーとは、GNOME デスクトップ、アプリケーションおよびドキュメントの翻訳改善に貢献するユーザーのことです。翻訳の間違いやわかりづらい日本語など、気づいたことや気になったことがあれば、ぜひお知らせください。いただいた情報をもとに、必要に応じて翻訳チームが対処します。単語ひとつだけに関する指摘など、些細に思われるものでも歓迎します。</para>
       <para>お知らせいただきたい情報としては、たとえば以下のようなものがあります。</para>
       <itemizedlist>
         <listitem><para>誤字・脱字・誤訳・未訳を見つけた</para></listitem>
         <listitem><para>ソフトウェアのメッセージがわかりづらい、使いにくい</para></listitem>
-        <listitem><para>マニュアルやヘルプの文章がわかりづらい、読みにくい</para></listitem>
-        <listitem><para>日本語化してほしいソフトウェアやマニュアルがある</para></listitem>
+        <listitem><para>ドキュメントやヘルプの文章がわかりづらい、読みにくい</para></listitem>
+        <listitem><para>日本語化してほしいソフトウェアやドキュメントがある</para></listitem>
         <listitem><para>その他、翻訳の改善提案などなど</para></listitem>
       </itemizedlist>
-	  <para>協力ユーザとして参加するには、翻訳チームのメーリングリストを購読して、そちらにご報告ください。購読の方法は、<xref linkend="list"/> を参照してください。</para>
+	  <para>協力ユーザーとして参加するには、翻訳チームのメーリングリストを購読して、そちらにご報告ください。購読の方法は、<xref linkend="list"/> を参照してください。</para>
     </sect1>
     <sect1 id="translators">
       <title>翻訳者</title>
-      <para>翻訳者は、文字通りユーザーインターフェースやマニュアルの翻訳を行う翻訳チームの主要なメンバーです。余力があれば、他の翻訳者の翻訳内容を確認し、コメントする場合もあります。</para>
+      <para>翻訳者は、文字通りユーザーインターフェースやドキュメントの翻訳を行う翻訳チームの主要なメンバーです。余力があれば、他の翻訳者の翻訳内容を確認し、コメントする場合もあります。</para>
       <para>翻訳者の具体的な作業手順は、<xref linkend="workflow" />にて解説します。</para>
       <para>翻訳者として参加するには、翻訳チームのメーリングリストの購読および<ulink url="http://l10n.gnome.org/">GNOME 翻訳ステータス</ulink>へのアカウント登録が必要です。詳細は、<xref linkend="preparation" />を参照してください。</para>
     </sect1>
     <sect1 id="reviewers">
       <title>査読者</title>
       <para>査読者は、翻訳者がアップロードした翻訳を査読し、必要により校正を行い、翻訳の状態を「コミット待ち」に変更し、コミッターにコミット可能であることを伝えます。</para>
-      <para>査読者は、<ulink url="http://l10n.gnome.org/">GNOME 翻訳ステータス</ulink>で翻訳者として登録されているメンバーから、コーディネータが選抜します。現在のところ、日本語翻訳チームでは、査読者の権限を持つメンバーがいない状況です。コーディネータの負担を軽減するためにも査読者の選抜について議論が必要と思われます。</para>
+      <para>査読者は、<ulink url="http://l10n.gnome.org/">GNOME 翻訳ステータス</ulink>で翻訳者として登録されているメンバーの中から、コーディネーターが選出します。現在のところ、日本語翻訳チームに専任の査読者は存在せず、コーディネーターが査読者を兼務しています (専任の査読者の必要性について議論がなされています)。</para>
       <para>ToDo: 松澤さんの指摘通り査読者の作業フローが必要そうである。校正を予約→校正した翻訳をアップロード→コミット待ち?</para>
     </sect1>
     <sect1 id="committers">
       <title>コミッター</title>
-      <para>ToDo: コミッターの役割</para>
+      <para>コミッターは、リリースされる GNOME の翻訳に対し変更を加える権限を有します。査読者により「コミット待ち」状態に変更された翻訳を「リポジトリへ送る」(コミットする)ことができます。</para>
+      <para>コミットが無事に完了したら、「コミットしたことを通知」します。すると、新たな提案を受け付けるための「アクションをアーカイブする」も同時に実行されます。</para>
+      <para>コミッターは、<ulink url="http://l10n.gnome.org/">GNOME 翻訳ステータス</ulink>で翻訳者として登録されているメンバーの中から、コーディネーターが選出します。現在のところ、日本語翻訳チームに専任のコミッターは存在せず、コーディネーターがコミッターを兼務しています (専任のコミッターの必要性について議論がなされています)。</para>
+      <para>GNOME の翻訳コミット権の取得方法については <ulink url="http://live.gnome.org/TranslationProject/RequestingAnAccount">Requesting a Git account</ulink> にまとめられています。また、<ulink url="http://live.gnome.org/TranslationProject/AccountResponsibilities">Translator Account Responsibilities</ulink> なども必読です。</para>
     </sect1>
     <sect1 id="coordinator">
-      <title>コーディネータ</title>
-      <para>ToDo: コーディネータとは</para>
+      <title>コーディネーター</title>
+      <para>コーディネーターは、日本語翻訳チームのまとめ役です。GNOME における日本語など、担当する言語のサポートが継続されるよう責任を負います。<ulink url="http://live.gnome.org/TranslationProject/StartingATeam">Starting Team</ulink> や <ulink url="http://live.gnome.org/TranslationProject/TeamCoordinatorResponsibilities">Team Coordinator Responsibilities</ulink> は必読で、そこに書かれている要件を守らなくてはなりません。</para>
+      <para>コーディネーターは必ずしもコミッターとしてコミット権を持っている必要はありませんが、現在の日本語チームではコーディネーターがコミッターも兼ねています。</para> 
+      <para>日本語翻訳チームでの活動について困ったことなどがあれば、コーディネーターに相談してください。</para>
     </sect1>
   </chapter>
   <chapter id="preparation">
@@ -237,6 +251,7 @@
       <title>翻訳</title>
       <para>翻訳の予約が済めば、いよいよ実際の翻訳作業に入ります。</para>
       <para>GNOME の翻訳は、PO ファイルという翻訳データのソースファイルを編集して作業を進めます。PO ファイルの中身は、一連の翻訳対象メッセージと各メッセージに対応する翻訳文とで構成されています。日本語の翻訳文を PO ファイルに記述していくのが、翻訳作業のメインになります。PO ファイルの詳細については、<xref linkend="gettext" /> を参照してください。</para>
+      <para>ドキュメント翻訳の場合は、アプリケーションの翻訳済み画面イメージが必要になることがあります。詳細については <xref linkend="translate-figures" /> を参照してください。</para>
       <procedure>
         <title>翻訳の手順</title>
         <step>
@@ -258,22 +273,26 @@
         </step>
         <step>
           <para>PO ファイルを編集します。</para>
-          <para>PO ファイルはテキストデータなので、gedit などお好みのテキストエディターだけで作業することができます。テキストエディター以外にも、<xref linkend="po-editor" /> で紹介する翻訳支援ツールを使うのもよいでしょう。</para>
+          <para>PO ファイルはテキストデータなので、<application>gedit</application> などお好みのテキストエディターだけで作業することができます。テキストエディター以外にも、<xref linkend="po-editor" /> で紹介する翻訳支援ツールを使うのもよいでしょう。</para>
         </step>
         <step>
           <para>編集した PO ファイルのフォーマットチェックを行います。</para>
           <para>PO ファイルに形式的な誤りがないかチェックします。このチェックは、あくまで機械的なものであり、翻訳内容の妥当性判断を行うものではありません。</para>
           <substeps>
             <step>
-              <para><application>GNOME 端末</application> (<command>gnome-terminal</command>) を起動してください。</para>
+              <para><application>GNOME 端末</application> (gnome-terminal) を起動してください。</para>
             </step>
             <step>
               <para>次のコマンドを実行してください。<prompt>$ </prompt><command>msgfmt -co /dev/null /PATH/TO/PO-FILE</command></para>
+              <para><quote>/PATH/TO/PO-FILE</quote> の部分は、編集した PO ファイルのパスに置き換えてください。</para>
             </step>
             <step>
               <para>エラーが検出されれば、修正してください。</para>
             </step>
           </substeps>
+          <tip>
+            <para><application>msgfmt</application> コマンドは、多くのディストリビューションで gettext パッケージにて提供されています。<application>msgfmt</application> がインストールされていない場合は、お使いのディストリビューションの該当するパッケージをインストールしてください。</para>
+          </tip>
         </step>
       </procedure>
       <tip>
@@ -317,7 +336,7 @@
       </caution>
       <tip>
         <title>複数ファイルのアップロード</title>
-        <para>マニュアルの翻訳では、PO ファイルだけでなく画面キャプチャなどの画像ファイルもアップロードすることがあります。複数のファイルをアップロードしたい場合は、それらを tar.gz、または tar.bz2 形式のアーカイブとして 1 ファイルにまとめてアップロードしてください。</para>
+        <para>ドキュメントの翻訳では、PO ファイルだけでなく画面キャプチャなどの画像ファイルもアップロードすることがあります。複数のファイルをアップロードしたい場合は、それらを tar.gz、または tar.bz2 形式のアーカイブとして 1 ファイルにまとめてアップロードしてください。</para>
       </tip>
     </sect1>
     <sect1 id="waiting">
@@ -340,15 +359,89 @@
           <para><guibutton>送信</guibutton>ボタンをクリックしてください。</para>
         </step>
       </procedure>
-
     </sect1>
     <sect1 id="review">
       <title>査読者による査読</title>
-      <para>ToDo: demnad-lies でのコメントを使わず ML で返信するように統制</para>
+      <para>翻訳成果物が査読待ち状態になると、次に査読作業に入ります。査読のことをレビューと呼ぶこともあります。翻訳の品質を確保するために、翻訳物に誤訳や誤字脱字がないか、日本語はわかりやすいか、などのチェックが行われます。</para>
+      <para>「GNOME 翻訳ステータス」上の役割として、「翻訳者」と区別される「査読者」がありますが、「査読者」以外にも、査読を行いたい人なら誰でも参加できます。</para>
+      <procedure>
+        <title>査読の手順</title>
+        <para>ここでは、査読者と翻訳実施者と両者の作業について順を追って述べます。</para>
+        <step>
+          <para>査読者は、査読待ち状態が通知されたモジュールのページから、アップロードされた PO ファイルをダウンロードしてください。</para>
+          <para>翻訳実施者による「<guilabel>新しい翻訳をアップロード</guilabel>」アクションの欄のリンクからダウンロードできます。下の画面例では、<quote>gnome-shell-master-po-ja-226361.merged.po</quote> のリンクからダウンロードしてください。</para>
+          <figure>
+            <title>アップロードされた翻訳 (例)</title>
+            <screenshot>
+              <mediaobject>
+                <imageobject>
+                  <imagedata fileref="figures/action-upload.png" format="PNG"/>
+                </imageobject>
+                <textobject>
+                  <phrase>アップロードされた翻訳 (例)</phrase>
+                </textobject>
+              </mediaobject>
+            </screenshot>
+          </figure>
+        </step>
+        <step>
+          <para>査読者は、翻訳の成果物を査読してください。</para>
+          <itemizedlist>
+            <title>主な査読方法</title>
+            <listitem><para>PO ファイルを使ってビルドしたアプリケーションを実際に使ってみて、翻訳の妥当性を確認する</para></listitem>
+            <listitem><para>PO ファイルの中身からチェックする</para></listitem>
+          </itemizedlist>
+        </step>
+        <step>
+          <para>査読者は、翻訳物の問題や改善点また確認事項などがあれば、「GNOME 翻訳ステータス」の該当モジュールのページでコメント登録してください。</para>
+          <important>
+            <para>登録したコメント内容は、翻訳実施者および該当モジュールの各コメント登録者宛てに自動でメール通知されます。メーリングリストには通知されません。</para>
+          </important>
+        </step>
+        <step>
+          <para>翻訳実施者は、査読者からのコメントにたいする返事を、同じく該当モジュールのページでコメント登録してください。</para>
+        </step>
+        <step>
+          <para>上記 2 つの、査読者と翻訳実施者とによるコメント登録ステップは、双方の合意が得られるまでくり返し行います。</para>
+        </step>
+        <step>
+          <para>翻訳実施者は、査読者からの指摘を基に、必要に応じて PO ファイルを修正します。</para>
+          <para>「翻訳作業の流れ」の <xref linkend="reserve" /> からの手順を再度実施してください。修正自体は、アップロード済みの PO ファイルにたいして行ってください。</para>
+        </step>
+        <step>
+          <para>アップロードした翻訳にたいして査読者から合意が得られれば、査読はひとまず完了です。</para>
+        </step>
+      </procedure>
+      <important>
+        <title>査読手続き上の留意事項</title>
+        <itemizedlist>
+          <listitem>
+            <para>査読コメントのやりとりは、「GNOME 翻訳ステータス」上で行ってください。「GNOME 翻訳ステータス」のアカウントが必要になるので、アカウント登録していない場合は登録してください。登録方法については、<xref linkend="damned-lies" /> を参照してください。</para>
+          </listitem>
+          <listitem>
+            <para>査読が十分になされていないと思われる場合は、メーリングリストなどで追加の査読者を募集してください。その場合も査読コメント自体は「GNOME 翻訳ステータス」上で行う必要があります。</para>
+          </listitem>
+          <listitem>
+            <para>査読者は、特に指摘事項がない場合でも、査読を実施した旨コメント登録するようにしてください。その時点で特に問題が見つかっていないことが明確になります。</para>
+          </listitem>
+          <listitem>
+            <para>査読者と翻訳実施者との間で意見が折り合わず、議論が平行線を辿る場合は、コーディネーターを中心に第三者が取りまとめることになります。必要に応じてメーリングリストなどで仲裁を呼びかけてください。</para>
+          </listitem>
+        </itemizedlist>
+      </important>
     </sect1>
     <sect1 id="commit">
       <title>コミッターによるコミット</title>
-      <para>ToDo: この辺の事情を確認</para>
+      <para>査読を経て一定の品質が確保できたと判断される翻訳が、GNOME 公式の配布物に反映されることになります。作成された PO ファイルを、コミッターあるいはその権限を持つ人が、GNOME のリポジトリへコミットすることで、翻訳が反映されます。</para>
+      <para>コミットされた翻訳も、誤訳の発見や訳語の改善などの理由で修正が必要になることがあります。その場合も、修正版のコミットまで一連の翻訳作業を経ることになります。最終的にコミットされた翻訳が、GNOME のプロダクトとしてリリースされ、ユーザーの目に触れるようになります。</para>
+      <procedure>
+        <step>
+          <para>コミッターは、提出された PO ファイルをリポジトリへコミットします。</para>
+        </step>
+        <step>
+          <para>コミッターは、コミットしたことを翻訳チームにたいして通知します。</para>
+        </step>
+      </procedure>
     </sect1>
   </chapter>
   <appendix id="technology">
@@ -357,8 +450,43 @@
       <title>インターフェースの翻訳を支える gettext</title>
     </sect1>
     <sect1 id="gnome-doc-utils">
-      <title>マニュアルの翻訳を支える gnome-doc-utils</title>
+      <title>ドキュメントの翻訳を支える gnome-doc-utils</title>
     </sect1>
+  </appendix>
+  <appendix id="translate-figures">
+    <title>ドキュメントで使用されている画像の翻訳について</title>
+    <para>ユーザーの理解を助けるため、多くのドキュメントでアプリケーションのスクリーンショットやアイコンなどの画像を使用しています。当然のことながら、我々が翻訳対象とするドキュメントで使われているスクリーンショットは、翻訳されていないユーザーインターフェースのものを使用しています。ここでは、これらの画像を翻訳する方法について説明します。</para>
+      <procedure>
+        <title>画像の翻訳手順</title>
+        <step>
+          <para>まず、画像の翻訳状況を確認します。ドキュメントで画像が使用されている場合、図のように「モジュールの翻訳」のページで PO ファイルの翻訳率の右側にウィンドウを2枚重ねたようなアイコンが表示されています。(代替えテキストは、「ドキュメントの画像を表示」です。)</para>
+          <screenshot>
+            <screeninfo>329x28x256</screeninfo>
+            <graphic fileref="figures/figure.png" />
+          </screenshot>
+          <para>このアイコンは、ハイパーリンクになっておりクリックするとオリジナルと日本語の画像が対比されたページが表示されます。</para>
+          <screenshot>
+            <screeninfo>414x292x256</screeninfo>
+            <graphic fileref="figures/images.png" />
+          </screenshot>
+          <para>オリジナルの画像に対する翻訳された画像が存在しない場合、「未翻訳」や「曖昧」と表示されます。</para>
+        </step>
+        <step><para>オリジナルの画像と同様の場面でスクリーンショットを取得します。適宜、画像処理ソフトで処理し、オリジナルの文書と画像用ディレクトリの関係と同じになるように保存します。(すなわち、オリジナル画像が C/figures/image.png という名前で保存されていれば、ja/figures/image.png として保存してください。)</para></step>
+        <step>
+          <para><command>md5sum</command> コマンドを使用して、翻訳した画像の MD5 チェックサム値を取得します。</para>
+<screen>$ md5sum figures/figure.png
+c932ecb576a04c544fadaf8885492b23  figures/figure.png</screen>
+        </step>
+        <step>
+          <para>PO ファイルの該当画像に関する部分を修正します。msgid の「md5=」の後の部分を前項で取得した MD5 チェックサム値に置き換えた文字列を msgstr に与えます。</para>
+<screen>msgid "@@image: 'figures/image.png'; md5=a32ef2d5d2a75737206a394c8183cdf8"
+msgstr "@@image: 'figures/image.png'; md5=c932ecb576a04c544fadaf8885492b23"</screen>
+          <para>「fuzzy」(曖昧)とマークされている場合は、解除してください。(つまり、<screen>#, fuzzy</screen>という行を削除します。)</para>
+        </step>
+        <step>
+          <para>PO ファイルの「新しい翻訳をアップロード」した際にコメント機能を使って画像をアップロードしてください。画像が複数ある場合は、gzip や bzip2 で圧縮された Tar アーカイブ(*.tar.gz、*.tar.bz2)にしてアップロードしても構いません。</para>
+        </step>
+      </procedure>
   </appendix>
   <appendix id="po-editor">
     <title>ja.po 編集ソフトウェアの紹介(仮)</title>
