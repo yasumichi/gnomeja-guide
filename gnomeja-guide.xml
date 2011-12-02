@@ -148,6 +148,20 @@
   <chapter id="workflow">
     <title>翻訳作業の流れ</title>
     <para>ここでは、翻訳作業にかかわる一連の作業手順を説明します。</para>
+    <para>下の図は、モジュールごとの翻訳プロセスにおける状態遷移とアクションの説明です。丸が状態を表し、矢印で示されるアクションにより、状態が遷移します。</para>
+    <figure>
+      <title>翻訳作業の流れ</title>
+      <screenshot>
+        <mediaobject>
+          <imageobject>
+            <imagedata fileref="figures/workflow-translation.png" format="PNG"/>
+          </imageobject>
+          <textobject>
+            <phrase>翻訳作業の流れ</phrase>
+          </textobject>
+        </mediaobject>
+      </screenshot>
+    </figure>
     <sect1 id="status">
       <title>翻訳状況の確認</title>
       <para>実際に翻訳作業に着手するまえに、まず日本語の翻訳状況を確認します。たとえば、翻訳したいアプリケーションを誰か他の人が担当していないか、未翻訳が残っているアプリケーションはどれか、などの確認を行います。</para>
