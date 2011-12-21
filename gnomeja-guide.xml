@@ -60,7 +60,6 @@
       <title>査読者</title>
       <para>査読者は、翻訳者がアップロードした翻訳を査読し、必要により校正を行い、翻訳の状態を「コミット待ち」に変更し、コミッターにコミット可能であることを伝えます。</para>
       <para>査読者は、<ulink url="http://l10n.gnome.org/">GNOME 翻訳ステータス</ulink>で翻訳者として登録されているメンバーの中から、コーディネーターが選出します。</para>
-      <para>ToDo: 松澤さんの指摘通り査読者の作業フローが必要そうである。校正を予約→校正した翻訳をアップロード→コミット待ち?</para>
     </sect1>
     <sect1 id="committers">
       <title>コミッター</title>
@@ -458,15 +457,6 @@
       </procedure>
     </sect1>
   </chapter>
-  <appendix id="technology">
-    <title>翻訳を支える技術</title>
-    <sect1 id="gettext">
-      <title>インターフェースの翻訳を支える gettext</title>
-    </sect1>
-    <sect1 id="gnome-doc-utils">
-      <title>ドキュメントの翻訳を支える gnome-doc-utils</title>
-    </sect1>
-  </appendix>
   <appendix id="translate-figures">
     <title>ドキュメントで使用されている画像の翻訳について</title>
     <para>ユーザーの理解を助けるため、多くのドキュメントでアプリケーションのスクリーンショットやアイコンなどの画像を使用しています。当然のことながら、我々が翻訳対象とするドキュメントで使われているスクリーンショットは、翻訳されていないユーザーインターフェースのものを使用しています。ここでは、これらの画像を翻訳する方法について説明します。</para>
@@ -501,20 +491,5 @@ msgstr "@@image: 'figures/image.png'; md5=c932ecb576a04c544fadaf8885492b23"</scr
           <para>PO ファイルの「新しい翻訳をアップロード」した際にコメント機能を使って画像をアップロードしてください。画像が複数ある場合は、gzip や bzip2 で圧縮された Tar アーカイブ(*.tar.gz、*.tar.bz2)にしてアップロードしても構いません。</para>
         </step>
       </procedure>
-  </appendix>
-  <appendix id="po-editor">
-    <title>ja.po 編集ソフトウェアの紹介(仮)</title>
-    <sect1 id="gtranslaor">
-      <title>Gtranslator 翻訳エディタ</title>
-      <para>ToDo: Gtranslator の簡易チュートリアルを作成?</para>
-    </sect1>
-    <sect1 id="po-mode">
-      <title>エディタ Emacs の po-mode</title>
-      <para>ToDo: この辺の事情を確認</para>
-    </sect1>
-    <sect1 id="omega-t">
-      <title>Omega-T</title>
-      <para>ToDo: この辺の事情を確認</para>
-    </sect1>
   </appendix>
 </book>
