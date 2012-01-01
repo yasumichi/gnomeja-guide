@@ -1,2 +1,50 @@
 The guide for participant of GNOME Japanese team.
 
+Sorry, this repository use only Japanese.
+
+==========================================
+
+GNOME 日本語翻訳チーム参加者ガイドについて
+
+==========================================
+
+1. ガイドの記述方式
+
+　ガイドの記述には、DocBook XML V4.3 により記述しています。HTML 形式のガイド
+は、gnome-doc-utils を用いて gnomeja-guide.xml から生成されるものですので直
+接の編集は避けてください。
+
+
+2. ガイドの生成に必要なパッケージ等
+
+ * libxslt (ドラフト文書生成に xsltproc を利用します。)
+ * gnome-doc-utils
+
+3. ドラフト文書の公開
+
+ (1) master ブランチを checkout してください。
+ (2) 以下のコマンドを実行してください。
+     $ make draft
+
+     ******
+     注　意
+     ******
+
+     gnome-doc-utils のスタイルシートが、
+
+     /usr/share/xml/gnome/xslt/docbook/html/db2html.xsl
+
+   にあるものと仮定しています。もし、違うパスにインストールされている場合は
+   IMPORT_STYLE という変数を上書きして実行してください。
+   
+    $ make IMPORT_STYLE=/usr/local/share/xml/gnome/xslt/docbook/html/db2html.xsl draft
+
+ (3) 生成された html ファイルを gh-pages ブランチのものに上書きしてください。
+ (4) gh-pages ブランチを push してください。
+
+4. 日本ＧＮＯＭＥユーザー会公式サイト公開用ページの生成
+
+ (1) gnome_gr_jp ブランチをチェックアウトしてください。
+ (2) 以下のコマンドを実行してください。
+     $ make html
+
