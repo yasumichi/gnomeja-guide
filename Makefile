@@ -44,5 +44,5 @@ clean:
 	rm -f 88x31.png
 	rm -f figures/*.pdf *~ gnomeja-guide-param.xsl
 	rm -f *.aux *.cb *.dvi *.glo *.idx *.lof *.log *.out *.toc
-	rm *.tex *.pdf
+	rm -f *.tex *.pdf
 
