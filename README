@@ -48,7 +48,13 @@ GNOME 日本語翻訳チーム参加者ガイドについて
  (2) 以下のコマンドを実行してください。
      $ make html
 
-5. pdf の作成に必要なパッケージ (とりあえず、Vine Linux での名前で把握しているもののみ)
+5. PDF ファイルの生成
+   Project Vine の山本 宗宏さんに PDF の作成に必要なファイルを提供して頂きました。
+   PDF を生成するには、以下のコマンドを実行してください。
+
+   $ make pdf
+
+6. pdf の作成に必要なパッケージ (とりあえず、Vine Linux での名前で把握しているもののみ)
    ImageMagick
    TrueType-ipafont-gothic
    TrueType-ipafont-mincho
