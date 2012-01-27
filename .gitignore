@@ -1,2 +1,15 @@
+*.aux
+*.cb
+*.dvi
+*.glo
 *.html
+*.idx
+*.lof
+*.log
+*.out
+*.pdf
+*.tex
+*.toc
+88x31.png
 draft.xsl
+gnomeja-guide-param.xsl

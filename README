@@ -48,3 +48,16 @@ GNOME 日本語翻訳チーム参加者ガイドについて
  (2) 以下のコマンドを実行してください。
      $ make html
 
+5. pdf の作成に必要なパッケージ (とりあえず、Vine Linux での名前で把握しているもののみ)
+   ImageMagick
+   TrueType-ipafont-gothic
+   TrueType-ipafont-mincho
+   dblatex
+   texlive
+   texlive-collection-mathextra
+   wget
+
+※wget は http://i.creativecommons.org/l/by-sa/2.1/jp/88x31.png を取得するのに使います。
+　他の方法で取得し、トップディレクトリに配置すれば、必要ありません。
+※ エラーが出る場合は、エラーメッセージを添えてご連絡ください。
+
