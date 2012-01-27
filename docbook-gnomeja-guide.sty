@@ -1,0 +1,1219 @@
+%#!xelatex gnomeja-guide
+\NeedsTeXFormat{LaTeX2e}
+%% dblatex DocBook Style for Gnome-ja Guide
+%%   Munehiro Yamamoto <munepi@vinelinux.org>
+%% based on 
+%\ProvidesPackage{docbook}[2007/04/04 DocBook Style]
+\ProvidesPackage{docbook-gnomeja-guide}
+%% [2012/01/20 DocBook Style for gnomeja-guide]
+%% \makecover
+  [2012/01/22 DocBook Style for gnomeja-guide]
+
+\RequirePackage{pict2e}
+
+\def\dbk@gnomeja@usefont#1#2#3#4{%
+  \fontencoding{T1}\fontfamily{phv}\fontseries{b}\fontshape{sc}%
+  \selectfont\ignorespaces}
+
+\graphicspath{{/usr/share/dblatex/latex/contrib/db2latex/graphics/}}
+
+% The defined options
+\DeclareOption{hyperlink}{ \def\DBKhyperlink{yes} }
+\DeclareOption{nohyperlink}{ \def\DBKhyperlink{no} }
+
+% Default values
+\ExecuteOptions{nohyperlink}
+
+% If defined, process the options
+\ProcessOptions\relax
+
+% ##############################################################################
+% ### DocBook and local commands
+% ##############################################################################
+% Default DocBook Parameters
+\newcommand{\DBKreference}{}
+\newcommand{\DBKtitle}{Main Title}
+\let\DBKsubtitle\relax
+\newcommand{\DBKdate}{\today}
+\newcommand{\DBKsite}{}
+\newcommand{\DBKedition}{}
+\newcommand{\DBKreleaseinfo}{Working Paper}
+\newcommand{\DBKpubdate}{}
+\let\DBKlegalblock\relax
+\newcommand{\DBKlegaltitle}{}
+\let\DBKcopyright\relax
+
+% Local commands
+\newcommand{\DBKtoclof}{true}
+\newcommand{\DBKauthor}{}
+
+% Adaptation...
+\setcounter{secnumdepth}{4}
+\setcounter{tocdepth}{4}
+
+%%!!\setlength\parskip{\medskipamount}
+%%!!\setlength\parindent{0pt}
+
+%%!!% Don't want paragraph indentation in abstract
+%%!!\@ifundefined{abstract}{%
+%%!!\newenvironment{abstract}{
+%%!!  \setlength\parskip{\medskipamount}%
+%%!!  \setlength\parindent{0pt}%
+%%!!}{
+%%!!}
+%%!!}{
+%%!!\let\stdabstract=\abstract
+%%!!\let\endstdabstract=\endabstract
+%%!!\renewenvironment{abstract}{
+%%!!  \begin{stdabstract}%
+%%!!  \noindent%
+%%!!  \setlength\parskip{\medskipamount}%
+%%!!  \setlength\parindent{0pt}%
+%%!!}{
+%%!!  \end{stdabstract}
+%%!!}
+%%!!}
+
+%%!!% We want paragraph + subparagraph headers like the others
+%%!!\renewcommand\paragraph{\@startsection{paragraph}{4}{\z@}%
+%%!!                                     {-3.25ex\@plus -1ex \@minus -.2ex}%
+%%!!                                     {1ex \@plus .2ex}%
+%%!!                                     {\normalfont\normalsize\bfseries}}
+
+%%!!\renewcommand\subparagraph{\@startsection{subparagraph}{5}{\z@}%
+%%!!                                     {-3.25ex\@plus -1ex \@minus -.2ex}%
+%%!!                                     {1ex \@plus .2ex}%
+%%!!                                     {\normalfont\normalsize\bfseries}}
+
+% To have title rendering changed
+%%!!\usepackage[sf,bf]{titlesec}
+
+
+% Display ``DRAFT'' as a water mark:
+\usepackage{ifpdf}
+\ifpdf
+\usepackage{pdfpages}
+\usepackage{color}
+\def\showwatermark#1{%
+  \AddToShipoutPicture{
+  \AtTextCenter{%
+  \makebox(0,0)[c]{\resizebox{\textwidth}{!}{%
+  \rotatebox{45}{\textsf{\textbf{\color[gray]{0.8}#1}}}}}%
+  }}
+}
+\else
+\def\showwatermark#1{}%
+\fi
+
+% ##############################################################################
+% ### Page Parameters
+% ##############################################################################
+%%!!\setlength{\paperwidth}{21cm}
+%%!!\setlength{\paperheight}{29.7cm}
+%%!!\setlength{\hoffset}{-1in}
+%%!!\setlength{\voffset}{-1in}
+%%!!\setlength{\oddsidemargin}{2cm}
+%%!!\setlength{\marginparsep}{0cm}
+%%!!\setlength{\marginparwidth}{0cm}
+%%!!\setlength{\textwidth}{18cm}
+%%!!\setlength{\topmargin}{0.5cm}
+%%!!\setlength{\headsep}{2cm}
+
+%%!!\setlength{\textheight}{24cm}
+%%!!\setlength{\footskip}{1.5cm}
+%\bxjs@postproc@layout
+
+% ##############################################################################
+% ### Used Packages
+% ##############################################################################
+%%!!\makeatletter
+% Postscript Graphics
+\usepackage{graphicx}
+
+% Miscellaneous
+\usepackage{calc}
+\usepackage{multirow}
+\usepackage{subfigure}
+\usepackage{ifthen}
+\usepackage{tabularx}
+% Before hyperlink to have consistent links to footnotes
+\usepackage{footmisc}
+% To be able to have sections afters appendices
+%%!!\usepackage{appendix}
+
+% Workaround to avoid troubles with accents in \appendixname used as hyperref
+% label: force the label prefix to 'appendix' whatever the lang is
+\let\orgresetsapp=\@resets@pp
+\let\orgrestoreapp=\restoreapp
+\let\restoreapp\relax
+\def\@resets@pp{%
+  \orgresetsapp
+  \if@pphyper
+    \def\Hy@chapapp{appendix}%
+  \fi
+  \orgrestoreapp
+}
+
+\usepackage{dbk_fonts}
+\usepackage{dbk_hyper}
+
+\usepackage{fancyhdr}
+
+% To have fancy <programlisting>
+\usepackage{fancyvrb}
+
+% ##############################################################################
+% ### Some DocBook floats and environments
+% ##############################################################################
+
+%% Inclusion of float package after hyperref to have its definitions!
+\usepackage{float}
+
+\@ifundefined{chapter}{
+
+\floatstyle{ruled}
+\newfloat{example}{htb}{loe}[section]
+\floatname{example}{\examplename}
+
+\floatstyle{plain}
+\newfloat{dbequation}{htb}{lom}[section]
+\floatname{dbequation}{{\scshape Equation }}
+
+% Redefinition of tableofcontent, to have it in separate pages
+\let\stdtoc=\tableofcontents
+\def\tableofcontents{ \newpage \stdtoc{} \newpage} 
+}{
+
+\floatstyle{ruled}
+\newfloat{example}{htb}{loe}[chapter]
+\floatname{example}{\examplename}
+
+\floatstyle{plain}
+\newfloat{dbequation}{htb}{lom}[chapter]
+\floatname{dbequation}{{\scshape Equation }}
+}
+
+% Sidebar is a boxed minipage that can contain verbatim
+\newenvironment{sidebar}[1][0.95\textwidth]{
+  \hspace{0mm}\newline%
+  \noindent\begin{Sbox}\begin{minipage}{#1}%
+  \setlength\parskip{\medskipamount}%
+}{
+  \end{minipage}\end{Sbox}\shadowbox{\TheSbox}%
+}
+
+
+% ##############################################################################
+% ### Title and Bookinfo display
+% ##############################################################################
+\def\title#1{\renewcommand{\DBKtitle}{#1}}
+
+% Redefine author so that it can be used by the domitete
+\def\author#1{\renewcommand{\DBKauthor}{#1}}
+
+% Redefine how to print the cover page and book infos
+%%!! \def\maketitle{
+%%!!   \DBKcover
+%%!! %  \if\DBKcopyright\@empty\else
+%%!!   \ifx\DBKcopyright\relax\else
+%%!!     \DBKcopyright \\
+%%!!   \fi
+%%!!   \ifx\DBKlegalblock\relax\else
+%%!!     \DBKlegalblock
+%%!!   \fi
+%%!!   \newpage
+%%!!   \DBKdomitete
+%%!! }
+
+\def\cover@gnome@font{%
+  \dbk@gnomeja@usefont{T1}{phv}{b}{sc}\fontsize{80\p@}{\z@}\selectfont}
+\def\cover@title@font{%
+  \sffamily\fontsize{30\p@}{\z@}\selectfont}
+\def\cover@author@font{%
+  \sffamily\fontsize{24\p@}{\z@}\selectfont}
+\def\cover@JapanGNOMEUsersGroup@font{%
+  \sffamily\fontsize{24\p@}{\z@}\selectfont}
+
+\newcommand{\makecover}{%
+  \thispagestyle{empty}
+  \vbox to \textheight{\vss
+    \noindent
+    \hbox to \textwidth{\hss
+      \unitlength=1mm
+      \begin{picture}(210,297)(0,0)
+        \linethickness{5\p@}%
+        \put(190,199){\line(0,1){58}}%
+        \linethickness{1\p@}%
+        \put(10,215){\line(1,0){175}}%
+        \put(90,235){\hbox{\cover@gnome@font Gnome}}%
+        \put(48,220){\hbox{\cover@title@font 日本語翻訳チーム参加者ガイド}}%
+        \put(76,200){\hbox{\cover@author@font 
+          赤星柔充・松澤二郎・草野貴之}}%
+        \put(105,20){\hbox{\cover@JapanGNOMEUsersGroup@font 
+          日本GNOMEユーザー会}}%
+      \end{picture}%
+    \hss}%
+  \vss}%
+}
+
+\renewcommand{\maketitle}{%
+  \makecover
+  \clearpage
+  \ifx\DBKcopyright\relax\else
+    \DBKcopyright \\
+  \fi
+  \ifx\DBKlegalblock\relax\else
+    \DBKlegalblock
+  \fi
+  \newpage
+  \DBKdomitete
+}
+
+% How to render a <legalnotice>
+\newenvironment{DBKlegalnotice}{
+  \if@twocolumn
+    \noindent\small\textit{\DBKlegaltitle}
+    \/\bfseries---$\!$
+  \else
+    \ifx\DBKlegaltitle\relax\else
+      \noindent\begin{center}\small\bfseries\DBKlegaltitle\end{center}%
+    \fi
+    \begin{quote}\small
+  \fi
+}{
+  \vspace{0.6em}\par\if@twocolumn\else\end{quote}\fi
+}
+
+% ##############################################################################
+% ### Index redefinition
+% ##############################################################################
+
+%
+% Index is redefined to have the section numbered.
+% 
+\renewenvironment{theindex}
+{ 
+  \if@twocolumn
+    \@restonecolfalse
+  \else
+    \@restonecoltrue
+  \fi
+  \columnseprule \z@
+  \columnsep 35\p@
+  \pagebreak
+  \@ifundefined{chapter}{
+    \twocolumn[\section{\indexname}]%
+  }{
+    % To not have the number, replace makechapterhead by
+    % makeschapterhead
+    % \chapter{\indexname}{%
+    % \@mkboth{\MakeUppercase\indexname}%
+    %        {\MakeUppercase\indexname}
+    % }%
+    \refstepcounter{chapter}
+    \twocolumn[\@makechapterhead{\indexname}]%
+  }
+  \thispagestyle{plain}\parindent\z@
+  \parskip\z@ \@plus .3\p@\relax
+  \let\item\@idxitem
+}{\if@restonecol\onecolumn\else\clearpage\fi}
+
+\let\stdindex=\theindex
+\let\endstdindex=\endtheindex
+\renewenvironment{theindex}{
+  \begin{stdindex}
+  \@ifundefined{chapter}{}{
+    % To not have the number, replace by:
+    % \addcontentsline{toc}{chapter}{\numberline{}\indexname}
+    \ifnum \c@secnumdepth >\z@
+      \ifnum \value{part} >\z@
+        \addcontentsline{toc}{part}{\numberline{\thechapter}\hspace{-1em}\indexname}
+      \else
+        \addcontentsline{toc}{chapter}{\numberline{\thechapter}\indexname}
+      \fi
+    \else
+      \addcontentsline{toc}{chapter}{\indexname}
+    \fi
+  }
+}{
+  \end{stdindex}
+}
+
+
+% ##############################################################################
+% ### Commands and environments
+% ##############################################################################
+\newcommand{\draft}{\special{!userdict begin /bop-hook{gsave 200 30 translate %
+         65 rotate /Times-Roman findfont 216 scalefont setfont %
+         0 0 moveto 0.8 setgray (DRAFT) show grestore}def end}}
+
+\usepackage{refcount}
+\usepackage{lastpage}
+
+%%!!\usepackage{dbk_locale}
+%<dbk_locale>
+%%
+%% Locale for some float labels and articleinfo/bookinfo stuff
+%%
+
+\long\def\dolangsetup#1#2{%
+  \expandafter\def\csname setup@lang@#1\endcsname{#2}%
+}
+
+\def\dosetuplang#1{%
+  \csname setup@lang@#1\endcsname%
+}
+
+%% Internal interface
+\long\def\langsetupdbk#1#2{ \dolangsetup{dbk@#1}{#2} }
+\def\setuplocale#1{ \dosetuplang{dbk@#1} }
+
+%% User Babel setup hooks
+\long\def\babelsetup#1#2{ \dolangsetup{bab@#1}{#2} }
+\def\setupbabel#1{ \dosetuplang{bab@#1} }
+
+%% Define the locale setups in docbook
+\langsetupdbk{de}{
+  \def\refname{Referenzen}%
+  \def\abstractname{Zusammenfassung}%
+  \def\bibname{Bibliographie}%
+  \def\prefacename{Vorwort}%
+  \def\chaptername{Kapitel}%
+  \def\appendixname{Anhang}%
+  \def\contentsname{Inhaltsverzeichnis}%
+  \def\listfigurename{Abbildungsverzeichnis}%
+  \def\listtablename{Tabellenverzeichnis}%
+  \def\indexname{Index}%
+  \def\figurename{{\scshape Abbildung }}%
+  \def\tablename{{\scshape Tabelle }}%
+   
+  \def\examplename{Beispiel}
+  \def\ondate{am}
+  \renewcommand{\DBKreleaseinfo}{Arbeitspapier}
+  \def\writtenby{VERFASST DURCH}
+  \def\projname{PROJEKT}
+  \def\titlename{TITEL}
+  \def\DBKrefname{REFERENZ}
+  \def\DBKindname{NAME}
+  \def\DBKindtitle{MITWIRKENDE}
+  \def\DBKrevtitle{VERSIONSGESCHICHTE}
+  \def\DBKrevdesc{BESCHREIBUNG}
+  \def\DBKrevnumber{NUMMER}
+  \def\DBKrevname{NAME}
+  \def\DBKrevdate{DATUM}
+  \def\DBKcontrib{AKTION}
+  \def\DBKsignature{UNTERSCHRIFT}
+}
+\langsetupdbk{fr}{
+  \def\refname{R\'ef\'erences}%
+  \def\abstractname{R\'esum\'e}%
+  \def\bibname{Bibliographie}%
+  \def\prefacename{Pr\'eface}%
+  \def\chaptername{Chapitre}%
+  \def\appendixname{Annexe}%
+  \def\contentsname{Table des mati\`eres}%
+  \def\listfigurename{Liste des figures}%
+  \def\listtablename{Liste des tableaux}%
+  \def\indexname{Index}%
+  \def\figurename{{\scshape Figure }}%
+  \def\tablename{{\scshape Tableau }}%
+
+  \def\examplename{Exemple}
+  \def\ondate{le}
+  \renewcommand{\DBKreleaseinfo}{Document de Travail}
+  \def\projname{PROJET}
+  \def\titlename{TITRE}
+  \def\writtenby{R\'EDIG\'E PAR}
+  \def\DBKrefname{R\'EFERENCE}
+  \def\DBKindname{NOM}
+  \def\DBKindtitle{INDEXATION DU DOCUMENT}
+  \def\DBKrevtitle{SUIVI DU DOCUMENT}
+  \def\DBKrevdesc{MODIFICATIONS}
+  \def\DBKrevnumber{INDICE}
+  \def\DBKrevname{NOM}
+  \def\DBKrevdate{DATE}
+  \def\DBKcontrib{ACTION}
+  \def\DBKsignature{SIGNATURE}
+}
+\langsetupdbk{nl}{
+  \def\refname{Referenties}%
+  \def\abstractname{Samenvatting}%
+  \def\bibname{Bibliografie}%
+  \def\prefacename{Voorwoord}%
+  \def\chaptername{Hoofdstuk}%
+  \def\appendixname{Appendix}%
+  \def\contentsname{Inhoudstafel}%
+  \def\listfigurename{Lijst van figuren}%
+  \def\listtablename{Lijst van tabellen}%
+  \def\indexname{Index}%
+  \def\figurename{{\scshape Figuur }}%
+  \def\tablename{{\scshape Tabel }}%
+
+  \def\examplename{Voorbeeld}
+  \def\ondate{}
+  \renewcommand{\DBKreleaseinfo}{Werkdocument}
+  \def\writtenby{GESCHREVEN DOOR}
+  \def\projname{PROJECT}
+  \def\titlename{TITEL}
+  \def\DBKindname{NAAM}
+  \def\DBKindtitle{MEDEWERKERS}
+  \def\DBKrevtitle{HERZIENINGEN}
+  \def\DBKrevdesc{BESCHRIJVING}
+  \def\DBKrevnumber{NUMMER}
+  \def\DBKrevname{NAAM}
+  \def\DBKrevdate{DATUM}
+  \def\DBKcontrib{ACTIE}
+  \def\DBKsignature{Handtekening}
+}
+\langsetupdbk{es}{
+  \def\refname{Referencia}%
+  \def\abstractname{Resumen}%
+  \def\bibname{Bibliograf\'ia}%
+  \def\prefacename{Prefacio}%
+  \def\chaptername{Cap\'itulo}%
+  \def\appendixname{Ap\'endice}%
+  \def\contentsname{\'Indice de contenido}%
+  \def\listfigurename{\'Indice de ilustraciones}%
+  \def\listtablename{\'Indice de tablas}%
+  \def\indexname{\'Indice de palabras clave}%
+  \def\figurename{{\scshape Ilustraci\'on }}%
+  \def\tablename{{\scshape Tabla }}%
+   
+  \def\examplename{Ejemplo}
+  \def\ondate{}
+  \renewcommand{\DBKreleaseinfo}{Documento de trabajo}
+  \def\writtenby{ESCRITO POR}
+  \def\projname{PROYECTO}
+  \def\titlename{TﾍTULO}
+  \def\DBKindname{NOMBRE}
+  \def\DBKindtitle{COLABORADORES}
+  \def\DBKrevtitle{HISTORIAL DE REVISIONES}
+  \def\DBKrevdesc{MODIFICACIONES}
+  \def\DBKrevnumber{N\'UMERO}
+  \def\DBKrevname{NOMBRE}
+  \def\DBKrevdate{FECHA}
+  \def\DBKcontrib{ACCI\'ON}
+  \def\DBKsignature{FIRMA}
+}
+% Last-Translator: Giuseppe Sacco <eppesuig@debian.org>
+% Translation-Team: Italian translation project <tp@lists.linux.it>
+% Translation-Date: 2007-07-25
+\langsetupdbk{it}{
+  \def\refname{Nome}%
+  \def\abstractname{Introduzione}%
+  \def\bibname{Bibliografia}%
+  \def\prefacename{Prefazione}%
+  \def\chaptername{Capitolo}%
+  \def\appendixname{Appendice}%
+  \def\contentsname{Sommario}%
+  \def\listfigurename{Indice delle figure}%
+  \def\listtablename{Indice delle tavole}%
+  \def\indexname{Indice}%
+  \def\figurename{{\scshape Figura }}%
+  \def\tablename{{\scshape Tavola }}%
+ 
+  \def\examplename{Esempio}
+  \def\ondate{l\`i}
+  \renewcommand{\DBKreleaseinfo}{Documento di lavoro}
+  \def\writtenby{A CURA DI}
+  \def\projname{PROGETTO}
+  \def\titlename{TITOLO}
+  \def\DBKindname{NOME}
+  \def\DBKindtitle{COLLABORATORI}
+  \def\DBKrevtitle{CRONOLOGIA DELLE REVISIONI}
+  \def\DBKrevdesc{DESCRIZIONE}
+  \def\DBKrevnumber{POSIZIONE}
+  \def\DBKrevname{NOME}
+  \def\DBKrevdate{DATA}
+  \def\DBKcontrib{AZIONE}
+  \def\DBKsignature{FIRMA}
+}
+\langsetupdbk{en}{
+  \def\examplename{Example}
+  \def\ondate{on}
+  \renewcommand{\DBKreleaseinfo}{Working Paper}
+  \def\writtenby{WRITTEN BY}
+  \def\projname{PROJECT}
+  \def\titlename{TITLE}
+  \def\DBKrefname{REFERENCE}
+  \def\DBKindname{NAME}
+  \def\DBKindtitle{COLLABORATORS}
+  \def\DBKrevtitle{REVISION HISTORY}
+  \def\DBKrevdesc{DESCRIPTION}
+  \def\DBKrevnumber{NUMBER}
+  \def\DBKrevname{NAME}
+  \def\DBKrevdate{DATE}
+  \def\DBKcontrib{ACTION}
+  \def\DBKsignature{SIGNATURE}
+}
+\langsetupdbk{ko}{
+%  \usepackage{hfont}
+  \ifxetex
+  \newenvironment{CJK}[3][]{}{}
+  \else
+  \hypersetup{unicode}
+  \usepackage{CJKutf8}
+  \fi
+}
+\langsetupdbk{zh}{
+  \ifxetex
+  \newenvironment{CJK}[3][]{}{}
+  \else
+  \hypersetup{unicode}
+  \usepackage{CJKutf8}
+  \usepackage{pinyin}
+  \fi
+}
+\langsetupdbk{ja}{
+  \ifxetex
+  \newenvironment{CJK}[3][]{}{}
+  \else
+  \hypersetup{unicode}
+  \usepackage{CJKutf8}
+  \fi
+}
+
+%% Define the babel setups in docbook
+\babelsetup{cs}{%
+  % Shorthand breaks longtable stops
+  \AtBeginDocument{\shorthandoff{-}}
+}
+
+\babelsetup{fr}{%
+  \NoAutoSpaceBeforeFDP
+  % Avoid mess between enumitem and french redefinition
+  \@ifundefined{ifFrenchItemizeSpacing}{}{\FrenchItemizeSpacingfalse}
+}
+
+\babelsetup{es}{%
+  % Avoid enumitem to crash with spanish babel
+  \let\savees@listquot\es@listquot
+  \def\es@listquot{\protect\savees@listquot}
+
+  % Remove those horrible and messy "x shorthands
+  \renewcommand\shorthandsspanish{}
+}
+
+\babelsetup{de}{%
+  % Remove those messy "x shorthands
+  % \languageshorthands{none} does not work for lot/lof files
+  \AtBeginDocument{\shorthandoff{"}}
+}
+
+\babelsetup{ru}{%
+  % XeTeX works with russian babel only if xecyr is provided
+  \ifxetex\usepackage{xecyr}\fi
+  \AtBeginDocument{\shorthandoff{"}}
+}
+
+\babelsetup{sk}{%
+  % Shorthand breaks longtable stops
+  \AtBeginDocument{\shorthandoff{-}}
+}
+
+\babelsetup{uk}{%
+  % XeTeX works with ukrainian babel only if xecyr is provided
+  \ifxetex\usepackage{xecyr}\fi
+}
+
+%% Apply default locale setup
+\setuplocale{en}
+%</dbk_locale.sty>
+
+%%!!\usepackage{dbk_title}
+%<dbk_title>
+% ******************************************************************************
+% *** Page de garde
+% ******************************************************************************
+
+\newlength{\oldbaselineskip}
+
+\def\DBKcover{
+\ifthenelse{\equal{\DBKedition}{}}{\def\edhead{}}{\def\edhead{Ed. \DBKedition}}
+\thispagestyle{empty}
+% interligne double
+\setlength{\oldbaselineskip}{\baselineskip}
+\setlength{\baselineskip}{2\oldbaselineskip}
+\textsf{
+\vfill
+\vspace{2.5cm}
+\begin{center}
+  \huge{\textbf{\DBKtitle}}\\ %
+  \ifx\DBKsubtitle\relax\else%
+    \underline{\ \ \ \ \ \ \ \ \ \ \ }\\ %
+    \ \\ %
+    \huge{\textbf{\DBKsubtitle}}\\ %
+  \fi
+\end{center}
+\vfill
+\setlength{\baselineskip}{\oldbaselineskip}
+\hspace{1cm}
+\vspace{1cm}
+\begin{center}
+\begin{tabular}{p{7cm} p{7cm}}
+\Large{\DBKreference{} \edhead} & \\
+\end{tabular}
+\end{center}
+}
+
+% Format for the other pages
+\newpage
+\setlength{\baselineskip}{\oldbaselineskip}
+\chead[]{\DBKcheadfront}
+\lfoot[]{}
+}
+%</dbk_title>
+
+%%!!\usepackage{dbk_headfoot}
+%<dbk_headfoot>
+% ##############################################################################
+% ### Header and Footer Page
+% ##############################################################################
+
+%%!!\pagestyle{fancyplain}
+%%!!\renewcommand{\headrulewidth}{0.5pt}
+%%!!\renewcommand{\footrulewidth}{0.5pt}
+%%!!\renewcommand{\plainheadrulewidth}{0.5pt}
+%%!!\renewcommand{\plainfootrulewidth}{0.5pt}
+%%!!\pagestyle{plain}
+\setcounter{page}{1}
+
+\def\releasebox{%
+  \ifthenelse{\equal{\DBKreleaseinfo}{}}{}%
+  {\framebox{\textsc{\textsf{\DBKreleaseinfo}}}}%
+}
+
+% Define front/main/back matter if not available
+\@ifundefined{frontmatter}{
+  \def\frontmatter{\cleardoublepage\pagenumbering{roman}\chead[]{\DBKcheadfront}}
+}{}
+\@ifundefined{mainmatter}{
+  \def\mainmatter{\cleardoublepage\pagenumbering{arabic}\chead[]{\DBKcheadbody}}
+}{}
+\@ifundefined{backmatter}{
+  \def\backmatter{\if@openright\cleardoublepage\else\clearpage\fi}
+}{}
+
+
+% Fancy header/footer for the first page
+
+\chead[]{%
+  \begin{tabular}{
+    >{\raggedright}p{5.6cm} >{\centering}p{5.6cm} >{\raggedleft}p{5.6cm}} %
+    \multirow{3}{5.6cm}{\DBKtitle}
+    & & \tabularnewline%
+    & \releasebox
+    & \textsf{\thepage} \tabularnewline %
+    & & \tabularnewline%
+  \end{tabular}%
+} %
+
+\lfoot[]{\@ifundefined{DBKpublisher}{}{\DBKpublisher}}
+\rfoot[]{}
+\cfoot[]{}
+
+% Fancy header/footer for the front matter
+
+\def\DBKcheadfront{%
+  \begin{tabular}{
+    >{\raggedright}p{5.6cm} >{\centering}p{5.6cm} >{\raggedleft}p{5.6cm}} %
+    \multirow{3}{5.6cm}{\DBKtitle}
+    & & \textsf{\DBKreference{} \edhead} \tabularnewline%
+    & \releasebox & \tabularnewline %
+    & & \textsf{\thepage}
+  \tabularnewline%
+  \end{tabular}%
+}
+
+% Fancy header/footer for the doc body
+
+\def\DBKcheadbody{%
+  \begin{tabular}{
+    >{\raggedright}p{5.6cm} >{\centering}p{5.6cm} >{\raggedleft}p{5.6cm}} %
+    \multirow{3}{5.6cm}{\DBKtitle}
+    & & \textsf{\DBKreference{} \edhead} \tabularnewline%
+    & \releasebox & \tabularnewline %
+    & & \textsf{\thepage{} / \getpagerefnumber{LastPage}}
+  \tabularnewline%
+  \end{tabular}%
+}
+
+\lhead[]{}
+\rhead[]{}
+%</dbk_headfoot>
+
+%%!!\usepackage{dbk_revision}
+%<dbk_revision>
+%%
+%% Index table definitions
+%%
+
+\usepackage{longtable}
+
+% Index table row
+\def\DBKinditem#1#2{
+  & & & & \tabularnewline
+  #1  & #2 & \DBKdate &  & \ \tabularnewline
+  & & & & \tabularnewline
+  \hline
+}
+
+\def\referencetitle{
+  \ifthenelse{\equal{\DBKreference}{}}%
+    {}{\emph{\DBKrefname} :}}
+
+% Index table environment
+\newenvironment{DBKindtable}{
+\begin{center}
+\begin{tabular}{|>{\centering}p{2.25cm}|>{\centering}p{2.5cm}|
+>{\centering}p{3cm}|>{\centering}p{2.25cm}>{\centering}p{2.25cm}|}
+%%!!|>{\centering}p{3cm}|>{\centering}p{3cm}|>{\centering}p{3.5cm}|>{\centering}p{3cm}>{\centering}p{3cm}|
+  \hline
+  \multicolumn{5}{|c|}{\textbf{\DBKindtitle}} \tabularnewline
+  \hline
+  \multicolumn{5}{c}{\ } \tabularnewline
+  \hline
+  \multicolumn{1}{|l|}{} & \multicolumn{2}{l|}{\emph{\titlename} :}
+  & \multicolumn{2}{l|}{\referencetitle}\tabularnewline
+  & \multicolumn{2}{l|}{} & \multicolumn{2}{l|}{} \tabularnewline
+  \multicolumn{1}{|p{3cm}|}{} & \multicolumn{2}{p{6.5cm}|}{\DBKtitle}
+  & \multicolumn{2}{p{3cm}|}{\DBKreference}\tabularnewline
+  \hline
+  \hline
+   & & & & \tabularnewline
+  \emph{\DBKcontrib} & \emph{\DBKindname} & \emph{\DBKrevdate} & \multicolumn{2}{c|}{\emph{\DBKsignature}}
+  \tabularnewline 
+   & & & & \tabularnewline
+  \hline
+}{
+\end{tabular}
+\end{center}
+}
+
+%%
+%% Revision history table and rows
+%%
+
+\def\DBKrevitem#1#2#3#4{
+  & & & \tabularnewline
+  #1 & #2 & #3 & #4 \tabularnewline
+  & & & \tabularnewline
+  \hline
+}
+
+\newenvironment{DBKrevtable}{
+  \begin{center}
+  \savetablecounter %
+  \begin{longtable}{|>{\centering}p{2.5cm}|>{\centering}p{2.5cm}|>{\raggedright}p{6.5cm} |>{\centering}p{2.5cm}|}
+%%!!|>{\centering}p{3cm}|>{\centering}p{3cm}|>{\raggedright}p{6.9cm} |>{\centering}p{3cm}|
+  \hline
+  %% Domitete
+  \multicolumn{4}{|c|}{\textbf{\DBKrevtitle}} \tabularnewline
+  \hline
+
+  %% Table Titles
+  \multicolumn{4}{c}{\ } \tabularnewline
+  \hline
+  \multicolumn{1}{|c|}{\DBKrevnumber}& \multicolumn{1}{c|}{\DBKrevdate} &
+  \multicolumn{1}{c|}{\DBKrevdesc} & \multicolumn{1}{c|}{\DBKrevname}
+  \tabularnewline
+  \hline
+  \endhead
+}{
+  \end{longtable}
+  \restoretablecounter %
+  \end{center}
+}
+
+%% *****************
+%% *** Domitete
+%% *****************
+
+% Default history table
+\def\DBKrevhistory{
+  \begin{DBKrevtable}
+  \DBKrevitem{}{}{}{}
+  \end{DBKrevtable}
+}
+
+% Default credits table
+\def\DBKindexation{
+  \begin{DBKindtable}
+  \DBKinditem{\writtenby}{\DBKauthor}
+  \end{DBKindtable}
+}
+
+% Whole bookinfo tables
+\def\DBKdomitete{
+  \begin{sffamily}
+  \DBKindexation
+  \vspace{1cm}
+  \DBKrevhistory
+  \end{sffamily}
+}
+%</dbk_revision>
+
+%%!!\usepackage{dbk_admonition}
+%<dbk_admonition>
+%%
+%% Aper輹 des notes/avertissements/astuces, etc.
+%%
+
+\newlength{\admlength}
+\newenvironment{DBKadmonition}[2] {
+  \begin{center}
+  \hspace{0mm}%\newline
+  \noindent
+  \setlength{\fboxsep}{5pt}
+  \setlength{\admlength}{\linewidth}
+  \addtolength{\admlength}{-4mm}
+  \sffamily
+  \begin{minipage}{\admlength}
+  \hrule
+  \vspace{2mm} 
+  \ifthenelse{\equal{#1}{}}{%
+    \def\admgraph{false}%
+  }{%
+    \def\admgraph{true}%
+    \includegraphics[width=10mm]{#1}\hspace{1mm}
+    \addtolength{\admlength}{-12.5mm}
+    \begin{minipage}{\admlength}
+  }%
+  \textbf{#2}%
+}{%
+  \ifthenelse{\equal{\admgraph}{false}}{}{%
+    \end{minipage}\newline
+  }%
+  \vspace{3mm} 
+  \hrule
+  \end{minipage}\newline
+  \end{center}
+}
+%</dbk_admonition>
+
+%%!!\usepackage{dbk_changebar}
+%<dbk_changebar>
+% \usepackage[outerbars,traceon,leftbars]{changebar}
+%\usepackage[traceon,leftbars]{changebar}
+%\usepackage[outerbars,traceon]{changebar}
+\usepackage[innerbars,traceon]{changebar}
+
+% La longueur modifiée marche pour le Postscript et PDF, mais pas pour le DVI !
+% position pas mal en DVI : de 41.45172pt à 45.06544pt
+\setlength{\changebarsep}{0.2in}
+% \setlength{\changebarsep}{-0.86in}
+% \setlength{\changebarsep}{-0.85in}
+% \setlength{\changebarsep}{-1.2in}
+
+% On met la meme valeur que \oddsidemargin, pour que cela marche pour
+% toutes les pages.
+%\setlength{\evensidemargin}{2cm}
+% \cb@trace@defpoint{\cb@topleft}{\hoffset}
+% \cb@trace@defpoint{\cb@topleft}{\oddsidemargin}
+% \cb@trace@defpoint{\cb@topleft}{\evensidemargin}
+% \cb@trace@defpoint{\cb@topleft}{\changebarsep}
+%</dbk_changebar>
+
+%%!!\usepackage{dbk_biblio}
+%<dbk_biblio>
+\usepackage{bibtopic}
+
+% btPrintAll redefined to not include a file
+
+\newenvironment{bibgroup}{%
+    \ifthenelse{\boolean{bt@inside@sect}}{%
+        \protected@edef\bt@curr@line{\the\inputlineno}%
+        \def\bt@curr@cmd{\string\btPrintAll}%
+        \bt@stepcnt\bt@internal@sect@cnt
+        \bt@print@citedfalse\bt@print@alltrue
+        \label{Sec:\bt@internal@sect@cnt}%
+        \bt@change@bibitem
+    }{%
+        \bt@sect@err{btSect}{\btPrintAll}%
+    }%
+}{
+    \ifthenelse{\boolean{bt@inside@sect}}{%
+        \bt@print@keyvals{\bt@sect@ref@list}%
+            {Sec:\bt@internal@sect@cnt}%
+    }{%
+    }%
+}
+%</dbk_biblio>
+
+%%!!\usepackage{dbk_table}
+%<dbk_table>
+%%
+%% Manages the tables.
+%%
+%% The package is provided to:
+%% - fix or workaround some bugs,
+%% - define some specific dimensions,
+%% - workaround annoying longtable things about table counter.
+
+\usepackage{longtable}
+\usepackage{lscape}
+\usepackage{colortbl}
+%%!!\usepackage{multirow}
+%%!!\usepackage{calc}
+\usepackage{hhline}
+
+% Multirow changed, used by newtbl
+\usepackage{multirow2}
+
+% Temporary latex/3797 bug fix (colortbl) by Morten Hoegholm
+\expandafter\renewcommand\expandafter\multicolumn
+  \expandafter[\expandafter3\expandafter]\expandafter{%
+  \multicolumn{#1}{#2}{#3}}
+
+% Make \@xmultirow long
+\expandafter\long\expandafter\def%
+\expandafter\@xmultirow%
+\expandafter#\expandafter1%
+\expandafter[\expandafter#\expandafter2\expandafter]%
+\expandafter#\expandafter3%
+\expandafter[\expandafter#\expandafter4\expandafter]%
+\expandafter#\expandafter5%
+\expandafter{\@xmultirow{#1}[#2]{#3}[#4]{#5}}
+
+% For the newtbl code
+\newdimen\newtblstarfactor%
+\newdimen\newtblsparewidth%
+\newdimen\newtblcolwidth%
+\newdimen\tablewidth%
+
+% Avoid table counter mess with (informal) longtable
+\def\emptyrefstepcounter#1{}
+\let\stdrefstepcounter\refstepcounter%
+\def\savetablecounter{%
+  \let\refstepcounter\emptyrefstepcounter%
+}
+\def\restoretablecounter{%
+  \let\refstepcounter\stdrefstepcounter%
+}
+%</dbk_table>
+
+%%!!\usepackage{dbk_item}
+%<dbk_item>
+%
+% This package can handle @continuation, @spacing, and @numeration.
+%
+\usepackage{enumitem}
+
+% No extra indentation
+\setitemize{leftmargin=*}
+%</dbk_item>
+
+%%!!\usepackage{dbk_graphic}
+%<dbk_graphic>
+%
+% Check if the image file (#1) exists. If so, it switches to #2, else to #3
+% It assumes that the graphics package \Gin@extensions macro is defined.
+%
+\long\def\imgexists#1#2#3{%
+  \begingroup%
+  \let\img@file\relax%
+  \filename@parse{#1}%
+  \ifx\filename@ext\relax%
+    \@for\Gin@temp:=\Gin@extensions\do{%
+    \ifx\img@file\relax%
+      \IfFileExists{#1\Gin@temp}{\def\img@file{#1}}{}%
+    \fi}%
+  \else
+    \IfFileExists{#1}{\def\img@file{#1}}{}%
+  \fi%
+  \ifx\img@file\relax#3\else#2\fi%
+  \endgroup%
+}
+
+%
+% The image keeps its natural size if lower than the max boundaries
+% Now it's fully based on internal graphics macros
+%
+% Macros defining the maximum lengths
+\def\imgmaxwidth{\textwidth}
+\def\imgmaxheight{\textheight}
+
+% Real image sizes
+\def\imgrwidth{\Gin@nat@width}
+\def\imgrheight{\Gin@nat@height}
+\def\imgevalsize#1{}%
+
+% Use the maximum possible size
+\def\imgwidth{%
+  \ifdim\Gin@nat@width>\imgmaxwidth
+    \imgmaxwidth
+  \else
+    \Gin@nat@width
+  \fi
+}
+
+\def\imgheight{%
+  \ifdim\Gin@nat@height>\imgmaxheight
+    \imgmaxheight
+  \else
+    \Gin@nat@height
+  \fi
+}
+%</dbk_graphic>
+
+%\usepackage{dbk_verbatim}
+%<dbk_verbatim>
+
+\usepackage{listings}
+\usepackage{color}
+
+\definecolor{hellgelb}{rgb}{1,1,0.9}
+\definecolor{colKeys}{rgb}{0,0,1}
+\definecolor{colIdentifier}{rgb}{0,0,0}
+\definecolor{colComments}{rgb}{1,0,0}
+\definecolor{colString}{rgb}{0,0.5,0}
+
+% Symbol to put when line wraps
+\newcommand{\wrapsign}{\hbox{\rm\ensuremath\hookleftarrow}}
+
+%
+% Default verbatim layout used if \lstparamset not defined
+%
+\@ifundefined{lstparamset}{
+\lstset{%
+    basicstyle=\ttfamily\small, %
+    identifierstyle=\color{colIdentifier}, %
+    keywordstyle=\color{colKeys}, %
+    stringstyle=\color{colString}, %
+    commentstyle=\color{colComments}, %
+    tabsize=2, %
+    frame=single, %
+    framerule=0pt, %
+    extendedchars=true, %
+    showspaces=false, %
+    showlines=true, %
+    showstringspaces=false, %
+    numberstyle=\tiny, %
+    breaklines=true, %
+    prebreak={\space\wrapsign}, %
+    backgroundcolor=\color[gray]{0.95}, %
+    breakautoindent=true, %
+    captionpos=b%
+}
+}{
+% Call the user macro that defines the layout
+\lstparamset
+}
+
+%
+% GAP language, derivated from Pascal, has more keywords to highlight
+%
+\lstdefinelanguage[]{GAP}[]{Pascal}{%
+    morekeywords={od,fi,alias}%
+}
+
+% Lengths to compute the listing width from the number of characters
+\newlength{\lstcharwidth}
+\newlength{\lstframesep}
+\newlength{\lstwidth}
+\setlength{\lstcharwidth}{0.51em}
+\setlength{\lstframesep}{\lst@frametextsep}
+
+% Environment to render fancyvrb like listings does
+\newenvironment{fvlisting}[1][]
+  {\lstset{fancyvrb,#1}}
+  {\lstset{fancyvrb=false}}
+%</dbk_verbatim>
+
+%%!!\usepackage{dbk_callout}
+%<dbk_callout>
+\usepackage{overpic}
+
+%********************
+%* Graphic callouts *
+%********************
+
+% Where to put the <co> in the graphic
+\newdimen\picfactorx
+\newdimen\picfactory
+\newdimen\picx
+\newdimen\picy
+
+% Evaluates the percent factors for x and y dimensions. The principle is that
+% overpic gives a 100% for the biggest length (width or height).
+% The coordonates given to \calspair being in percentage of the graphic dimension
+% itself, the picfactors translate them to overpic percentages.
+% 
+% Variables set by overpic:
+% \@tempcnta = width
+% \@tempcntb = height
+
+\def\picfactoreval{%
+  \ifnum\@tempcnta>\@tempcntb%
+    \picfactorx=1pt%
+    \picfactory=\@tempcntb pt%
+    \divide\picfactory by \@tempcnta%
+  \else%
+    \picfactory=1pt%
+    \picfactorx=\@tempcnta pt%
+    \divide\picfactorx by \@tempcntb%
+  \fi%
+}
+
+\newcommand{\calspair}[3]{
+  \sbox{\z@}{#3}%
+  \picx=#1\picfactorx%
+  \picy=#2\picfactory%
+  \put(\strip@pt\picx,\strip@pt\picy){\makebox(0,0){\usebox{\z@}}}
+}
+
+%*********************
+%* Verbatim callouts *
+%*********************
+
+% Counters for cross-referencing callouts
+\newcounter{cocnt}
+\newcounter{colref}
+
+% How to represent the <co> markup.
+% Big thanks to Jean-Côme Charpentier for his help.
+%
+\newlength{\co@width}
+\newlength{\co@height}
+\newlength{\balldiam}
+\newlength{\ballcentre}
+
+\def\conum#1{%
+  \sbox{\z@}{\color{white}\sffamily\bfseries\tiny#1}% 
+  % Box sizes for any number with two digits
+  \sbox{\@ne}{\color{white}\sffamily\bfseries\tiny00}%
+  \settowidth{\co@width}{\usebox{\@ne}}%
+  \settoheight{\co@height}{\usebox{\@ne}}%
+  % Find out the biggest length, to define the circle diameter
+  \ifnum\co@width>\co@height
+    \setlength{\balldiam}{\co@width}%
+  \else
+    \setlength{\balldiam}{\co@height}%
+  \fi
+  \balldiam=1.45\balldiam
+  \ballcentre=0.5\balldiam
+  \setlength{\unitlength}{1pt}% In the case it has been changed
+  \begin{picture}(\strip@pt\balldiam,\strip@pt\balldiam) %
+  \put(\strip@pt\ballcentre,\strip@pt\ballcentre){\circle*{\strip@pt\balldiam}}
+  \put(\strip@pt\ballcentre,\strip@pt\ballcentre){\makebox(0,0){\usebox{\z@}}}
+  \end{picture}%
+}
+
+% How to represent a <co> embedded in a listing
+\def\co#1{\refstepcounter{cocnt}\conum{#1}}
+
+% Make the <co> text and the label to link to
+\def\coref#1#2{\co{#1}\label{#2}}
+
+% Make only the <co> label to link to
+\def\colabel#1{\refstepcounter{cocnt}\label{#1}}
+
+% Make the <callout> label to link to
+\def\collabel#1{\refstepcounter{colref}\label{#1}}
+%</dbk_callout>
+
+\usepackage{dbk_annot}
+
+%%!!\makeatother
+
+\endinput

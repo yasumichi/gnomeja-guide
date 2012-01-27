@@ -1,0 +1,33 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+                xmlns:html="http://www.w3.org/1999/xhtml"
+                version="1.0">
+
+<xsl:import href="@IMPORT_STYLE@"/>
+
+<xsl:param name="db.chunk.chunk_top">0</xsl:param>
+<xsl:param name="db.chunk.max_depth">2</xsl:param>
+
+<!-- スタイルの追加 -->
+<xsl:template name="db2html.css.custom">
+div#draft-notify {
+  background-color: white;
+  margin-bottom: 1em;
+  padding: 1em;
+  border: solid 3px red;
+}
+
+div#draft-notify h1 {
+  text-align: center;
+}
+</xsl:template>
+
+<!-- 上部のナビゲーションバーを変更 -->
+<xsl:template name="db2html.division.top">
+  <div id="draft-notify">
+    <h1>GNOME 日本語翻訳チームのドラフト文書</h1>
+    <p>この文書は、公開前のものです。正式公開版は、<a href="http://www.gnome.gr.jp/l10n/gnomeja-guide/gnomeja-guide.html">http://www.gnome.gr.jp/l10n/gnomeja-guide/gnomeja-guide.html</a> から、ご確認ねがいます。</p>
+  </div>
+</xsl:template>
+
+</xsl:stylesheet>
