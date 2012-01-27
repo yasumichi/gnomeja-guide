@@ -21,8 +21,8 @@
       </author>
       <othercredit role="family-given">
         <surname>山本</surname><firstname>宗宏</firstname>
-	<affiliation><orgname><ulink url="http://vinelinux.org/projectvine.html">Project Vine</ulink></orgname></affiliation>
-	<contrib>PDF 化に必要なファイルの提供および Makefile の修正</contrib>
+        <affiliation><orgname><ulink url="http://vinelinux.org/projectvine.html">Project Vine</ulink></orgname></affiliation>
+        <contrib>PDF 化に必要なファイルの提供および Makefile の修正</contrib>
       </othercredit>
     </authorgroup>
     <copyright>
