@@ -1,3 +1,4 @@
+% -*- coding: utf-8-unix -*-
 %#!xelatex gnomeja-guide
 % #!xelatex -no-pdf gnomeja-guide && xdvipdfmx -r 8000 gnomeja-guide
 %%
@@ -5,7 +6,8 @@
 %%
 \NeedsTeXFormat{LaTeX2e}
 \ProvidesClass{dbkgnomeja}
-  [2012/01/22 v0.1 Gnome-ja Guide document classes]
+%%[2012/01/22 v0.1 Gnome-ja Guide document classes]
+  [2012/02/02 v0.2 Gnome-ja Guide document classes]
 %% based on
 %%\ProvidesClass{bxjsreport}
 %%  [2010/08/15 v0.3 BXJS document classes]
@@ -44,33 +46,38 @@
 \fi
 \DeclareRobustCommand*{\jsInhibitGlue}{%
   \ifx\inhibitglue\@undefined\else \inhibitglue \fi}
+
+\newif\if@bfivepaper \@bfivepaperfalse
+
 \newif\if@restonecol
 \newif\if@titlepage
 \newif\if@openright
 \newif\if@mainmatter \@mainmattertrue
 \newif\if@enablejfam \@enablejfamtrue
 \def\bxjs@setpaper#1{\def\bxjs@param@paper{#1}}
-\DeclareOption{a3paper}{\bxjs@setpaper{a3paper}}
+%%!!\DeclareOption{a3paper}{\bxjs@setpaper{a3paper}}
 \DeclareOption{a4paper}{\bxjs@setpaper{a4paper}}
 \DeclareOption{a5paper}{\bxjs@setpaper{a5paper}}
-\DeclareOption{a6paper}{\bxjs@setpaper{a6paper}}
-\DeclareOption{b4paper}{\bxjs@setpaper{{364truemm}{257truemm}}}
-\DeclareOption{b5paper}{\bxjs@setpaper{{257truemm}{182truemm}}}
-\DeclareOption{b6paper}{\bxjs@setpaper{{182truemm}{128truemm}}}
-\DeclareOption{a4j}{\bxjs@setpaper{a4paper}}
-\DeclareOption{a5j}{\bxjs@setpaper{a5paper}}
-\DeclareOption{b4j}{\bxjs@setpaper{{364truemm}{257truemm}}}
-\DeclareOption{b5j}{\bxjs@setpaper{{257truemm}{182truemm}}}
-\DeclareOption{a4var}{\bxjs@setpaper{{283truemm}{210truemm}}}
-\DeclareOption{b5var}{\bxjs@setpaper{{230truemm}{182truemm}}}
-\DeclareOption{letterpaper}{\bxjs@setpaper{letterpaper}}
-\DeclareOption{legalpaper}{\bxjs@setpaper{legalpaper}}
-\DeclareOption{executivepaper}{\bxjs@setpaper{executivepaper}}
-\newif\if@landscape
-\@landscapefalse
-\DeclareOption{landscape}{\@landscapetrue}
-\newif\if@slide
-\@slidefalse
+%%!!\DeclareOption{a6paper}{\bxjs@setpaper{a6paper}}
+%%!!\DeclareOption{b4paper}{\bxjs@setpaper{{364truemm}{257truemm}}}
+\DeclareOption{b5paper}{%
+  \@bfivepapertrue
+  \bxjs@setpaper{{182truemm}{257truemm}}}
+%%!!\DeclareOption{b6paper}{\bxjs@setpaper{{182truemm}{128truemm}}}
+%%!!\DeclareOption{a4j}{\bxjs@setpaper{a4paper}}
+%%!!\DeclareOption{a5j}{\bxjs@setpaper{a5paper}}
+%%!!\DeclareOption{b4j}{\bxjs@setpaper{{364truemm}{257truemm}}}
+%%!!\DeclareOption{b5j}{\bxjs@setpaper{{257truemm}{182truemm}}}
+%%!!\DeclareOption{a4var}{\bxjs@setpaper{{283truemm}{210truemm}}}
+%%!!\DeclareOption{b5var}{\bxjs@setpaper{{230truemm}{182truemm}}}
+%%!!\DeclareOption{letterpaper}{\bxjs@setpaper{letterpaper}}
+%%!!\DeclareOption{legalpaper}{\bxjs@setpaper{legalpaper}}
+%%!!\DeclareOption{executivepaper}{\bxjs@setpaper{executivepaper}}
+%%!!\newif\if@landscape
+%%!!\@landscapefalse
+%%!!\DeclareOption{landscape}{\@landscapetrue}
+%%!!\newif\if@slide
+%%!!\@slidefalse
 \newcommand{\@ptsize}{0}
 \def\bxjs@param@basefontsize{10pt}
 \def\jsUnusualPtSize{-20}
@@ -81,21 +88,21 @@
   \else\ifdim\@tempdima=10.95pt \long\def\@ptsize{1}%
   \else\ifdim\@tempdima=12pt    \long\def\@ptsize{2}%
   \else \long\edef\@ptsize{\jsUnusualPtSize}\fi\fi\fi}
-\DeclareOption{8pt}{\bxjs@setbasefontsize{8pt}}
-\DeclareOption{9pt}{\bxjs@setbasefontsize{9pt}}
+%%!!\DeclareOption{8pt}{\bxjs@setbasefontsize{8pt}}
+%%!!\DeclareOption{9pt}{\bxjs@setbasefontsize{9pt}}
 \DeclareOption{10pt}{\bxjs@setbasefontsize{10pt}}
-\DeclareOption{11pt}{\bxjs@setbasefontsize{10.95pt}}
-\DeclareOption{12pt}{\bxjs@setbasefontsize{12pt}}
-\DeclareOption{14pt}{\bxjs@setbasefontsize{14.4pt}}
-\DeclareOption{17pt}{\bxjs@setbasefontsize{17.28pt}}
-\DeclareOption{20pt}{\bxjs@setbasefontsize{20pt}}
-\DeclareOption{21pt}{\bxjs@setbasefontsize{20.74pt}}
-\DeclareOption{25pt}{\bxjs@setbasefontsize{24.88pt}}
-\DeclareOption{30pt}{\bxjs@setbasefontsize{29.86pt}}
-\DeclareOption{36pt}{\bxjs@setbasefontsize{35.83pt}}
-\DeclareOption{43pt}{\bxjs@setbasefontsize{43pt}}
-\DeclareOption{12Q}{\bxjs@setbasefontsize{3mm}}
-\DeclareOption{14Q}{\bxjs@setbasefontsize{3.5mm}}
+%%!!\DeclareOption{11pt}{\bxjs@setbasefontsize{10.95pt}}
+%%!!\DeclareOption{12pt}{\bxjs@setbasefontsize{12pt}}
+%%!!\DeclareOption{14pt}{\bxjs@setbasefontsize{14.4pt}}
+%%!!\DeclareOption{17pt}{\bxjs@setbasefontsize{17.28pt}}
+%%!!\DeclareOption{20pt}{\bxjs@setbasefontsize{20pt}}
+%%!!\DeclareOption{21pt}{\bxjs@setbasefontsize{20.74pt}}
+%%!!\DeclareOption{25pt}{\bxjs@setbasefontsize{24.88pt}}
+%%!!\DeclareOption{30pt}{\bxjs@setbasefontsize{29.86pt}}
+%%!!\DeclareOption{36pt}{\bxjs@setbasefontsize{35.83pt}}
+%%!!\DeclareOption{43pt}{\bxjs@setbasefontsize{43pt}}
+%%!!\DeclareOption{12Q}{\bxjs@setbasefontsize{3mm}}
+%%!!\DeclareOption{14Q}{\bxjs@setbasefontsize{3.5mm}}
 \DeclareOption{oneside}{\@twosidefalse \@mparswitchfalse}
 \DeclareOption{twoside}{\@twosidetrue \@mparswitchtrue}
 \DeclareOption{vartwoside}{\@twosidetrue \@mparswitchfalse}
@@ -203,17 +210,17 @@
 \define@key{bxjs}{mag}{\edef\bxjs@param@mag{#1}}
 \define@key{bxjs}{paper}{\edef\bxjs@param@paper{#1}}
 \DeclareOption*{\bxjs@setkey}
-\ExecuteOptions{a4paper,twoside,onecolumn,titlepage,openany,final}
+\ExecuteOptions{a4paper,twoside,onecolumn,openany,final}%%!!,titlepage
 \ProcessOptions\relax
 \bxjs@do@opt@jbase
-\if@slide
-  \def\maybeblue{\@ifundefined{ver@color.sty}{}{\color{blue}}}
-\fi
-\if@landscape
-  \setlength\@tempdima  {\paperheight}
-  \setlength\paperheight{\paperwidth}
-  \setlength\paperwidth {\@tempdima}
-\fi
+%%!!\if@slide
+%%!!  \def\maybeblue{\@ifundefined{ver@color.sty}{}{\color{blue}}}
+%%!!\fi
+%%!!\if@landscape
+%%!!  \setlength\@tempdima  {\paperheight}
+%%!!  \setlength\paperheight{\paperwidth}
+%%!!  \setlength\paperwidth {\@tempdima}
+%%!!\fi
 \ifdim\bxjs@param@basefontsize<10pt \def\n@baseline{15}%
 \else \def\n@baseline{16}\fi
 \ifx\bxjs@param@mag\relax
@@ -339,11 +346,11 @@
 \setlength\normallineskiplimit{1\p@}
 \renewcommand{\baselinestretch}{}
 \setlength\parskip{0\p@}
-\if@slide
-  \setlength\parindent{0\p@}
-\else
+%%!!\if@slide
+%%!!  \setlength\parindent{0\p@}
+%%!!\else
   \setlength\parindent{1\Cwd}
-\fi
+%%!!\fi
 \@lowpenalty   51
 \@medpenalty  151
 \@highpenalty 301
@@ -357,12 +364,19 @@
 \def\bxjs@read@d#1\@nil{}
 \expandafter\bxjs@read@a\bxjs@param@paper\@nil
 \edef\bxjs@layout@paper{%
-  truedimen,\if@landscape landscape,\fi \bxjs@param@paper}
+  truedimen, \bxjs@param@paper}%%!!\if@landscape landscape,\fi
 \def\bxjs@layout{%
   headheight=\topskip,footskip=0.03367\paperheight,%
   headsep=\footskip-\topskip,includeheadfoot,%
-  hscale=0.76,,hmarginratio=1:1,%
-  vscale=0.83,vmarginratio=1:1,%
+  %%!!hscale=0.76,hmarginratio=1:1,%
+  %%!!vscale=0.83,vmarginratio=1:1,%
+  \if@bfivepaper
+    textwidth=45\Cwd,hmarginratio=1:1,
+    textheight=40\Cvs,vmarginratio=1:1,%
+  \else
+    textwidth=50\Cwd,hmarginratio=1:1,
+    textheight=44\Cvs,vmarginratio=1:1,%
+  \fi
 }
 \newdimen\fullwidth
 \def\bxjs@postproc@layout{%
@@ -511,20 +525,20 @@
       \let\footnoterule\relax
       \let\footnote\thanks
       \null\vfil
-      \if@slide
-        {\footnotesize \@date}%
-        \begin{center}
-          \mbox{} \\[1\jsZw]
-          \large
-          {\maybeblue\hrule height0pt depth2pt\relax}\par
-          \smallskip
-          \@title
-          \smallskip
-          {\maybeblue\hrule height0pt depth2pt\relax}\par
-          \vfill
-          {\small \@author}%
-        \end{center}
-      \else
+%%!!      \if@slide
+%%!!        {\footnotesize \@date}%
+%%!!        \begin{center}
+%%!!          \mbox{} \\[1\jsZw]
+%%!!          \large
+%%!!          {\maybeblue\hrule height0pt depth2pt\relax}\par
+%%!!          \smallskip
+%%!!          \@title
+%%!!          \smallskip
+%%!!          {\maybeblue\hrule height0pt depth2pt\relax}\par
+%%!!          \vfill
+%%!!          {\small \@author}%
+%%!!        \end{center}
+%%!!      \else
       \vskip 60\p@
       \begin{center}%
         {\LARGE \@title \par}%
@@ -537,7 +551,7 @@
         \vskip 1.5em
         {\large \@date \par}%
       \end{center}%
-      \fi
+%%!!      \fi
       \par
       \@thanks\vfil\null
     \end{titlepage}%
@@ -618,10 +632,10 @@
   \else
     \addpenalty\@secpenalty
     \ifdim \@tempskipa >\z@
-      \if@slide\else
+%%!!      \if@slide\else
         \null
         \vspace*{-\baselineskip}%
-      \fi
+%%!!      \fi
       \vskip\@tempskipa
     \fi
   \fi
@@ -685,9 +699,9 @@
     \vskip \@tempskipa
     \@afterheading
   \fi
-  \if@slide
-    {\vskip-6pt\maybeblue\hrule height0pt depth1pt\vskip7pt\relax}%
-  \fi
+%%!!  \if@slide
+%%!!    {\vskip-6pt\maybeblue\hrule height0pt depth1pt\vskip7pt\relax}%
+%%!!  \fi
   \par  % 2000-12-18
   \ignorespaces}
 \def\@ssect#1#2#3#4#5{%
@@ -854,7 +868,7 @@
     {\normalfont\large\headfont\raggedright}}
 \else
   \newcommand{\section}{%
-    \if@slide\clearpage\fi
+%%!!    \if@slide\clearpage\fi
     \@startsection{section}{1}{\z@}%
     {\Cvs \@plus.5\Cdp \@minus.2\Cdp}% 前アキ
     {.5\Cvs \@plus.3\Cdp}% 後アキ
@@ -893,28 +907,28 @@
 \newcommand{\subparagraph}{\@startsection{subparagraph}{5}{\z@}%
    {\z@}{-1\jsZw}%
    {\normalfont\normalsize\headfont}}
-\if@slide
-  \setlength\leftmargini{1\jsZw}
-\else
+%%!!\if@slide
+%%!!  \setlength\leftmargini{1\jsZw}
+%%!!\else
   \if@twocolumn
     \setlength\leftmargini{2\jsZw}
   \else
     \setlength\leftmargini{3\jsZw}
   \fi
-\fi
-\if@slide
-  \setlength\leftmarginii {1\jsZw}
-  \setlength\leftmarginiii{1\jsZw}
-  \setlength\leftmarginiv {1\jsZw}
-  \setlength\leftmarginv  {1\jsZw}
-  \setlength\leftmarginvi {1\jsZw}
-\else
+%%!!\fi
+%%!!\if@slide
+%%!!  \setlength\leftmarginii {1\jsZw}
+%%!!  \setlength\leftmarginiii{1\jsZw}
+%%!!  \setlength\leftmarginiv {1\jsZw}
+%%!!  \setlength\leftmarginv  {1\jsZw}
+%%!!  \setlength\leftmarginvi {1\jsZw}
+%%!!\else
   \setlength\leftmarginii {2\jsZw}
   \setlength\leftmarginiii{2\jsZw}
   \setlength\leftmarginiv {2\jsZw}
   \setlength\leftmarginv  {1\jsZw}
   \setlength\leftmarginvi {1\jsZw}
-\fi
+%%!!\fi
 \setlength  \labelsep  {0.5\jsZw} % .5em
 \setlength  \labelwidth{\leftmargini}
 \addtolength\labelwidth{-\labelsep}

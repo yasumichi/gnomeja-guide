@@ -60,8 +60,14 @@ GNOME 日本語翻訳チーム参加者ガイドについて
    TrueType-ipafont-mincho
    dblatex
    texlive
+   texlive-collection-basic
    texlive-collection-bibtexextra
+   texlive-collection-latex
+   texlive-collection-latexextra
+   texlive-collection-latexrecommended
    texlive-collection-mathextra
+   texlive-collection-pictures
+   texlive-collection-xetex
    wget
 
 ※wget は http://i.creativecommons.org/l/by-sa/2.1/jp/88x31.png を取得するのに使います。
