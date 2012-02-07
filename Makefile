@@ -1,8 +1,20 @@
+# -*- coding: utf-8-unix -*-
 IMPORT_STYLE=/usr/share/xml/gnome/xslt/docbook/html/db2html.xsl
 
 JAMAINFONT=IPA明朝
 JASANSFONT=IPAゴシック
 JAMONOFONT=IPAゴシック
+# JAMAINFONT=IPA明朝
+# JASANSFONT=VL ゴシック
+# JAMONOFONT=VL ゴシック
+# JAMAINFONT=IPA明朝
+# JASANSFONT=IPAゴシック
+# JAMONOFONT=VL ゴシック
+# JAMAINFONT=ヒラギノ明朝 ProN W3
+# JASANSFONT=ヒラギノ角ゴ ProN W3
+# JAMONOFONT=ヒラギノ丸ゴ ProN W4
+PAPERSIZE=b5paper
+# PAPERSIZE=a4paper
 
 html: gnomeja-guide.xml
 	gnome-doc-tool html $<
@@ -32,9 +44,10 @@ gnomeja-guide.tex: gnomeja-guide.xml gnomeja-guide-param.xsl 88x31.png
 	done
 
 gnomeja-guide-param.xsl: gnomeja-guide-param.xsl.in
-	sed -e "s,@@JAMAINFONT@@,${JAMAINFONT}," \
-	    -e "s,@@JASANSFONT@@,${JASANSFONT}," \
-	    -e "s,@@JAMONOFONT@@,${JAMONOFONT}," $< > $@
+	sed -e "s|@@JAMAINFONT@@|${JAMAINFONT}|" \
+	    -e "s|@@JASANSFONT@@|${JASANSFONT}|" \
+	    -e "s|@@JAMONOFONT@@|${JAMONOFONT}|" \
+	    -e "s|@@PAPERSIZE@@|${PAPERSIZE}|" $< > $@
 
 88x31.png:
 	wget http://i.creativecommons.org/l/by-sa/2.1/jp/88x31.png
