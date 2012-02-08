@@ -1,18 +1,18 @@
 # -*- coding: utf-8-unix -*-
 IMPORT_STYLE=/usr/share/xml/gnome/xslt/docbook/html/db2html.xsl
 
-JAMAINFONT=IPA明朝
-JASANSFONT=IPAゴシック
-JAMONOFONT=IPAゴシック
+# JAMAINFONT=IPA明朝
+# JASANSFONT=IPAゴシック
+# JAMONOFONT=IPAゴシック
 # JAMAINFONT=IPA明朝
 # JASANSFONT=VL ゴシック
 # JAMONOFONT=VL ゴシック
 # JAMAINFONT=IPA明朝
 # JASANSFONT=IPAゴシック
 # JAMONOFONT=VL ゴシック
-# JAMAINFONT=ヒラギノ明朝 ProN W3
-# JASANSFONT=ヒラギノ角ゴ ProN W3
-# JAMONOFONT=ヒラギノ丸ゴ ProN W4
+JAMAINFONT=ヒラギノ明朝 ProN W3
+JASANSFONT=ヒラギノ角ゴ ProN W3
+JAMONOFONT=ヒラギノ丸ゴ ProN W4
 PAPERSIZE=b5paper
 # PAPERSIZE=a4paper
 
