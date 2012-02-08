@@ -8,7 +8,9 @@
 \ProvidesPackage{docbook-gnomeja-guide}
 %% [2012/01/20 v0.1 DocBook Style for gnomeja-guide]
 %% \makecover
-  [2012/01/22 v0.2 DocBook Style for gnomeja-guide]
+%% [2012/01/22 v0.2 DocBook Style for gnomeja-guide]
+%% Require jlisting; ad-hoc \lst@AppendJchar
+  [2012/02/08 v0.3 DocBook Style for gnomeja-guide]
 
 \RequirePackage{pict2e}
 
@@ -783,7 +785,7 @@
 \begin{center}
 \if@bfivepaper
   \begin{tabular}{|
-    >{\centering}p{1.5cm}|
+    >{\centering}p{2.5cm}|
     >{\centering}p{2.5cm}|
     >{\centering}p{2.5cm}|
     >{\centering}p{1.5cm}
@@ -791,7 +793,7 @@
   }%\end{tabular}
 \else
   \begin{tabular}{|
-    >{\centering}p{2.25cm}|
+    >{\centering}p{2.5cm}|
     >{\centering}p{2.5cm}|
     >{\centering}p{3cm}|
     >{\centering}p{2.25cm}
@@ -1084,7 +1086,14 @@
 %<dbk_verbatim>
 
 \usepackage{listings}
-\usepackage{color}
+\usepackage{jlisting}
+%ad-hoc
+\def\lst@AppendJchar#1#2{%
+   \kern-.25\jsZw%
+   \lst@check@chartype{#2}%
+      {\advance\lst@length\@ne\lst@Append{#1}}%
+      \relax}
+%%!!\usepackage{color}
 
 \definecolor{hellgelb}{rgb}{1,1,0.9}
 \definecolor{colKeys}{rgb}{0,0,1}

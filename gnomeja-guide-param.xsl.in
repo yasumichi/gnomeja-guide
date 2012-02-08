@@ -37,8 +37,8 @@
 
 <!-- Override procedure/title, step/title in procedure.xsl -->
 <xsl:template match="procedure/title">
-  <xsl:text>{\jafamily{rm}\scshape </xsl:text>
-  <!-- <xsl:text>\paragraph{</xsl:text> -->
+  <!-- <xsl:text>{\jafamily{rm}\scshape </xsl:text> -->
+  <xsl:text>\paragraph*{</xsl:text>
   <xsl:apply-templates/>
   <xsl:text>}&#10;</xsl:text>
   <xsl:call-template name="label.id">
@@ -49,8 +49,8 @@
 </xsl:template>
 
 <xsl:template match="step/title">
-  <xsl:text>{\jafamily{rm}\scshape </xsl:text>
-  <!-- <xsl:text>\paragraph{</xsl:text> -->
+  <!-- <xsl:text>{\jafamily{rm}\scshape </xsl:text> -->
+  <xsl:text>\paragraph*{</xsl:text>
   <xsl:apply-templates/>
   <xsl:text>}&#10;&#10;</xsl:text>
 </xsl:template>
