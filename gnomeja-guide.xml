@@ -346,7 +346,7 @@ msgstr "ファイルを開く"]]></programlisting>
 msgid "Open Files"
 msgstr ""]]></programlisting>
           </example>
-          この msgstr の部分に翻訳文を埋めていくことが、翻訳者の仕事になります。お好みのテキストエディターを使って、例1のように訳語を記入してください。
+          この msgstr の部分に翻訳文を埋めていくことが、翻訳者の仕事になります。お好みのテキストエディターを使って、翻訳済みの例のように訳語を記入してください。
         </para>
         <para>
           翻訳済みのメッセージでも、原文が更新されたりした場合、その訳語は古いものとして使えなくなります。そうしたメッセージには fuzzy というフラグが付与され、無効な翻訳とみなされます。
@@ -397,6 +397,38 @@ msgid "Open '%s'"
 msgstr "'%s' を開きます"]]></programlisting>
                 </example>
                 原文に <quote>%s</quote> というフレーズが見えます。これは書式指定子と呼ばれるもので、プログラムの実行時に <quote>%s</quote> が何らかの文字列に変換されてメッセージが出力されます (C 言語をご存知の方なら printf で使用されるもの、と言えばわかりやすいでしょう)。原文と同様に日本語版でも <quote>%s</quote> はプログラムによって使用されるので、<quote>%s</quote> を日本語訳にも残しておく必要があります。上の例の場合は、<quote>%s</quote> が何らかの URI を表す文字列に置き換わることが、翻訳者向けのコメント (<quote>#. Translators: %s is a URI</quote>) から読み取れます。書式指定子の使われ方を考慮しつつ、適切な日本語訳を考えてください。書式指定子には様々な種類があります。訳し方に迷った場合は、メーリングリストなどで相談してください。
+              </para>
+            </listitem>
+            <listitem>
+              <para>著作権・クレジット表示</para>
+              <para>
+                <example>
+                  <title>著作権表示の例</title>
+                  <programlisting><![CDATA[
+# Copyright (C) 2007-2012 damned-lies's COPRYRIGHT HOLDER
+# This file is distributed under the same license as the damned-lies package.
+# Satoru SATOH <ss@gnome.gr.jp>, 2007.
+# Takayuki KUSANO <AE5T-KSN@asahi-net.or.jp>, 2009-2011.
+# OKANO Takayoshi <kano@na.rim.or.jp>, 2010.
+# Jiro Matsuzawa <jmatsuzawa@src.gnome.org>, 2011, 2012.
+# Yasumichi Akahoshi <yasumichi@vinelinux.org>, 2011.]]></programlisting>
+                </example>
+                  PO ファイルの先頭は、著作権表示部分になります。PO を編集したら、既存の記述を参考の上、ここにご自身の情報を追記・更新してください。どう書けばよいかわからない場合は、遠慮なく日本語翻訳チームにご質問ください。
+              </para>
+              <para>
+                <example>
+                  <title>クレジット表示の例</title>
+                  <programlisting><![CDATA[
+msgid "translator-credits"
+msgstr ""
+"Satoru SATOH <ss@gnome.gr.jp>\n"
+"草野 貴之 <AE5T-KSN@asahi-net.or.jp>\n"
+"OKANO Takayoshi <kano@na.rim.or.jp>\n"
+"松澤 二郎 <jmatsuzawa@src.gnome.org>\n"
+"赤星 柔充 <yasumichi@vinelinux.org>\n"
+"日本GNOMEユーザー会 <http://www.gnome.gr.jp/>"]]></programlisting>
+                </example>
+				"translator-credits" や "translator_credits" などの msgid が PO に含まれていることがあります。これは特殊なメッセージで、msgstr には翻訳者のクレジットを記述します。既存の記述例を参考にご自身のクレジットを記述してください。どう書けばよいかわからない場合は、遠慮なく日本語翻訳チームにご質問ください。
               </para>
             </listitem>
           </itemizedlist>
