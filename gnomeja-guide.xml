@@ -59,18 +59,18 @@
       <title>翻訳者</title>
       <para>翻訳者は、文字通りユーザーインターフェースやドキュメントの翻訳を行う翻訳チームの主要なメンバーです。余力があれば、他の翻訳者の翻訳内容を確認し、コメントする場合もあります。</para>
       <para>翻訳者の具体的な作業手順は、<xref linkend="workflow" />にて解説します。</para>
-      <para>翻訳者として参加するには、翻訳チームのメーリングリストの購読および<ulink url="http://l10n.gnome.org/">GNOME 翻訳ステータス</ulink>へのアカウント登録が必要です。詳細は、<xref linkend="preparation" />を参照してください。</para>
+      <para>翻訳者として参加するには、翻訳チームのメーリングリストの購読および <ulink url="http://l10n.gnome.org/">Damned Lies</ulink> (GNOME 翻訳管理システム) へのアカウント登録が必要です。詳細は、<xref linkend="preparation" />を参照してください。</para>
     </sect1>
     <sect1 id="reviewers">
       <title>査読者</title>
       <para>査読者は、翻訳者がアップロードした翻訳を査読し、必要により校正を行い、翻訳の状態を「コミット待ち」に変更し、コミッターにコミット可能であることを伝えます。</para>
-      <para>査読者は、<ulink url="http://l10n.gnome.org/">GNOME 翻訳ステータス</ulink>で翻訳者として登録されているメンバーの中から、コーディネーターが選出します。</para>
+      <para>査読者は、<ulink url="http://l10n.gnome.org/">Damned Lies</ulink> で翻訳者として登録されているメンバーの中から、コーディネーターが選出します。</para>
     </sect1>
     <sect1 id="committers">
       <title>コミッター</title>
       <para>コミッターは、リリースされる GNOME の翻訳に対し変更を加える権限を有します。査読者により「コミット待ち」状態に変更された翻訳を「リポジトリへ送る」(コミットする)ことができます。</para>
       <para>コミットが無事に完了したら、「コミットしたことを通知」します。すると、新たな提案を受け付けるための「アクションをアーカイブする」も同時に実行されます。</para>
-      <para>コミッターは、<ulink url="http://l10n.gnome.org/">GNOME 翻訳ステータス</ulink>で翻訳者として登録されているメンバーの中から、コーディネーターが選出します。</para>
+      <para>コミッターは、<ulink url="http://l10n.gnome.org/">Damned Lies</ulink> で翻訳者として登録されているメンバーの中から、コーディネーターが選出します。</para>
       <para>GNOME の翻訳コミット権の取得方法については <ulink url="http://live.gnome.org/TranslationProject/RequestingAnAccount">Requesting a Git account</ulink> にまとめられています。また、<ulink url="http://live.gnome.org/TranslationProject/AccountResponsibilities">Translator Account Responsibilities</ulink> なども必読です。</para>
     </sect1>
     <sect1 id="coordinator">
@@ -112,13 +112,13 @@
       <para>どのようにメールを書けば良いか、メーリングリストの雰囲気を知りたいなど過去のメールを確認したい場合、<ulink url="http://mail.gnome.gr.jp/ml/gnome-translation">Gnome-translation 保存書庫</ulink>で過去のメールを参照することが可能です。</para>
     </sect1>
     <sect1 id="damned-lies">
-      <title>GNOME 翻訳ステータスへのアカウント登録</title>
-      <para><ulink url="http://l10n.gnome.org/">GNOME 翻訳ステータス</ulink>というサイトが、私たちの活動拠点になります。このサイトでは、GNOME アプリケーションの翻訳状況の確認、翻訳の予約・アップロードなどが行えます。<xref linkend="workflow" />で示す作業を行うには、アカウントの登録が必要です。</para>
+      <title>Damned Lies へのアカウント登録</title>
+      <para><ulink url="http://l10n.gnome.org/">Damned Lies</ulink> という、GNOME の翻訳作業を管理するサイトがあり、そこが私たちの活動拠点になります。このサイトでは、GNOME アプリケーションの翻訳状況の確認、翻訳の予約・アップロードなどが行えます。<xref linkend="workflow" />で示す作業を行うには、アカウントの登録が必要です。</para>
       <procedure>
-        <title>GNOME 翻訳ステータスへのアカウント登録手順</title>
+        <title>Damned Lies へのアカウント登録手順</title>
         <step><para><ulink url="http://l10n.gnome.org/register/">アカウント登録</ulink>のページを開きます。</para></step>
         <step>
-          <para>GNOME 翻訳ステータスで利用したいユーザーIDを入力してください。(入力必須)</para>
+          <para>Damned Lies で利用したいユーザーIDを入力してください。(入力必須)</para>
           <para>英字、数字、アンダースコア(_)、およびハイフン(-)のみが使えます。</para>
         </step>
         <step><para>メールアドレスを入力してください。(入力必須)</para></step>
@@ -222,7 +222,7 @@
       <procedure>
         <title>モジュール名からの状況確認手順</title>
         <step>
-          <para>「<ulink url="http://l10n.gnome.org/">GNOME 翻訳ステータス</ulink>」のトップページ上部の「<guilabel>モジュール</guilabel>」タブをクリックしてください。モジュール名の一覧が表示されます。</para>
+          <para><ulink url="http://l10n.gnome.org/">Damned Lies</ulink> のトップページ上部の「<guilabel>モジュール</guilabel>」タブをクリックしてください。モジュール名の一覧が表示されます。</para>
         </step>
         <step>
           <para>対象のモジュールをクリックしてください。</para>
@@ -405,7 +405,7 @@ msgstr "'%s' を開きます"]]></programlisting>
     </sect1>
     <sect1 id="upload">
       <title>翻訳のアップロード</title>
-      <para>PO ファイルを作成したあとは、それを「<ulink url="http://l10n.gnome.org/">GNOME 翻訳ステータス</ulink>」にアップロードします。</para>
+      <para>PO ファイルを作成したあとは、それを <ulink url="http://l10n.gnome.org/">Damned Lies</ulink> にアップロードします。</para>
       <para>アップロードすることで、翻訳チームに向けて翻訳文を提案することになります。アップロードされたファイルは、他の翻訳メンバーなどが参照できます。アップロードした翻訳物がそのままアプリケーションに反映されるわけではないので、お気軽にアップロードしてください。</para>
       <important>
         <para>翻訳をアップロードすると、自動的に日本語翻訳チームのメーリングリスト宛にその旨の通知が行われます。</para>
@@ -444,7 +444,7 @@ msgstr "'%s' を開きます"]]></programlisting>
     <sect1 id="review">
       <title>他のメンバーによる査読</title>
       <para>翻訳がアップロードされると、次に査読作業に入ります。査読のことをレビューと呼ぶこともあります。翻訳の品質を確保するために、翻訳物に誤訳や誤字脱字がないか、日本語はわかりやすいか、などのチェックが行われます。</para>
-      <para>「GNOME 翻訳ステータス」上の役割として、「翻訳者」と区別される「査読者」がありますが、「査読者」以外にも、査読を行いたい人なら誰でも参加できます。</para>
+      <para>Damned Lies 上の役割として、「翻訳者」と区別される「査読者」がありますが、「査読者」以外にも、査読を行いたい人なら誰でも参加できます。</para>
       <procedure>
         <title>査読の手順</title>
         <para>ここでは、査読者と翻訳実施者と両者の作業について順を追って述べます。</para>
@@ -474,7 +474,7 @@ msgstr "'%s' を開きます"]]></programlisting>
           </itemizedlist>
         </step>
         <step>
-          <para>査読者は、翻訳物の問題や改善点また確認事項などがあれば、「GNOME 翻訳ステータス」の該当モジュールのページでコメント登録してください。</para>
+          <para>査読者は、翻訳物の問題や改善点また確認事項などがあれば、Damned Lies の該当モジュールのページでコメント登録してください。</para>
           <important>
             <para>登録したコメント内容は、翻訳実施者および該当モジュールの各コメント登録者宛てに自動でメール通知されます。メーリングリストには通知されません。</para>
           </important>
@@ -497,10 +497,10 @@ msgstr "'%s' を開きます"]]></programlisting>
         <title>査読手続き上の留意事項</title>
         <itemizedlist>
           <listitem>
-            <para>査読コメントのやりとりは、「GNOME 翻訳ステータス」上で行ってください。「GNOME 翻訳ステータス」のアカウントが必要になるので、アカウント登録していない場合は登録してください。登録方法については、<xref linkend="damned-lies" /> を参照してください。</para>
+            <para>査読コメントのやりとりは、Damned Lies 上で行ってください。Damned Lies のアカウントが必要になるので、アカウント登録していない場合は登録してください。登録方法については、<xref linkend="damned-lies" /> を参照してください。</para>
           </listitem>
           <listitem>
-            <para>査読が十分になされていないと思われる場合は、メーリングリストなどで追加の査読者を募集してください。その場合も査読コメント自体は「GNOME 翻訳ステータス」上で行う必要があります。</para>
+            <para>査読が十分になされていないと思われる場合は、メーリングリストなどで追加の査読者を募集してください。その場合も査読コメント自体は Damned Lies 上で行う必要があります。</para>
           </listitem>
           <listitem>
             <para>査読者は、特に指摘事項がない場合でも、査読を実施した旨コメント登録するようにしてください。その時点で特に問題が見つかっていないことが明確になります。</para>
