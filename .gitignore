@@ -8,8 +8,10 @@
 *.log
 *.out
 *.pdf
+*.swp
 *.tex
 *.toc
+*~
 88x31.png
 draft.xsl
 gnomeja-guide-param.xsl
