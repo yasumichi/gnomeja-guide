@@ -268,61 +268,141 @@
     </sect1>
     <sect1 id="translation">
       <title>翻訳</title>
-      <para>翻訳の予約が済めば、いよいよ実際の翻訳作業に入ります。</para>
-      <para>GNOME の翻訳は、PO ファイルという翻訳データのソースファイルを編集して作業を進めます。PO ファイルの中身は、一連の翻訳対象メッセージと各メッセージに対応する翻訳文とで構成されています。日本語の翻訳文を PO ファイルに記述していくのが、翻訳作業のメインになります。PO ファイルの詳細については、<xref linkend="gettext" /> を参照してください。</para>
-      <para>ドキュメント翻訳の場合は、アプリケーションの翻訳済み画面イメージが必要になることがあります。詳細については <xref linkend="translate-figures" /> を参照してください。</para>
-      <procedure>
-        <title>翻訳の手順</title>
-        <step>
-          <para>該当モジュールのページから、編集対象になる PO ファイルをダウンロードしてください。</para>
-          <para>翻訳率のラベルの左にあるダウンロード用のアイコンをクリックしてダウンロードできます。</para>
-          <figure>
-            <title>ダウンロード用のアイコン</title>
-            <screenshot>
-              <mediaobject>
-                <imageobject>
-                  <imagedata fileref="figures/download-icon.png" format="PNG"/>
-                </imageobject>
-                <textobject>
-                  <phrase>ダウンロード用のアイコン</phrase>
-                </textobject>
-              </mediaobject>
-            </screenshot>
-          </figure>
-        </step>
-        <step>
-          <para>PO ファイルを編集します。</para>
-          <para>PO ファイルはテキストデータなので、<application>gedit</application> などお好みのテキストエディターだけで作業することができます。テキストエディター以外にも、<xref linkend="po-editor" /> で紹介する翻訳支援ツールを使うのもよいでしょう。</para>
-        </step>
-        <step>
-          <para>編集した PO ファイルのフォーマットチェックを行います。</para>
-          <para>PO ファイルに形式的な誤りがないかチェックします。このチェックは、あくまで機械的なものであり、翻訳内容の妥当性判断を行うものではありません。</para>
-          <substeps>
-            <step>
-              <para><application>GNOME 端末</application> (gnome-terminal) を起動してください。</para>
-            </step>
-            <step>
-              <para>次のコマンドを実行してください。<prompt>$ </prompt><command>msgfmt -co /dev/null /PATH/TO/PO-FILE</command></para>
-              <para><quote>/PATH/TO/PO-FILE</quote> の部分は、編集した PO ファイルのパスに置き換えてください。</para>
-            </step>
-            <step>
-              <para>エラーが検出されれば、修正してください。</para>
-            </step>
-          </substeps>
-          <tip>
-            <para><application>msgfmt</application> コマンドは、多くのディストリビューションで gettext パッケージにて提供されています。<application>msgfmt</application> がインストールされていない場合は、お使いのディストリビューションの該当するパッケージをインストールしてください。</para>
-          </tip>
-        </step>
-      </procedure>
-      <tip>
-        <title>作業上のアドバイスと注意</title>
-        <itemizedlist>
-          <listitem><para><ulink url="http://www.gnome.gr.jp/l10n/trans-terms.html">対訳表</ulink>を適宜参照してください。</para></listitem>
-          <listitem><para>訳語に迷ったりした場合は、メーリングリストなどで他の翻訳メンバーに遠慮無く相談してください。</para></listitem>
-          <listitem><para>PO ファイルに含まれるすべてのメッセージを翻訳する必要はありません。1 メッセージだけの翻訳でもけっこうです。</para></listitem>
-          <listitem><para>プログラムを実際に動作させて、<emphasis>ユーザー目線</emphasis>で翻訳の妥当性を確認してください。プログラムのビルドには <ulink url="http://developer.gnome.org/jhbuild/stable/"><application>JHBuild</application></ulink> などのビルドツールが利用できます。</para></listitem>
-        </itemizedlist>
-      </tip>
+      <sect2>
+        <title>作業概要</title>
+        <para>翻訳の予約が済めば、いよいよ実際の翻訳作業に入ります。</para>
+        <para>GNOME の翻訳は、PO ファイルという翻訳データのソースファイルを編集して作業を進めます。PO ファイルの中身は、一連の翻訳対象メッセージと各メッセージに対応する翻訳文とで構成されています。日本語の翻訳文を PO ファイルに記述していくのが、翻訳作業のメインになります。PO ファイルの編集方法については、<xref linkend="how-to-edit" /> を参照してください。</para>
+        <para>ドキュメント翻訳の場合は、アプリケーションの翻訳済み画面イメージが必要になることがあります。詳細については <xref linkend="translate-figures" /> を参照してください。</para>
+        <procedure>
+          <title>翻訳の手順</title>
+          <step>
+            <para>該当モジュールのページから、編集対象になる PO ファイルをダウンロードしてください。</para>
+            <para>翻訳率のラベルの左にあるダウンロード用のアイコンをクリックしてダウンロードできます。</para>
+            <figure>
+              <title>ダウンロード用のアイコン</title>
+              <screenshot>
+                <mediaobject>
+                  <imageobject>
+                    <imagedata fileref="figures/download-icon.png" format="PNG"/>
+                  </imageobject>
+                  <textobject>
+                    <phrase>ダウンロード用のアイコン</phrase>
+                  </textobject>
+                </mediaobject>
+              </screenshot>
+            </figure>
+          </step>
+          <step>
+            <para>PO ファイルを編集します。</para>
+            <para>PO ファイルはテキストデータなので、<application>gedit</application> などお好みのテキストエディターだけで作業することができます。詳細は、<xref linkend="how-to-edit" /> を参照してください。</para>
+          </step>
+          <step>
+            <para>編集した PO ファイルのフォーマットチェックを行います。</para>
+            <para>PO ファイルに形式的な誤りがないかチェックします。このチェックは、あくまで機械的なものであり、翻訳内容の妥当性判断を行うものではありません。</para>
+            <substeps>
+              <step>
+                <para><application>GNOME 端末</application> (gnome-terminal) を起動してください。</para>
+              </step>
+              <step>
+                <para>次のコマンドを実行してください。<prompt>$ </prompt><command>msgfmt -co /dev/null /PATH/TO/PO-FILE</command></para>
+                <para><quote>/PATH/TO/PO-FILE</quote> の部分は、編集した PO ファイルのパスに置き換えてください。</para>
+              </step>
+              <step>
+                <para>エラーが検出されれば、修正してください。</para>
+              </step>
+            </substeps>
+            <tip>
+              <para><application>msgfmt</application> コマンドは、多くのディストリビューションで gettext パッケージにて提供されています。<application>msgfmt</application> がインストールされていない場合は、お使いのディストリビューションの該当するパッケージをインストールしてください。</para>
+            </tip>
+          </step>
+        </procedure>
+        <tip>
+          <title>作業上のアドバイス</title>
+          <itemizedlist>
+            <listitem><para><ulink url="http://www.gnome.gr.jp/l10n/trans-terms.html">対訳表</ulink>を適宜参照してください。</para></listitem>
+            <listitem><para>訳語に迷ったりした場合は、メーリングリストなどで他の翻訳メンバーに遠慮無く相談してください。</para></listitem>
+            <listitem><para>PO ファイルに含まれるすべてのメッセージを翻訳する必要はありません。1 メッセージだけの翻訳でもけっこうです。</para></listitem>
+            <listitem><para>プログラムを実際に動作させて、<emphasis>ユーザー目線</emphasis>で翻訳の妥当性を確認してください。プログラムのビルドには <ulink url="http://developer.gnome.org/jhbuild/stable/"><application>JHBuild</application></ulink> などのビルドツールが利用できます。</para></listitem>
+          </itemizedlist>
+        </tip>
+      </sect2>
+      <sect2 id="how-to-edit">
+        <title>PO ファイルの編集方法</title>
+        <para>翻訳者が編集する PO ファイルについて説明します。PO ファイルは、一連の翻訳対象メッセージと各メッセージに対応する翻訳文とで構成されるテキストファイルで、翻訳情報を保持するファイルです。翻訳者はこのファイルを編集し、翻訳情報を追加、修正することで翻訳を進めます。</para>
+        <para>
+          実際に PO ファイルの中身の一部をサンプルとして見てみましょう。
+          <example>
+            <title>翻訳済みの例</title>
+            <programlisting><![CDATA[
+msgid "Open Files"
+msgstr "ファイルを開く"]]></programlisting>
+          </example>
+          msgid で始まる行と、その下に msgstr で始まる行があります。msgid の直後には二重引用符で括った英語が見え、msgstr の直後には二重引用符で括った日本語が見えます。msgid の英語が、翻訳対象のオリジナルのメッセージであり、msgstr の日本語は、オリジナルメッセージに対応する日本語訳となります。msgid と msgstr のペアを 1 つの単位として、PO ファイルには、1 つ以上のペアが並べられています。また <quote>#</quote> で始まる行はコメントとして扱われますが、一部特殊な用途のコメントもあります。
+        </para>
+        <para>
+          次の例のように msgstr の二重引用符の中が空になっている場合は、そのメッセージがまだ翻訳されていないということです。
+          <example>
+            <title>未翻訳の例</title>
+            <programlisting><![CDATA[
+msgid "Open Files"
+msgstr ""]]></programlisting>
+          </example>
+          この msgstr の部分に翻訳文を埋めていくことが、翻訳者の仕事になります。お好みのテキストエディターを使って、例1のように訳語を記入してください。
+        </para>
+        <para>
+          翻訳済みのメッセージでも、原文が更新されたりした場合、その訳語は古いものとして使えなくなります。そうしたメッセージには fuzzy というフラグが付与され、無効な翻訳とみなされます。
+          <example>
+            <title>fuzzy の例</title>
+            <programlisting><![CDATA[
+#, fuzzy
+#| msgid "Open"
+msgid "Open Files"
+msgstr "開く"]]></programlisting>
+          </example>
+          上の例のように、無効となった翻訳済みメッセージには <quote>#, fuzzy</quote> という特殊なコメントが付与されます。さらに更新前の原文が <quote>#| msgid "Open"</quote> として、更新後の原文が <quote>msgid "Open Files"</quote> として記載されています。既存の訳語が再利用できるか、または修正する必要があるかを判断してください。適切な訳語が決まれば、<quote>#, fuzzy</quote> と <quote>#| msgid "Open"</quote> の行を削除してください。
+        </para>
+        <tip>
+          <title>PO ファイル編集上の注意</title>
+          <para>PO ファイルを編集する際の注意事項について、いくつか主要なものを紹介します。</para>
+          <itemizedlist>
+            <listitem>
+              <para>アクセラレーターキー</para>
+              <para>
+                <example>
+                  <title>アクセラレーターキーの翻訳例</title>
+                  <programlisting><![CDATA[
+msgid "_View"
+msgstr "表示(_V)"]]></programlisting>
+                </example>
+                msgid をご覧ください。 この <quote>_V</quote> のようにアルファベットの前に英語表記にそぐわない形でアンダースコアが配置されているメッセージが存在します。これは <quote>V</quote> がアクセラレーターキーとして機能することを示しています。英語版でも日本語版でも、同じアプリケーションではアクセラレターキーは同じように動作する必要があるので、日本語訳にも <quote>_V</quote> を付与する必要があります。日本語訳にアクセラレーターキーを付与する場合は、上記の <quote>表示(_V)</quote> のように、アンダースコアと該当のアルファベットの大文字を半角丸括弧で括った文字列を、語句の末尾に配置します。アクセラレーターキーに大文字小文字の区別はありませんが、日本語訳では原則として大文字アルファベットを使用してください。原文のキーが小文字であっても、日本語では大文字で記述します。
+              </para>
+              <variablelist>
+                <varlistentry>
+                  <term>アクセラレーターキー</term>
+                  <listitem>
+                    <para>アクセラレーターキーとは、一般に <keycap>Alt</keycap> キーとともにそのキーを押すことで、特定のメニューやテキストエントリーなどにフォーカスを移すといった、ショートカット機能を提供するものです。たとえば <application>gedit</application> を開いた状態で <keycombo><keycap>Alt</keycap><keycap>v</keycap></keycombo> を押すと、表示メニューが開かれます。</para>
+                  </listitem>
+                </varlistentry>
+              </variablelist>
+            </listitem>
+            <listitem>
+              <para>書式指定子</para>
+              <para>
+                <example>
+                  <title>書式指定子を含むメッセージの翻訳例</title>
+                  <programlisting><![CDATA[
+#. Translators: %s is a URI
+#: ../gedit/gedit-window.c:1413
+#, c-format
+msgid "Open '%s'"
+msgstr "'%s' を開きます"]]></programlisting>
+                </example>
+                原文に <quote>%s</quote> というフレーズが見えます。これは書式指定子と呼ばれるもので、プログラムの実行時に <quote>%s</quote> が何らかの文字列に変換されてメッセージが出力されます (C 言語をご存知の方なら printf で使用されるもの、と言えばわかりやすいでしょう)。原文と同様に日本語版でも <quote>%s</quote> はプログラムによって使用されるので、<quote>%s</quote> を日本語訳にも残しておく必要があります。上の例の場合は、<quote>%s</quote> が何らかの URI を表す文字列に置き換わることが、翻訳者向けのコメント (<quote>#. Translators: %s is a URI</quote>) から読み取れます。書式指定子の使われ方を考慮しつつ、適切な日本語訳を考えてください。書式指定子には様々な種類があります。訳し方に迷った場合は、メーリングリストなどで相談してください。
+              </para>
+            </listitem>
+          </itemizedlist>
+        </tip>
+      </sect2>
     </sect1>
     <sect1 id="upload">
       <title>翻訳のアップロード</title>
