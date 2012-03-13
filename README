@@ -17,6 +17,7 @@ GNOME 日本語翻訳チーム参加者ガイドについて
 
 2. ガイドの生成に必要なパッケージ等
 
+ * make
  * libxslt (ドラフト文書生成に xsltproc を利用します。)
  * gnome-doc-utils
 
