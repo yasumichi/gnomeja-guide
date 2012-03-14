@@ -574,13 +574,19 @@ msgstr ""
         <step>
           <para>まず、画像の翻訳状況を確認します。ドキュメントで画像が使用されている場合、図のように「モジュールの翻訳」のページで PO ファイルの翻訳率の右側にウィンドウを2枚重ねたようなアイコンが表示されています。(代替えテキストは、「ドキュメントの画像を表示」です。)</para>
           <screenshot>
-            <screeninfo>329x28x256</screeninfo>
-            <graphic fileref="figures/figure.png" />
+            <mediaobject>
+              <imageobject>
+                <imagedata fileref="figures/figure.png" format="PNG"/>
+              </imageobject>
+            </mediaobject>
           </screenshot>
           <para>このアイコンは、ハイパーリンクになっておりクリックするとオリジナルと日本語の画像が対比されたページが表示されます。</para>
           <screenshot>
-            <screeninfo>414x292x256</screeninfo>
-            <graphic fileref="figures/images.png" />
+            <mediaobject>
+              <imageobject>
+                <imagedata fileref="figures/images.png" format="PNG"/>
+              </imageobject>
+            </mediaobject>
           </screenshot>
           <para>オリジナルの画像に対する翻訳された画像が存在しない場合、「未翻訳」や「曖昧」と表示されます。</para>
         </step>
