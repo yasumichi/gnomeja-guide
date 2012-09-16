@@ -59,18 +59,19 @@ GNOME 日本語翻訳チーム参加者ガイドについて
    ImageMagick
    TrueType-ipafont-gothic
    TrueType-ipafont-mincho
-   dblatex
-   texlive
-   texlive-collection-basic
-   texlive-collection-bibtexextra
-   texlive-collection-latex
-   texlive-collection-latexextra
-   texlive-collection-latexrecommended
-   texlive-collection-mathextra
-   texlive-collection-pictures
-   texlive-collection-xetex
+   dblatex-0.3.2
+   texlive-2011
+   texlive-collection-basic-2011
+   texlive-collection-bibtexextra-2011
+   texlive-collection-latex-2011
+   texlive-collection-latexextra-2011
+   texlive-collection-latexrecommended-2011
+   texlive-collection-mathextra-2011
+   texlive-collection-pictures-2011
+   texlive-collection-xetex-2011
    wget
 
+※ TeX Live http://www.tug.org/texlive/ 公式バイナリを利用しても、pdf ファイルを作成できます。その場合は、TeX Live 2011 以降を利用してください。
 ※wget は http://i.creativecommons.org/l/by-sa/2.1/jp/88x31.png を取得するのに使います。
 　他の方法で取得し、トップディレクトリに配置すれば、必要ありません。
 ※ エラーが出る場合は、エラーメッセージを添えてご連絡ください。

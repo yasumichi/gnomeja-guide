@@ -43,6 +43,8 @@ gnomeja-guide.tex: gnomeja-guide.xml gnomeja-guide-param.xsl 88x31.png
 	    sed -i -e "s|$${png}|$${pdf}|g" gnomeja-guide.tex; \
 	done
 
+	patch -p0 gnomeja-guide.tex < gnomeja-guide-tex-contents.patch
+
 gnomeja-guide-param.xsl: gnomeja-guide-param.xsl.in
 	sed -e "s|@@JAMAINFONT@@|${JAMAINFONT}|" \
 	    -e "s|@@JASANSFONT@@|${JASANSFONT}|" \
