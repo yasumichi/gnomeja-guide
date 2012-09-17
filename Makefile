@@ -29,6 +29,7 @@ pdf: gnomeja-guide.tex
 	for x in 1 2 3; do \
 	  xelatex -file-line-error -interaction=nonstopmode $< < /dev/null || exit 1; \
 	  grep 'Rerun to get cross-references right.' $(<:.tex=.log) || \
+	  grep 'Package longtable Warning: Table widths have changed. Rerun LaTeX.' $(<:.tex=.log) || \
 	  grep 'Package hyperref Warning: Rerun to get /PageLabels entry.' $(<:.tex=.log) || \
 	  exit 0; \
 	done
