@@ -6,11 +6,11 @@
 %%
 \NeedsTeXFormat{LaTeX2e}
 \ProvidesClass{dbkgnomeja}
+%% based on \ProvidesClass{bxjsreport}[2010/08/15 v0.3 BXJS document classes]
 %%[2012/01/22 v0.1 Gnome-ja Guide document classes]
-  [2012/02/02 v0.2 Gnome-ja Guide document classes]
-%% based on
-%%\ProvidesClass{bxjsreport}
-%%  [2010/08/15 v0.3 BXJS document classes]
+%%[2012/02/02 v0.2 Gnome-ja Guide document classes]
+%% rebased on \ProvidesClass{bxjsreport}[2012/05/01 v0.3a BXJS document classes]
+  [2013/04/05 v0.3 Gnome-ja Guide document classes]
 \RequirePackage{calc}
 \RequirePackage{keyval}
 \let\bxjs@engine=n
@@ -59,17 +59,17 @@
 \DeclareOption{a4paper}{\bxjs@setpaper{a4paper}}
 \DeclareOption{a5paper}{\bxjs@setpaper{a5paper}}
 %%!!\DeclareOption{a6paper}{\bxjs@setpaper{a6paper}}
-%%!!\DeclareOption{b4paper}{\bxjs@setpaper{{364truemm}{257truemm}}}
+%%!!\DeclareOption{b4paper}{\bxjs@setpaper{{257truemm}{364truemm}}}
 \DeclareOption{b5paper}{%
   \@bfivepapertrue
   \bxjs@setpaper{{182truemm}{257truemm}}}
-%%!!\DeclareOption{b6paper}{\bxjs@setpaper{{182truemm}{128truemm}}}
+%%!!\DeclareOption{b6paper}{\bxjs@setpaper{{128truemm}{182truemm}}}
 %%!!\DeclareOption{a4j}{\bxjs@setpaper{a4paper}}
 %%!!\DeclareOption{a5j}{\bxjs@setpaper{a5paper}}
-%%!!\DeclareOption{b4j}{\bxjs@setpaper{{364truemm}{257truemm}}}
-%%!!\DeclareOption{b5j}{\bxjs@setpaper{{257truemm}{182truemm}}}
-%%!!\DeclareOption{a4var}{\bxjs@setpaper{{283truemm}{210truemm}}}
-%%!!\DeclareOption{b5var}{\bxjs@setpaper{{230truemm}{182truemm}}}
+%%!!\DeclareOption{b4j}{\bxjs@setpaper{{257truemm}{364truemm}}}
+%%!!\DeclareOption{b5j}{\bxjs@setpaper{{182truemm}{257truemm}}}
+%%!!\DeclareOption{a4var}{\bxjs@setpaper{{210truemm}{283truemm}}}
+%%!!\DeclareOption{b5var}{\bxjs@setpaper{{182truemm}{230truemm}}}
 %%!!\DeclareOption{letterpaper}{\bxjs@setpaper{letterpaper}}
 %%!!\DeclareOption{legalpaper}{\bxjs@setpaper{legalpaper}}
 %%!!\DeclareOption{executivepaper}{\bxjs@setpaper{executivepaper}}
@@ -210,7 +210,7 @@
 \define@key{bxjs}{mag}{\edef\bxjs@param@mag{#1}}
 \define@key{bxjs}{paper}{\edef\bxjs@param@paper{#1}}
 \DeclareOption*{\bxjs@setkey}
-\ExecuteOptions{a4paper,twoside,onecolumn,openany,final}%%!!,titlepage
+\ExecuteOptions{a4paper,twoside,onecolumn,openany,final}%%!!,oneside,titlepage
 \ProcessOptions\relax
 \bxjs@do@opt@jbase
 %%!!\if@slide
@@ -368,15 +368,15 @@
 \def\bxjs@layout{%
   headheight=\topskip,footskip=0.03367\paperheight,%
   headsep=\footskip-\topskip,includeheadfoot,%
-  %%!!hscale=0.76,hmarginratio=1:1,%
-  %%!!vscale=0.83,vmarginratio=1:1,%
-  \if@bfivepaper
-    textwidth=45\Cwd,hmarginratio=1:1,
-    textheight=40\Cvs,vmarginratio=1:1,%
-  \else
-    textwidth=50\Cwd,hmarginratio=1:1,
-    textheight=44\Cvs,vmarginratio=1:1,%
-  \fi
+  hscale=0.76,hmarginratio=1:1,%
+  vscale=0.83,vmarginratio=1:1,%
+  % \if@bfivepaper
+  %   textwidth=45\Cwd,hmarginratio=1:1,
+  %   textheight=40\Cvs,vmarginratio=1:1,%
+  % \else
+  %   textwidth=50\Cwd,hmarginratio=1:1,
+  %   textheight=44\Cvs,vmarginratio=1:1,%
+  % \fi
 }
 \newdimen\fullwidth
 \def\bxjs@postproc@layout{%

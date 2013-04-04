@@ -27,7 +27,7 @@ draft.xsl: draft.xsl.in
 
 pdf: gnomeja-guide.tex
 	for x in 1 2 3; do \
-	  xelatex -file-line-error -interaction=nonstopmode $< < /dev/null || exit 1; \
+	  xelatex -synctex=1 -file-line-error -interaction=nonstopmode $< < /dev/null || exit 1; \
 	  grep 'Rerun to get cross-references right.' $(<:.tex=.log) || \
 	  grep 'Package longtable Warning: Table widths have changed. Rerun LaTeX.' $(<:.tex=.log) || \
 	  grep 'Package hyperref Warning: Rerun to get /PageLabels entry.' $(<:.tex=.log) || \
@@ -59,6 +59,6 @@ clean:
 	rm -f *.html draft.xsl
 	rm -f 88x31.png
 	rm -f figures/*.pdf *~ gnomeja-guide-param.xsl
-	rm -f *.aux *.cb *.dvi *.glo *.idx *.lof *.log *.out *.toc
+	rm -f *.aux *.cb *.dvi *.glo *.idx *.lof *.log *.out *.toc *.synctex.gz
 	rm -f *.tex *.pdf
 

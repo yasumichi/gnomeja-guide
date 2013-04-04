@@ -55,23 +55,14 @@ GNOME 日本語翻訳チーム参加者ガイドについて
 
    $ make pdf
 
-6. pdf の作成に必要なパッケージ (とりあえず、Vine Linux での名前で把握しているもののみ)
+6. pdf の作成に必要なパッケージ（とりあえず、Vine Linux での名前で把握しているもののみ）
+   TeX Live 2012 (current) http://www.tug.org/texlive/
+   dblatex-0.3.2
    ImageMagick
    TrueType-ipafont-gothic
    TrueType-ipafont-mincho
-   dblatex-0.3.2
-   texlive-2011
-   texlive-collection-basic-2011
-   texlive-collection-bibtexextra-2011
-   texlive-collection-latex-2011
-   texlive-collection-latexextra-2011
-   texlive-collection-latexrecommended-2011
-   texlive-collection-mathextra-2011
-   texlive-collection-pictures-2011
-   texlive-collection-xetex-2011
    wget
 
-※ TeX Live http://www.tug.org/texlive/ 公式バイナリを利用しても、pdf ファイルを作成できます。その場合は、TeX Live 2011 以降を利用してください。
 ※wget は http://i.creativecommons.org/l/by-sa/2.1/jp/88x31.png を取得するのに使います。
 　他の方法で取得し、トップディレクトリに配置すれば、必要ありません。
 ※ エラーが出る場合は、エラーメッセージを添えてご連絡ください。
