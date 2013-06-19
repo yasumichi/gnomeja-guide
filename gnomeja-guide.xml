@@ -607,6 +607,67 @@ msgstr "@@image: 'figures/image.png'; md5=c932ecb576a04c544fadaf8885492b23"</scr
         </step>
       </procedure>
   </appendix>
+  <appendix id="how-to-view-ui">
+    <title>ユーザーインターフェースの確認方法</title>
+    <sect1 id="deckard">
+      <title>Deckard</title>
+      <para><ulink url="http://deckard.malizor.org/">Deckard</ulink> は、GNOME アプリケーションの UI を表示してくれる、Web アプリケーションです。Web ブラウザーさえあれば、開発版の UI を確認することができます。自分で GNOME アプリケーションをビルドする必要はありませんし、ソースコードを取得する必要すらありません。しかも、ただ表示するだけではなく、UI 上のボタンを押したり、チェックボックスにチェックを入れたり、簡単な GUI 操作もできます。アプリケーションが実際に実行されるわけではないので、気軽に試してみることができます。</para>
+      <figure>
+        <title>Deckard</title>
+        <screenshot>
+          <mediaobject>
+            <imageobject>
+              <imagedata fileref="figures/deckard.png" format="PNG"/>
+            </imageobject>
+            <textobject>
+              <phrase>Deckard, a Web based Glade Runner</phrase>
+            </textobject>
+          </mediaobject>
+        </screenshot>
+      </figure>
+      <para>GTK アプリケーションは、XML ファイルで UI を静的に定義できます。この XML ファイルは、<filename class="extension">.ui</filename> という拡張子がよく使用され、UI ファイルとも呼ばれます。Deckard は、この UI ファイルを利用して GUI イメージを構築しています。この XML フォーマットは「GtkBuilder UI 定義」と呼ばれています。詳細については、<ulink url="https://developer.gnome.org/gtk3/unstable/GtkBuilder.html"/> を参照してください。</para>
+      <para>なお、このガイドの執筆時点で、Deckard には次の制約があります。</para>
+      <itemizedlist>
+        <listitem><para>UI ファイルで定義された UI しか確認できない</para></listitem>
+        <listitem><para>一部のモジュールしか対応していない</para></listitem>
+        <listitem><para>master ブランチしか対応していない</para></listitem>
+      </itemizedlist>
+      <procedure>
+        <title>基本的な使用方法</title>
+        <step>
+          <para>Web ブラウザーを使って、<ulink url="http://deckard.malizor.org/">Deckard のサイト</ulink>にアクセスします。</para>
+        </step>
+        <step>
+          <para><guilabel>Select a module</guilabel> から、表示するモジュールを選択します。</para>
+        </step>
+        <step>
+          <para><guilabel>Select a UI</guilabel> から、表示する UI ファイルを選択します。</para>
+        </step>
+        <step>
+          <para><guilabel>Select a language</guilabel> から、<guilabel>ja_JP - 日本語</guilabel>を選択します。</para>
+        </step>
+        <step>
+          <para><guibutton>Display</guibutton> ボタンを押します。</para>
+        </step>
+      </procedure>
+      <procedure>
+        <title>自分の翻訳を適用する方法</title>
+        <para>自分がローカルで編集した PO ファイルを Deckard 上の UI に適用することができます。実際に自分の翻訳を適用したイメージを確認したい場合などに便利でしょう。</para>
+        <step>
+          <para>上記、「基本的な使用方法」の手順 1 から 3 までを同様に行います。</para>
+        </step>
+        <step>
+          <para><guilabel>Custom PO file for the selected module</guilabel> の<guibutton>参照</guibutton> ボタンを押して、編集した PO ファイルを選択します。</para>
+        </step>
+        <step>
+          <para><guibutton>Upload</guibutton> ボタンを押して PO ファイルをアップロードします。すると、<guilabel>Select a language</guilabel> 欄の値が、<guilabel>ja_JP - 日本語</guilabel>から、アップロードしたファイル名に変わります。ファイル名のままにしておきます。</para>
+        </step>
+        <step>
+          <para><guibutton>Display</guibutton> ボタンを押します。</para>
+        </step>
+      </procedure>
+    </sect1>
+  </appendix>
   <appendix id="po-editor">
     <title>ja.po 編集ソフトウェアの紹介(仮)</title>
     <sect1 id="gtranslaor">
